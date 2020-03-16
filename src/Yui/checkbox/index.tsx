@@ -9,30 +9,31 @@ class CheckBox extends React.Component {
     let addonBefore = null
     let addonAfter = null
     let checkbox = null;
+    const theme = this.props.dark ? '-dark' : ''
     if (this.props.addonBefore) { // 前置按钮
-      addonBefore = <span className="yui-checkbox-addonBefore">
+      addonBefore = <span className={"yui-checkbox-addonBefore" + theme}>
         {this.props.addonBefore}
       </span>
     }
     if (this.props.addonAfter) { // 后置按钮
-      addonAfter = <span className="yui-checkbox-addonAfter">
+      addonAfter = <span className={"yui-checkbox-addonAfter" + theme}>
         {this.props.addonAfter}
       </span>
     }
-    checkbox = <div className="yui-checkbox-compont">
+    checkbox = <div className={"yui-checkbox-compont" + theme}>
       {
         dataList.map(item => {
           return (
             item.disabled
               ?
-              <span className="yui-checkbox-compont-item-disabled" key={item.key}>
+              <span className={"yui-checkbox-compont-item-disabled" + theme} key={item.key}>
                 <span className="label">
                   {item.label}
                 </span>
                 <span className="value"></span>
               </span>
               :
-              <span className="yui-checkbox-compont-item" key={item.key}>
+              <span className={"yui-checkbox-compont-item" + theme} key={item.key}>
                 <span className="label">
                   {item.label}
                 </span>
@@ -62,11 +63,11 @@ class CheckBox extends React.Component {
       }
     </div>
     if (this.props.readonly) {
-      checkbox = <div className="yui-checkbox-compont-disabled" style={{ display: 'flex' }}>
+      checkbox = <div className={"yui-checkbox-compont-disabled" + theme} style={{ display: 'flex' }}>
         {
           dataList && dataList.map(item => {
             return (
-              <span className="yui-checkbox-compont-item" key={item.key}>
+              <span className={"yui-checkbox-compont-item" + theme} key={item.key}>
                 <span className="label">
                   {item.label}
                 </span>
@@ -88,7 +89,7 @@ class CheckBox extends React.Component {
       </div>
     }
     return (
-      <div className="yui-checkbox" style={{ border: (this.props.addonBefore || this.props.addonAfter) ? '1px solid #f2f2f2' : 0 }}>
+      <div className={"yui-checkbox" + theme} style={{ border: (this.props.addonBefore || this.props.addonAfter) ? (theme ? '1px solid #333' : '1px solid #f2f2f2') : 0 }}>
         {addonBefore}
         {checkbox}
         {addonAfter}

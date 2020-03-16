@@ -68,7 +68,7 @@ class Select extends React.Component {
         <div style={{ width: '90%', position: 'relative'}}>
           { label || <span className='yui-select-placeholder'>{this.props.placeholder || '请选择'}</span> }
           {
-            this.props.clear && <div className='yui-select-clear' onClick={
+            this.props.clear && label && <div className='yui-select-clear' onClick={
               (e) => {
                 e.stopPropagation()
                 this.props.onChange('')
@@ -99,7 +99,7 @@ class Select extends React.Component {
                     ?
                     <span className={"yui-select-body-item-disabled" + theme} key={item.key} >{item.label}</span>
                     :
-                    <span className={(item.value === value) ? "yui-select-body-item-active" + theme : "yui-select-body-item" + theme} key={item.key} value={item.value} onClick={
+                    <span className={(item.value === value) ? "yui-select-body-item-active" + theme : "yui-select-body-item" + theme} key={item.key} onClick={
                       () => {
                         this.itemSelect(item.value)
                       }
@@ -147,7 +147,7 @@ class Select extends React.Component {
         <div style={{ width: '90%', position: 'relative' }}>
           { label || <span className='yui-select-placeholder'>{this.props.placeholder || '请选择'}</span> }
           {
-            this.props.clear && <div className='yui-select-clear' style={{top: value.length === 0 ? 0 : 5}} onClick={
+            this.props.clear && label && <div className='yui-select-clear' style={{top: value.length === 0 ? 0 : 5}} onClick={
               (e) => {
                 e.stopPropagation()
                 this.props.onChange([])
@@ -179,7 +179,7 @@ class Select extends React.Component {
                       ?
                       <span className={"yui-select-body-item-disabled" + theme} key={item.key} >{item.label}</span>
                       :
-                      <span className={value.includes(item.value) ? "yui-select-body-item-active" + theme : "yui-select-body-item" + theme} key={item.key} value={item.value} onClick={
+                      <span className={value.includes(item.value) ? "yui-select-body-item-active" + theme : "yui-select-body-item" + theme} key={item.key} onClick={
                         () => {
                           if (value.includes(item.value)) {
                             value.splice(value.indexOf(item.value), 1)

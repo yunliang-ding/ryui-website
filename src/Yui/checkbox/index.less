@@ -1,8 +1,8 @@
-.yui-checkbox{
+.yui-checkbox, .yui-checkbox-dark{
   display:flex;
   justify-content: flex-start;
   align-items: center;
-  .yui-checkbox-addonBefore{
+  .yui-checkbox-addonBefore, .yui-checkbox-addonBefore-dark{
     min-width:50px;
     font-size:12px;
     border-right: 1px solid #f2f2f2;
@@ -15,7 +15,14 @@
       border:0;
     }
   }
-  .yui-checkbox-compont,.yui-checkbox-compont-disabled{
+  .yui-checkbox-addonBefore-dark{
+     border-right: 1px solid #333;
+     color:#888;
+  }
+  .yui-checkbox-compont,
+  .yui-checkbox-compont-disabled,
+  .yui-checkbox-compont-dark,
+  .yui-checkbox-compont-disabled-dark{
     flex:6;
     font-size:12px;
     line-height: 1.3;
@@ -28,7 +35,10 @@
     box-sizing: border-box;
     display: flex;
     justify-content: start;
-    .yui-checkbox-compont-item,.yui-checkbox-compont-item-disabled{
+    .yui-checkbox-compont-item,
+    .yui-checkbox-compont-item-disabled,
+    .yui-checkbox-compont-item-dark,
+    .yui-checkbox-compont-item-disabled-dark{
       display:flex;
       justify-content: flex-start;
       align-items: center;
@@ -61,7 +71,7 @@
         }
       }
     }
-    .yui-checkbox-compont-item-disabled{
+    .yui-checkbox-compont-item-disabled,.yui-checkbox-compont-item-disabled-dark{
       opacity: 0.6;
       cursor:not-allowed;
       .value{
@@ -69,9 +79,9 @@
       }
     }
   }
-  .yui-checkbox-compont-disabled{
+  .yui-checkbox-compont-disabled, .yui-checkbox-compont-disabled-dark{
     cursor:not-allowed;
-    .yui-checkbox-compont-item{
+    .yui-checkbox-compont-item, .yui-checkbox-compont-item-dark{
       opacity: 0.6;
       cursor:not-allowed;
       .value{
@@ -82,7 +92,7 @@
   .yui-checkbox-compont:hover{
     border-color: #16b4a7;
   }
-  .yui-checkbox-addonAfter{
+  .yui-checkbox-addonAfter, .yui-checkbox-addonAfter-dark{
     min-width:50px;
     font-size:12px;
     border:0;
@@ -94,6 +104,20 @@
     flex:2;
     .yui-select-compont{
       border:0
+    }
+  }
+  .yui-checkbox-addonAfter-dark{
+    border-left: 1px solid #333;
+    color:#888;
+  }
+}
+.yui-checkbox-dark{
+  .yui-checkbox-compont-item-dark, .yui-checkbox-compont-item-disabled-dark{
+    .label{
+      color: #888
+    }
+    .value{
+      border-color: #333 !important;
     }
   }
 }

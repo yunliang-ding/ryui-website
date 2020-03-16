@@ -99,28 +99,28 @@ export default class extends React.Component {
         </div>
         <div className="app-checkbox-right">
           <div style={{ width: 300, marginBottom: 20 }}>
-            <CheckBox dataList={dataList} value={valueList} onChange={
+            <CheckBox dark dataList={dataList} value={valueList} onChange={
               (e) => {
                 this.setValueList(e)
               }
             } />
           </div>
           <div style={{ width: 300, marginBottom: 20 }}>
-            <CheckBox readonly={true} dataList={dataList} value={valueList} onChange={
+            <CheckBox dark readonly={true} dataList={dataList} value={valueList} onChange={
               (e) => {
                 this.setValueList(e)
               }
             } />
           </div>
           <div style={{ width: 330, marginBottom: 20 }} >
-            <CheckBox addonBefore='爱好' dataList={dataList} value={valueList} onChange={
+            <CheckBox dark addonBefore='爱好' dataList={dataList} value={valueList} onChange={
               (e) => {
                 this.setValueList(e)
               }
             } />
           </div>
           <div style={{ width: 330, marginBottom: 20 }} >
-            <CheckBox addonAfter={
+            <CheckBox dark addonAfter={
               <i className="iconfont icon-chazhao" style={{ color: 'var(--theme-color)' }} />
             } dataList={dataList} value={valueList} onChange={
               (e) => {
@@ -129,7 +129,7 @@ export default class extends React.Component {
             } />
           </div>
           <div style={{ width: 350, marginBottom: 20 }}>
-            <CheckBox addonBefore={
+            <CheckBox dark addonBefore={
               <Select
                 dark
                 style={{
