@@ -1,4 +1,4 @@
-.ain-select{
+.yui-select, .yui-select-dark{
   display:flex;
   justify-content: flex-start;
   align-items: center;
@@ -9,7 +9,30 @@
   border-color: #f2f2f2;
   transition: all .8s;
   background-color: #fff;
-  .ain-select-addonBefore{
+  .yui-select-spin{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left:0;
+  }
+  .yui-select-placeholder{
+    opacity: 0.5;
+  }
+  .yui-select-clear{
+    position: absolute;
+    right: 0;
+    top:0;
+    color:#888;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  .yui-select-clear:hover{
+    .iconfont{
+      color: var(--theme-color);
+    }
+  }
+  .yui-select-addonBefore, .yui-select-addonBefore-dark{
     min-width:50px;
     font-size:12px;
     border-right: 0;
@@ -19,11 +42,15 @@
     align-items: center;
     background: #f2f2f2;
     flex:2;
-    .ain-select-compont{
+    .yui-select-compont{
       border:0
     }
   }
-  .ain-select-compont{
+  .yui-select-addonBefore-dark{
+    background: #3333;
+    color:#888;
+  }
+  .yui-select-compont, .yui-select-compont-dark{
     flex:6;
     min-height: 32px;
     font-size:12px;
@@ -37,7 +64,7 @@
     align-items: center;
     user-select: none;
     box-sizing: border-box;
-    .ain-select-compont-multiple-label{
+    .yui-select-compont-multiple-label, .yui-select-compont-multiple-label-dark{
       padding:2px;
       min-width:25%;
       display:inline-block;
@@ -46,8 +73,13 @@
       border: 1px solid #e8e8e8;
       margin:2px;
     }
+    .yui-select-compont-multiple-label-dark{
+      background-color: #333;
+      color: #888;
+      border-color: #444;
+    }
   }
-  .ain-select-compont-disabled{
+  .yui-select-compont-disabled, .yui-select-compont-disabled-dark{
     flex:6;
     height: 32px;
     font-size:12px;
@@ -64,8 +96,14 @@
     display:flex;
     align-items: center;
     user-select: none;
+    opacity: 0.6;
   }
-  .ain-select-body{
+  .yui-select-compont-disabled-dark{
+    background: #555;
+    color: #fff;
+    border: 0;
+  }
+  .yui-select-body, .yui-select-body-dark{
     position:absolute;
     top:33px;
     left:0;
@@ -78,7 +116,12 @@
     overflow: auto;
     transition: all .8s;
     -webkit-transition: all .8s;
-    .ain-select-body-item,.ain-select-body-item-active,.ain-select-body-item-disabled{
+    .yui-select-body-item,
+    .yui-select-body-item-active,
+    .yui-select-body-item-disabled,
+    .yui-select-body-item-dark,
+    .yui-select-body-item-active-dark,
+    .yui-select-body-item-disabled-dark{
       display: inline-block;
       width:100%;
       padding:6px 4px;
@@ -86,31 +129,37 @@
       cursor: pointer;
       box-sizing: border-box;
     }
-    .ain-select-body-item:hover{
+    .yui-select-body-item:hover, .yui-select-body-item-dark:hover{
       background: #f2f2f2;
     }
-    .ain-select-body-item-active{
+    .yui-select-body-item-active, .yui-select-body-item-active-dark{
       background: var(--theme-background-color);
       color:#fff;
     }
-    .ain-select-body-item-disabled{
+    .yui-select-body-item-disabled, .yui-select-body-item-disabled-dark{
       cursor: not-allowed;
       opacity: 0.6;
     }
   }
-  .ain-select-body::-webkit-scrollbar {/*滚动条整体样式*/
+  .yui-select-body-dark{
+    background-color: #333;
+    .yui-select-body-item-dark:hover{
+      background-color: #111;
+    }
+  }
+  .yui-select-body::-webkit-scrollbar {/*滚动条整体样式*/
     width: 6px;     /*高宽分别对应横竖滚动条的尺寸*/
     height: 6px;
   }
-  .ain-select-body::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+  .yui-select-body::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
     border-radius: 6px;
     background: #ddd
   }
-  .ain-select-body::-webkit-scrollbar-track {/*滚动条里面轨道*/
+  .yui-select-body::-webkit-scrollbar-track {/*滚动条里面轨道*/
     border-radius: 0;
     background: rgba(199, 196, 196, 0.1);
   }
-  .ain-select-addonAfter{
+  .yui-select-addonAfter, .yui-select-addonAfter-dark{
     min-width:50px;
     min-height: 32px;
     font-size:12px;
@@ -120,19 +169,17 @@
     align-items: center;
     background: #f2f2f2;
     flex:2;
-    .ain-select-compont{
+    .yui-select-compont{
       border:0
     }
   }
-  .app-search-input-search{
-    width: 90%;
+  .yui-select-addonAfter-dark{
+    background: #3333;
+    color:#888;
   }
-  .app-search-input-search-icon{
-    width: 10%;
-    min-width: 20px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+}
+.yui-select-dark{
+  background: #222;
+  color: #888;
+  border-color: #333;
 }

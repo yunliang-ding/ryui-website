@@ -44,7 +44,8 @@ export default class extends React.Component {
         <div className="app-select-left">
           <div style={{ width: 300, marginBottom: 16 }}>
             <Select
-              placeholder="爱好"
+              clear
+              placeholder="请选择"
               dataList={dataList}
               value={value}
               onChange={
@@ -56,8 +57,9 @@ export default class extends React.Component {
           </div>
           <div style={{ width: 300, marginBottom: 16 }}>
             <Select
-              placeholder="爱好"
+              placeholder="请选择"
               readonly={true}
+              dataList={dataList}
               value={value}
               onChange={
                 (e) => {
@@ -71,7 +73,7 @@ export default class extends React.Component {
               addonBefore={
                 <i className="iconfont icon-chazhao" style={{ color: 'var(--theme-color)' }} />
               }
-              placeholder="爱好"
+              placeholder="请选择"
               dataList={dataList}
               value={value}
               onChange={
@@ -84,7 +86,7 @@ export default class extends React.Component {
           <div style={{ width: 300, marginBottom: 16 }}>
             <Select
               addonAfter='请选择'
-              placeholder="爱好"
+              placeholder="请选择"
               dataList={dataList}
               value={value}
               onChange={
@@ -112,7 +114,7 @@ export default class extends React.Component {
                   }
                 />
               }
-              placeholder="爱好"
+              placeholder="请选择"
               dataList={dataList}
               value={value}
               onChange={
@@ -125,6 +127,7 @@ export default class extends React.Component {
           <div style={{ width: 300, marginBottom: 16 }}>
             <Select
               mode="multiple"
+              clear
               addonBefore='多选'
               placeholder="请选择"
               dataList={dataList}
@@ -138,6 +141,110 @@ export default class extends React.Component {
           </div>
         </div>
         <div className="app-select-right">
+          <div style={{ width: 300, marginBottom: 16 }}>
+            <Select
+              dark
+              clear
+              placeholder="请选择"
+              dataList={dataList}
+              value={value}
+              onChange={
+                (e) => {
+                  setValue(e)
+                }
+              }
+            />
+          </div>
+          <div style={{ width: 300, marginBottom: 16 }}>
+            <Select
+              dark
+              placeholder="请选择"
+              readonly={true}
+              dataList={dataList}
+              value={value}
+              onChange={
+                (e) => {
+                  setValue(e)
+                }
+              }
+            />
+          </div>
+          <div style={{ width: 300, marginBottom: 16 }}>
+            <Select
+              dark
+              addonBefore={
+                <i className="iconfont icon-chazhao" style={{ color: 'var(--theme-color)' }} />
+              }
+              placeholder="请选择"
+              dataList={dataList}
+              value={value}
+              onChange={
+                (e) => {
+                  setValue(e)
+                }
+              }
+            />
+          </div>
+          <div style={{ width: 300, marginBottom: 16 }}>
+            <Select
+              dark
+              addonAfter='请选择'
+              placeholder="请选择"
+              dataList={dataList}
+              value={value}
+              onChange={
+                (e) => {
+                  setValue(e)
+                }
+              }
+            />
+          </div>
+          <div style={{ width: 300, marginBottom: 16 }}>
+            <Select
+              dark
+              addonAfter={
+                <Select
+                  dark
+                  placeholder="请选择"
+                  value={value}
+                  dataList={dataList}
+                  style={{
+                    border:0,
+                    borderLeft: '1px solid #334'
+                  }}
+                  onChange={
+                    (e) => {
+                      setValue(e)
+                    }
+                  }
+                />
+              }
+              placeholder="请选择"
+              dataList={dataList}
+              value={value}
+              onChange={
+                (e) => {
+                  setValue(e)
+                }
+              }
+            />
+          </div>
+          <div style={{ width: 300, marginBottom: 16 }}>
+            <Select
+              dark 
+              mode="multiple"
+              addonBefore='多选'
+              clear
+              placeholder="请选择"
+              dataList={dataList}
+              value={valueList}
+              onChange={
+                (e) => {
+                  setValueList(e)
+                }
+              }
+            />
+          </div>
         </div>
       </div>
     )
