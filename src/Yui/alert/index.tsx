@@ -28,8 +28,9 @@ class Alert extends React.Component {
   }
   render() {
     let show = this.state.show;
+    let theme = this.props.dark ? '-dark' : ''
     return (
-      <div className="ain-alert" style={{ display: show ? 'block' : 'none' }}>
+      <div className={"ain-alert"+theme} style={{ display: show ? 'block' : 'none' }}>
         <div className="ain-alert-center">
           <div className="ain-alert-title">
             <span>{this.props.title}</span>
