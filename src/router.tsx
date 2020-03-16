@@ -3,6 +3,7 @@ import { Router, hashHistory, Route, Redirect, IndexRoute} from 'react-router'
 import { Layout } from './layout/index'
 import Input from './components/input/index'
 import Select from './components/select/index'
+import Button from './components/button/index'
 export default class extends React.Component {
   render() {
     return (
@@ -12,6 +13,7 @@ export default class extends React.Component {
           <IndexRoute component={Input} />
           <Route path='input' component={Input} />
           <Route path='select' component={Select} />
+          <Route path='button' component={Button} />
         </Route>
       </Router>
     )
