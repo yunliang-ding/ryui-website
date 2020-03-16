@@ -5,6 +5,7 @@ import Input from './components/input/index'
 import Select from './components/select/index'
 import Button from './components/button/index'
 import CheckBox from './components/checkbox/index'
+import Radio from './components/radio/index'
 export default class extends React.Component {
   render() {
     return (
@@ -16,6 +17,7 @@ export default class extends React.Component {
           <Route path='select' component={Select} />
           <Route path='button' component={Button} />
           <Route path='checkbox' component={CheckBox} />
+          <Route path='radio' component={Radio} />
         </Route>
       </Router>
     )

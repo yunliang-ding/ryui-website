@@ -33,20 +33,20 @@ class CheckBox extends React.Component {
                 <span className="value"></span>
               </span>
               :
-              <span className={"yui-checkbox-compont-item" + theme} key={item.key}>
+              <span className={"yui-checkbox-compont-item" + theme} key={item.key} onClick={
+                () => {
+                  if (value.includes(item.value)) {
+                    value.splice(value.indexOf(item.value), 1)
+                  } else {
+                    value.push(item.value)
+                  }
+                  this.props.onChange(value)
+                }
+              }>
                 <span className="label">
                   {item.label}
                 </span>
-                <span className={value.includes(item.value) ? "value-active" : "value"} onClick={
-                  () => {
-                    if (value.includes(item.value)) {
-                      value.splice(value.indexOf(item.value), 1)
-                    } else {
-                      value.push(item.value)
-                    }
-                    this.props.onChange(value)
-                  }
-                }>
+                <span className={value.includes(item.value) ? "value-active" : "value"}>
                   {
                     value.includes(item.value)
                       ?
