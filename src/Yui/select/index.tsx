@@ -7,10 +7,6 @@ import './index.less'
  */
 class Select extends React.Component {
   props: any;
-  multipleSelect_node: any;
-  addonBefore_node: any;
-  addonAfter_node: any;
-  selectNode: any;
   state = {
     isOpen: false,
     isActive: false,
@@ -29,14 +25,18 @@ class Select extends React.Component {
       this.props.onChange(e)
     }
   }
+  selectNode: any;
+  selectBodyNode: any;
   componentDidUpdate() {
-    if (this.multipleSelect_node) {
-      if (this.addonBefore_node) {
-        this.addonBefore_node.style.height = this.multipleSelect_node.style.height;
+    if (this.props.style.border !== 0) {
+      if (this.state.isOpen) {
+        this.selectNode.style.border = '1px solid var(--theme-color)'
+      } else {
+        this.selectNode.style.border = this.props.dark ? '1px solid #333' : '1px solid #f2f2f2'
       }
-      if (this.addonAfter_node) {
-        this.addonAfter_node.style.height = this.multipleSelect_node.style.height;
-      }
+    }
+    if (this.selectBodyNode) {
+      this.selectBodyNode.style.top = parseInt(window.getComputedStyle(this.selectNode).height)
     }
   }
   render() {
@@ -55,19 +55,19 @@ class Select extends React.Component {
     let theme = this.props.dark ? '-dark' : ''
     let style = this.props.style || {}
     if (this.props.addonBefore) { // 前置按钮
-      addonBefore = <span className={"yui-select-addonBefore" + theme} ref={(node) => { this.addonBefore_node = node }}>
+      addonBefore = <span className={"yui-select-addonBefore" + theme}>
         {this.props.addonBefore}
       </span>
     }
     if (this.props.addonAfter) { // 后置按钮
-      addonAfter = <span className={"yui-select-addonAfter" + theme} ref={(node) => { this.addonAfter_node = node }}>
+      addonAfter = <span className={"yui-select-addonAfter" + theme}>
         {this.props.addonAfter}
       </span>
     }
     if (!this.props.mode) {
-      select = <div style={{ borderColor: this.state.isActive ? '#16b4a7' : '#f2f2f2' }} className={"yui-select-compont" + theme} onClick={this.toggleSelect}>
-        <div style={{ width: '90%', position: 'relative'}}>
-          { label || <span className='yui-select-placeholder'>{this.props.placeholder || '请选择'}</span> }
+      select = <div className={"yui-select-compont" + theme} onClick={this.toggleSelect}>
+        <div style={{ width: '90%', position: 'relative' }}>
+          {label || <span className='yui-select-placeholder'>{this.props.placeholder || '请选择'}</span>}
           {
             this.props.clear && label && <div className='yui-select-clear' onClick={
               (e) => {
@@ -92,7 +92,7 @@ class Select extends React.Component {
           this.state.isOpen && <div className='yui-select-spin' />
         }
         {
-          this.state.isOpen && <div className={"yui-select-body" + theme}>
+          this.state.isOpen && <div className={"yui-select-body" + theme} ref={(node) => { this.selectBodyNode = node }}>
             {
               dataList.map(item => {
                 return (
@@ -144,11 +144,11 @@ class Select extends React.Component {
           )
         })
       }
-      select = <div ref={(node) => { this.multipleSelect_node = node }} style={{ minHeight: 30, borderColor: this.state.isActive ? '#16b4a7' : '#f2f2f2' }} className={"yui-select-compont" + theme} onClick={this.toggleSelect}>
+      select = <div style={{ minHeight: 32 }} className={"yui-select-compont" + theme} onClick={this.toggleSelect}>
         <div style={{ width: '90%', position: 'relative' }}>
-          { label || <span className='yui-select-placeholder'>{this.props.placeholder || '请选择'}</span> }
+          {label || <span className='yui-select-placeholder'>{this.props.placeholder || '请选择'}</span>}
           {
-            this.props.clear && label && <div className='yui-select-clear' style={{top: value.length === 0 ? 0 : 5}} onClick={
+            this.props.clear && label && <div className='yui-select-clear' onClick={
               (e) => {
                 e.stopPropagation()
                 this.props.onChange([])
@@ -172,16 +172,21 @@ class Select extends React.Component {
         }
         {
           this.state.isOpen ?
-            <div className={"yui-select-body" + theme}>
+            <div className={"yui-select-body" + theme} ref={(node) => { this.selectBodyNode = node }}>
               {
                 dataList && dataList.map(item => {
                   return (
                     item.disabled
                       ?
-                      <span className={"yui-select-body-item-disabled" + theme} key={item.key} >{item.label}</span>
+                      <span className={"yui-select-body-item-disabled" + theme} key={item.key} onClick={
+                        (e) => {
+                          e.stopPropagation()
+                        }
+                      }>{item.label}</span>
                       :
                       <span className={value.includes(item.value) ? "yui-select-body-item-active" + theme : "yui-select-body-item" + theme} key={item.key} onClick={
-                        () => {
+                        (e) => {
+                          e.stopPropagation()
                           if (value.includes(item.value)) {
                             value.splice(value.indexOf(item.value), 1)
                           } else {
@@ -208,16 +213,11 @@ class Select extends React.Component {
         </div>
       </div>
     }
-    if(style.border !== 0){
-      style.border = this.state.isOpen ? '1px solid var(--theme-color)' : (theme ? '1px solid #333' : '1px solid #f2f2f2')
-    }
-    return (
-      <div className={"yui-select" + theme} ref={(node) => { this.selectNode = node }} style={style}>
-        {addonBefore}
-        {select}
-        {addonAfter}
-      </div>
-    )
+    return <div className={"yui-select" + theme} style={style} ref={(node) => { this.selectNode = node }}>
+      {addonBefore}
+      {select}
+      {addonAfter}
+    </div>
   }
 }
 export {
