@@ -54,14 +54,14 @@ export default class extends React.Component {
               }
             } />
           </div>
-          <div style={{ width: 330, marginBottom: 20 }} >
+          <div style={{ width: 430, marginBottom: 20 }} >
             <CheckBox addonBefore='爱好' dataList={dataList} value={valueList} onChange={
               (e) => {
                 this.setValueList(e)
               }
             } />
           </div>
-          <div style={{ width: 330, marginBottom: 20 }} >
+          <div style={{ width: 430, marginBottom: 20 }} >
             <CheckBox addonAfter={
               <i className="iconfont icon-chazhao" style={{ color: 'var(--theme-color)' }} />
             } dataList={dataList} value={valueList} onChange={
@@ -70,7 +70,7 @@ export default class extends React.Component {
               }
             } />
           </div>
-          <div style={{ width: 350, marginBottom: 20 }}>
+          <div style={{ width: 430, marginBottom: 20 }}>
             <CheckBox addonBefore={
               <Select
                 style={{
@@ -112,14 +112,14 @@ export default class extends React.Component {
               }
             } />
           </div>
-          <div style={{ width: 330, marginBottom: 20 }} >
+          <div style={{ width: 430, marginBottom: 20 }} >
             <CheckBox dark addonBefore='爱好' dataList={dataList} value={valueList} onChange={
               (e) => {
                 this.setValueList(e)
               }
             } />
           </div>
-          <div style={{ width: 330, marginBottom: 20 }} >
+          <div style={{ width: 430, marginBottom: 20 }} >
             <CheckBox dark addonAfter={
               <i className="iconfont icon-chazhao" style={{ color: 'var(--theme-color)' }} />
             } dataList={dataList} value={valueList} onChange={
@@ -128,7 +128,7 @@ export default class extends React.Component {
               }
             } />
           </div>
-          <div style={{ width: 350, marginBottom: 20 }}>
+          <div style={{ width: 430, marginBottom: 20 }}>
             <CheckBox dark addonBefore={
               <Select
                 dark

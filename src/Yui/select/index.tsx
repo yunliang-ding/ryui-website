@@ -53,6 +53,7 @@ class Select extends React.Component {
     let addonAfter = null
     let select = null;
     let theme = this.props.dark ? '-dark' : ''
+    let style = this.props.style || {}
     if (this.props.addonBefore) { // 前置按钮
       addonBefore = <span className={"yui-select-addonBefore" + theme} ref={(node) => { this.addonBefore_node = node }}>
         {this.props.addonBefore}
@@ -207,8 +208,11 @@ class Select extends React.Component {
         </div>
       </div>
     }
+    if(style.border !== 0){
+      style.border = this.state.isOpen ? '1px solid var(--theme-color)' : (theme ? '1px solid #333' : '1px solid #f2f2f2')
+    }
     return (
-      <div className={"yui-select" + theme} ref={(node) => { this.selectNode = node }} style={this.props.style}>
+      <div className={"yui-select" + theme} ref={(node) => { this.selectNode = node }} style={style}>
         {addonBefore}
         {select}
         {addonAfter}
