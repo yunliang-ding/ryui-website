@@ -4,6 +4,7 @@ import { Layout } from './layout/index'
 import Input from './components/input/index'
 import Select from './components/select/index'
 import Button from './components/button/index'
+import CheckBox from './components/checkbox/index'
 export default class extends React.Component {
   render() {
     return (
@@ -14,6 +15,7 @@ export default class extends React.Component {
           <Route path='input' component={Input} />
           <Route path='select' component={Select} />
           <Route path='button' component={Button} />
+          <Route path='checkbox' component={CheckBox} />
         </Route>
       </Router>
     )
