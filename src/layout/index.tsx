@@ -7,6 +7,23 @@ import { observer, inject } from 'mobx-react'
 @observer
 class Layout extends React.Component {
   props: any
+  componentDidMount() {
+    const {
+      setOpenkey,
+      setSelectKey
+    } = this.props.UI
+    let selectKey = location.hash.substring(2)
+    let openKey = ''
+    if (['input', 'radio', 'checkbox', 'select', 'button'].indexOf(selectKey) > -1) {
+      openKey = '1'
+    } else if (['alert', 'loading'].indexOf(selectKey) > -1) {
+      openKey = '2'
+    } else if (['table', 'tab', 'pagination', 'nav', 'tree'].indexOf(selectKey) > -1) {
+      openKey = '3'
+    }
+    setOpenkey([openKey])
+    setSelectKey([selectKey])
+  }
   render() {
     const {
       dark,
@@ -22,6 +39,10 @@ class Layout extends React.Component {
       setCollapsed,
       darkList,
       setDark,
+      openkey,
+      setOpenkey,
+      selectKey,
+      setSelectKey
     } = this.props.UI
     return (
       <div className="app-layout" style={{
@@ -32,7 +53,10 @@ class Layout extends React.Component {
             dark={dark}
             type={dark ? "normal" : "primary"}
             logo={
-              <i className="iconfont icon-UI1" style={{ fontSize: 30, color: 'var(--theme-color)' }} />
+              <div>
+                <span style={{ fontSize: 18, color: 'var(--theme-color)', marginRight: 8, cursor: 'pointer' }}>Yui</span>
+                <i className="iconfont icon-UI1" style={{ fontSize: 30, color: 'var(--theme-color)' }} />
+              </div>
             }
             navList={navList} menuClick={
               (nav) => {
@@ -44,7 +68,7 @@ class Layout extends React.Component {
             <Select
               dark={dark}
               style={{
-                width:120
+                width: 120
               }}
               dataList={versionList}
               value={version}
@@ -59,7 +83,7 @@ class Layout extends React.Component {
             <Select
               dark={dark}
               style={{
-                width:120
+                width: 120
               }}
               dataList={themeList}
               value={theme}
@@ -82,11 +106,14 @@ class Layout extends React.Component {
               navList={menus}
               menuClick={
                 (openkey, selectKey) => {
-                  console.log(openkey, selectKey)
+                  console.log(toJS(openkey))
+                  setOpenkey(toJS(openkey))
+                  setSelectKey(toJS(selectKey))
+                  window.location.hash = selectKey[0]
                 }
               }
-              openKey={['1']}
-              selectKey={['1-2']}
+              openKey={openkey}
+              selectKey={selectKey}
               collapsed={collapsed}
             />
             <Button

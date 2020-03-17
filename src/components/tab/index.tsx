@@ -28,13 +28,6 @@ export default class extends React.Component {
       label: 'index1.jsx',
       tip: '/user/Tabs/src/index.js',
       active: false
-    }, {
-      key: 4,
-      icon: 'icon-react',
-      color: '#1296db',
-      label: 'index1.jsx',
-      tip: '/user/Tabs/src/index.js',
-      active: false
     }],
     value: 3
   }
@@ -45,7 +38,7 @@ export default class extends React.Component {
       <div className="app-tab">
         <Tab
           dark={dark}
-          style={{ width: 800 }}
+          style={{ width: 500 }}
           data={this.state.data}
           value={this.state.value}
           onClick={
@@ -60,7 +53,7 @@ export default class extends React.Component {
         <Tab
           dark={dark}
           close
-          style={{ width: 800 }}
+          style={{ width: 500 }}
           data={this.state.data}
           value={this.state.value}
           onRemove={

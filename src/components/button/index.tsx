@@ -10,7 +10,7 @@ export default class extends React.Component {
     const { dark } = this.props.UI
     return (
       <div className="app-button">
-        <div style={{ display: 'flex' }}>
+        <div>
           <Button dark={dark} style={{ width: 100, margin: 4 }} label="normal" onClick={() => {
             alert('normal')
           }} />
@@ -30,7 +30,7 @@ export default class extends React.Component {
 
           }} />
         </div>
-        <div style={{ display: 'flex' }}>
+        <div>
           <Button dark={dark} style={{ width: 100, margin: 4 }} label={
             <i className="iconfont icon-fenxiang" />
           } onClick={() => {

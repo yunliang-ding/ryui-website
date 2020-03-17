@@ -49,24 +49,78 @@ class UI {
   @observable collapsed = false
   @observable menus = [{
     key: '1',
-    icon: 'icon-github',
-    label: '个人中心',
+    icon: 'icon-cloud-form',
+    label: '基本组件',
     subMenu: [{
-      key: '1-2',
-      icon: 'icon-fenxiang',
-      label: '我的信息'
+      key: 'input',
+      icon: 'icon-cebianlan',
+      label: 'Input'
     }, {
-      key: '1-3',
-      icon: 'icon-tuichu',
-      label: '我的提交',
+      key: 'checkBox',
+      icon: 'icon-cebianlan',
+      label: 'CheckBox'
+    }, {
+      key: 'radio',
+      icon: 'icon-cebianlan',
+      label: 'Radio'
+    }, {
+      key: 'select',
+      icon: 'icon-cebianlan',
+      label: 'Select'
+    }, {
+      key: 'button',
+      icon: 'icon-cebianlan',
+      label: 'Button'
     }]
   }, {
     key: '2',
-    icon: 'icon-icon_yingyongguanli',
-    label: '信息管理'
+    icon: 'icon-jiaohu',
+    label: '交互组件',
+    subMenu: [{
+      key: 'alert',
+      icon: 'icon-cebianlan',
+      label: 'Alert'
+    }, {
+      key: 'loading',
+      icon: 'icon-cebianlan',
+      label: 'Loading'
+    }]
+  }, {
+    key: '3',
+    icon: 'icon--buju',
+    label: '导航组件',
+    subMenu: [{
+      key: 'table',
+      icon: 'icon-cebianlan',
+      label: 'Table'
+    }, {
+      key: 'tab',
+      icon: 'icon-cebianlan',
+      label: 'Tab'
+    }, {
+      key: 'pagination',
+      icon: 'icon-cebianlan',
+      label: 'Pagination'
+    }, {
+      key: 'tree',
+      icon: 'icon-cebianlan',
+      label: 'Tree'
+    }, {
+      key: 'nav',
+      icon: 'icon-cebianlan',
+      label: 'Nav'
+    }]
   }]
   @action setCollapsed = (collapsed:boolean): void =>  {
     this.collapsed = collapsed
+  }
+  @observable openkey = []
+  @action setOpenkey = (openkey) => {
+    this.openkey = openkey
+  }
+  @observable selectKey = []
+  @action setSelectKey = (selectKey) => {
+    this.selectKey = selectKey
   }
 }
 const ui = new UI()
