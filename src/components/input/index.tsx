@@ -1,6 +1,9 @@
 import * as React from "react"
 import { Input } from '../../Yui/index'
 import './index.less'
+import { observer, inject } from 'mobx-react'
+@inject('UI')
+@observer
 export default class extends React.Component {
   props: any;
   state = {
@@ -12,86 +15,45 @@ export default class extends React.Component {
     })
   }
   render() {
+    const { dark } = this.props.UI
     return <div className="app-input">
-      <div className='app-input-left'>
-        <div style={{ width: 300, marginBottom: 20 }}>
-          <Input placeholder='姓名' value={this.state.value} onChange={
-            (e) => {
-              this.setValue(e.target.value)
-            }
-          } />
-        </div>
-        <div style={{ width: 300, marginBottom: 20 }}>
-          <Input readonly={true} placeholder='姓名' value={this.state.value} />
-        </div>
-        <div style={{ width: 300, marginBottom: 20 }}>
-          <Input placeholder='姓名' value={this.state.value} onChange={
-            (e) => {
-              this.setValue(e.target.value)
-            }
-          } addonBefore='姓名' />
-        </div>
-        <div style={{ width: 300, marginBottom: 20 }}>
-          <Input placeholder='姓名' value={this.state.value} onChange={
-            (e) => {
-              this.setValue(e.target.value)
-            }
-          } addonAfter={<i className="iconfont icon-chazhao" style={{ color: 'var(--theme-color)' }} />} />
-        </div>
-        <div style={{ width: 300, marginBottom: 20 }}>
-          <Input placeholder='姓名' value={this.state.value} onChange={
-            (e) => {
-              this.setValue(e.target.value)
-            }
-          } />
-        </div>
-        <div style={{ width: 300, marginBottom: 20 }}>
-          <Input type="textArea" placeholder='姓名' value={this.state.value} onChange={
-            (e) => {
-              this.setValue(e.target.value)
-            }
-          } />
-        </div>
+      <div style={{ width: 300, marginBottom: 20 }}>
+        <Input dark={dark} placeholder='姓名' value={this.state.value} onChange={
+          (e) => {
+            this.setValue(e.target.value)
+          }
+        } />
       </div>
-      <div className='app-input-right'>
-        <div style={{ width: 300, marginBottom: 20 }}>
-          <Input dark placeholder='姓名' value={this.state.value} onChange={
-            (e) => {
-              this.setValue(e.target.value)
-            }
-          } />
-        </div>
-        <div style={{ width: 300, marginBottom: 20 }}>
-          <Input dark readonly={true} placeholder='姓名' value={this.state.value} />
-        </div>
-        <div style={{ width: 300, marginBottom: 20 }}>
-          <Input dark placeholder='姓名' value={this.state.value} onChange={
-            (e) => {
-              this.setValue(e.target.value)
-            }
-          } addonBefore='姓名' />
-        </div>
-        <div style={{ width: 300, marginBottom: 20 }}>
-          <Input dark placeholder='姓名' value={this.state.value} onChange={
-            (e) => {
-              this.setValue(e.target.value)
-            }
-          } addonAfter={<i className="iconfont icon-chazhao" style={{ color: 'var(--theme-color)' }} />} />
-        </div>
-        <div style={{ width: 300, marginBottom: 20 }}>
-          <Input dark placeholder='姓名' value={this.state.value} onChange={
-            (e) => {
-              this.setValue(e.target.value)
-            }
-          } />
-        </div>
-        <div style={{ width: 300, marginBottom: 20 }}>
-          <Input dark type="textArea" placeholder='姓名' value={this.state.value} onChange={
-            (e) => {
-              this.setValue(e.target.value)
-            }
-          } />
-        </div>
+      <div style={{ width: 300, marginBottom: 20 }}>
+        <Input dark={dark} readonly={true} placeholder='姓名' value={this.state.value} />
+      </div>
+      <div style={{ width: 300, marginBottom: 20 }}>
+        <Input dark={dark} placeholder='姓名' value={this.state.value} onChange={
+          (e) => {
+            this.setValue(e.target.value)
+          }
+        } addonBefore='姓名' />
+      </div>
+      <div style={{ width: 300, marginBottom: 20 }}>
+        <Input dark={dark} placeholder='姓名' value={this.state.value} onChange={
+          (e) => {
+            this.setValue(e.target.value)
+          }
+        } addonAfter={<i className="iconfont icon-chazhao" style={{ color: 'var(--theme-color)' }} />} />
+      </div>
+      <div style={{ width: 300, marginBottom: 20 }}>
+        <Input dark={dark} placeholder='姓名' value={this.state.value} onChange={
+          (e) => {
+            this.setValue(e.target.value)
+          }
+        } />
+      </div>
+      <div style={{ width: 300, marginBottom: 20 }}>
+        <Input dark={dark} type="textArea" placeholder='姓名' value={this.state.value} onChange={
+          (e) => {
+            this.setValue(e.target.value)
+          }
+        } />
       </div>
     </div>
   }
