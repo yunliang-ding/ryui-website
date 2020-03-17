@@ -17,7 +17,7 @@ function getIPAdress() {
 const config = {
   entry: './src/index.tsx',
   output: {
-    path: process.env.NODE_ENV == "production" ? path.resolve(__dirname, 'out/') : path.resolve(__dirname, 'www/'),
+    path: process.env.NODE_ENV == "production" ? path.resolve(__dirname, './out/frontend/public/') : path.resolve(__dirname, 'www/'),
     filename: 'app.js'
   },
   resolve: {

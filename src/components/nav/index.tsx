@@ -6,6 +6,7 @@ import { observer, inject } from 'mobx-react'
 @observer
 export default class extends React.Component {
   [x: string]: any
+  props:any
   state = {
     value: 0,
     navList: [{

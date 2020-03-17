@@ -21,3 +21,7 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+
+out/log/
+out/frontend/public/
+out/frontend/node_modules/
