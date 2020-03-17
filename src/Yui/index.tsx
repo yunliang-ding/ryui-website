@@ -7,6 +7,7 @@ import { Alert } from './alert/index'
 import { Table } from './table/index'
 import { Pagination } from './pagination/index'
 import { Loading } from './loading/index'
+import { Nav } from './nav/index'
 import './theme.less'
 export {
   Input,
@@ -17,5 +18,6 @@ export {
   Alert,
   Table,
   Pagination,
-  Loading
+  Loading,
+  Nav
 }

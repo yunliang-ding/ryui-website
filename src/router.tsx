@@ -10,6 +10,7 @@ import Alert from './components/alert/index'
 import Table from './components/table/index'
 import Pagination from './components/pagination/index'
 import Loading from './components/loading/index'
+import Nav from './components/nav/index'
 export default class extends React.Component {
   render() {
     return (
@@ -26,6 +27,7 @@ export default class extends React.Component {
           <Route path='table' component={Table} />
           <Route path='pagination' component={Pagination} />
           <Route path='loading' component={Loading} />
+          <Route path='nav' component={Nav} />
         </Route>
       </Router>
     )
