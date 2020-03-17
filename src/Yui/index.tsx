@@ -5,6 +5,7 @@ import { CheckBox } from './checkbox/index'
 import { Radio } from './radio/index'
 import { Alert } from './alert/index'
 import { Table } from './table/index'
+import { Pagination } from './pagination/index'
 import './theme.less'
 export {
   Input,
@@ -13,5 +14,6 @@ export {
   CheckBox,
   Radio,
   Alert,
-  Table
+  Table,
+  Pagination
 }

@@ -30,16 +30,16 @@ class Alert extends React.Component {
     let show = this.state.show;
     let theme = this.props.dark ? '-dark' : ''
     return (
-      <div className={"ain-alert"+theme} style={{ display: show ? 'block' : 'none' }}>
-        <div className="ain-alert-center">
-          <div className="ain-alert-title">
+      <div className={"yui-alert"+theme} style={{ display: show ? 'block' : 'none' }}>
+        <div className="yui-alert-center">
+          <div className="yui-alert-title">
             <span>{this.props.title}</span>
             <span><i className="iconfont icon-guanbi" onClick={this.close} /> </span>
           </div>
-          <div className="ain-alert-body">
+          <div className="yui-alert-body">
             {this.props.children}
           </div>
-          <div className="ain-alert-footer">
+          <div className="yui-alert-footer">
             <Button dark={this.props.dark} type={this.props.dark ? "normal" : 'primary'} style={{ width: 80 }} label={this.props.okText || '确定'} onClick={
               () => {
                 if (this.props.onOk) {

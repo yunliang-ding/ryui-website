@@ -8,6 +8,7 @@ import CheckBox from './components/checkbox/index'
 import Radio from './components/radio/index'
 import Alert from './components/alert/index'
 import Table from './components/table/index'
+import Pagination from './components/pagination/index'
 export default class extends React.Component {
   render() {
     return (
@@ -22,6 +23,7 @@ export default class extends React.Component {
           <Route path='radio' component={Radio} />
           <Route path='alert' component={Alert} />
           <Route path='table' component={Table} />
+          <Route path='pagination' component={Pagination} />
         </Route>
       </Router>
     )
