@@ -1,0 +1,60 @@
+.yui-tabs, .yui-tabs-dark{
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  width:100%;
+  user-select: none;
+  overflow-x: auto;
+  font-weight: 800;
+  .yui-tabs-compont{
+    width:100%;
+    height:44px;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: #232323;
+    font-weight: 600;
+    .yui-tabs-item,.yui-tabs-item-active{
+      height:100%;
+      padding:0 16px;
+      transition: all .5s;
+      -webkit-transition: all .5s;
+      color:#888;
+      cursor: pointer;
+      font-size:12px;
+      background:#232323;
+      display:flex;
+      justify-content: space-between;
+      align-items:center;
+      .iconfont{
+        color:#fff;
+        font-Size:12px;
+        font-weight: 700;
+      }
+    }
+    .yui-tabs-item-active{
+      background: #1e1e1e;
+      color:#fff;
+    }
+    .yui-tabs-item:hover{
+      opacity: 0.6;
+      transition: all .5s;
+      -webkit-transition: all .5s;
+      .icon-guanbi{
+        visibility: visible !important;
+      }
+    }
+  }
+}
+.yui-tabs::-webkit-scrollbar {/*滚动条整体样式*/
+  width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
+  height: 4px;
+}
+.yui-tabs::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+  border-radius: 0;
+  background: rgb(146, 144, 144)
+}
+.yui-tabs::-webkit-scrollbar-track {/*滚动条里面轨道*/
+  border-radius: 0;
+  background: rgba(199, 196, 196, 0.1);
+}

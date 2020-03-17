@@ -8,6 +8,7 @@ import { Table } from './table/index'
 import { Pagination } from './pagination/index'
 import { Loading } from './loading/index'
 import { Nav } from './nav/index'
+import { Tab } from './tab/index'
 import './theme.less'
 export {
   Input,
@@ -19,5 +20,6 @@ export {
   Table,
   Pagination,
   Loading,
-  Nav
+  Nav,
+  Tab
 }
