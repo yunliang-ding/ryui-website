@@ -1,7 +1,11 @@
 import * as React from "react"
 import { Nav, Select, Button } from '../../Yui/index'
 import './index.less'
+import { observer, inject } from 'mobx-react'
+@inject('UI')
+@observer
 export default class extends React.Component {
+  [x: string]: any
   state = {
     value: 0,
     navList: [{
@@ -79,14 +83,14 @@ export default class extends React.Component {
     })
   }
   render() {
+    const { dark } = this.props.UI
     let navList = this.state.navList;
     let navListDark = this.state.navListDark;
     navList[3].label = <Select
       placeholder="选择"
       style={{
         border: 0,
-        width:60,
-        height:26
+        width: 60
       }}
       dataList={this.state.dataList}
       value={this.state.selectValue}
@@ -101,8 +105,7 @@ export default class extends React.Component {
       placeholder="选择"
       style={{
         border: 0,
-        width:60,
-        height:26
+        width: 60
       }}
       dataList={this.state.dataList}
       value={this.state.selectValue}
@@ -113,104 +116,54 @@ export default class extends React.Component {
       }
     />
     return <div className="app-nav">
-      <div className="app-nav-left">
-        <Nav logo={
-          <i className="iconfont icon-UI1" style={{ fontSize: 30, color: '#16b4a7' }} />
+      <Nav dark={dark} logo={
+        <i className="iconfont icon-UI1" style={{ fontSize: 30, color: 'var(--theme-color)' }} />
+      }
+        navList={dark ? this.state.navListDark : this.state.navList} menuClick={
+          (nav) => {
+            console.log(nav)
+          }
         }
-          navList={this.state.navList} menuClick={
-            (nav) => {
-              console.log(nav)
-            }
+      />
+      <br />
+      <Nav dark={dark} logo={
+        <i className="iconfont icon-UI1" style={{ fontSize: 30, color: 'var(--theme-color)' }} />
+      }
+        type="right"
+        navList={dark ? this.state.navListDark : this.state.navList} menuClick={
+          (nav) => {
+            console.log(nav)
           }
-        />
-        <br />
-        <Nav logo={
-          <i className="iconfont icon-UI1" style={{ fontSize: 30, color: '#16b4a7' }} />
         }
-          type="right"
-          navList={this.state.navList} menuClick={
-            (nav) => {
-              console.log(nav)
-            }
-          }
-        />
-        <br />
-        <Button
-          dark
-          type="primary"
-          style={{ width: this.state.collapsed ? 40 : 200 }}
-          label={
-            <i className={this.state.collapsed ? "iconfont icon-zhankai1" : "iconfont icon-shouqi"} style={{ color: '#fff' }} />
-          }
-          onClick={() => {
-            this.setState({
-              collapsed: !this.state.collapsed
-            })
-          }}
-        />
-        <Nav
-          style={{ width: 200 }}
-          model="menu"
-          navList={this.state.menu}
-          menuClick={
-            (openkey, selectKey) => {
-              console.log(openkey, selectKey)
-            }
-          }
-          openKey={['1']}
-          selectKey={['1-2']}
-          collapsed={this.state.collapsed}
-        />
-      </div>
-      <div className="app-nav-right">
-        <Nav dark logo={
-          <i className="iconfont icon-UI1" style={{ fontSize: 30, color: '#16b4a7' }} />
+      />
+      <br />
+      <Button
+        dark={dark} 
+        type="primary"
+        style={{ width: this.state.collapsed ? 40 : 200 }}
+        label={
+          <i className={this.state.collapsed ? "iconfont icon-zhankai1" : "iconfont icon-shouqi"} style={{ color: '#fff' }} />
         }
-          navList={this.state.navListDark} menuClick={
-            (nav) => {
-              console.log(nav)
-            }
+        onClick={() => {
+          this.setState({
+            collapsed: !this.state.collapsed
+          })
+        }}
+      />
+      <Nav
+        dark={dark}
+        style={{ width: 200, height: 300 }}
+        model="menu"
+        navList={this.state.menu}
+        menuClick={
+          (openkey, selectKey) => {
+            console.log(openkey, selectKey)
           }
-        />
-        <br />
-        <Nav dark logo={
-          <i className="iconfont icon-UI1" style={{ fontSize: 30, color: '#16b4a7' }} />
         }
-          type="right"
-          navList={this.state.navListDark} menuClick={
-            (nav) => {
-              console.log(nav)
-            }
-          }
-        />
-        <br />
-        <Button
-          dark
-          style={{ width: this.state.collapsed ? 40 : 200 }}
-          label={
-            <i className={this.state.collapsed ? "iconfont icon-zhankai1" : "iconfont icon-shouqi"} style={{ color: '#fff' }} />
-          }
-          onClick={() => {
-            this.setState({
-              collapsed: !this.state.collapsed
-            })
-          }}
-        />
-        <Nav
-          dark
-          style={{ width: 200 }}
-          model="menu"
-          navList={this.state.menu}
-          menuClick={
-            (openkey, selectKey) => {
-              console.log(openkey, selectKey)
-            }
-          }
-          openKey={['1']}
-          selectKey={['1-2']}
-          collapsed={this.state.collapsed}
-        />
-      </div>
+        openKey={['1']}
+        selectKey={['1-2']}
+        collapsed={this.state.collapsed}
+      />
     </div>
   }
 }

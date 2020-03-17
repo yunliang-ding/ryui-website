@@ -1,6 +1,9 @@
 import * as React from "react"
 import { Select } from '../../Yui/index'
 import './index.less'
+import { observer, inject } from 'mobx-react'
+@inject('UI')
+@observer
 export default class extends React.Component {
   props: any;
   state = {
@@ -51,201 +54,107 @@ export default class extends React.Component {
     } = this.state
     const setValue = this.setValue
     const setValueList = this.setValueList
+    const { dark } = this.props.UI
     return (
       <div className="app-select">
-        <div className="app-select-left">
-          <Select
-            clear
-            style={{ width: 300, marginBottom: 16 }}
-            placeholder="请选择"
-            dataList={dataList}
-            value={value}
-            onChange={
-              (e) => {
-                setValue(e)
-              }
+        <Select
+          dark={dark}
+          clear
+          style={{ width: 300, marginBottom: 16 }}
+          placeholder="请选择"
+          dataList={dataList}
+          value={value}
+          onChange={
+            (e) => {
+              setValue(e)
             }
-          />
-          <Select
-            style={{ width: 300, marginBottom: 16 }}
-            placeholder="请选择"
-            readonly={true}
-            dataList={dataList}
-            value={value}
-            onChange={
-              (e) => {
-                setValue(e)
-              }
+          }
+        />
+        <Select
+          dark={dark}
+          style={{ width: 300, marginBottom: 16 }}
+          placeholder="请选择"
+          readonly={true}
+          dataList={dataList}
+          value={value}
+          onChange={
+            (e) => {
+              setValue(e)
             }
-          />
-          <Select
-            style={{ width: 300, marginBottom: 16 }}
-            addonBefore={
-              <i className="iconfont icon-chazhao" style={{ color: 'var(--theme-color)' }} />
+          }
+        />
+        <Select
+          dark={dark}
+          style={{ width: 300, marginBottom: 16 }}
+          addonBefore={
+            <i className="iconfont icon-chazhao" style={{ color: 'var(--theme-color)' }} />
+          }
+          placeholder="请选择"
+          dataList={dataList}
+          value={value}
+          onChange={
+            (e) => {
+              setValue(e)
             }
-            placeholder="请选择"
-            dataList={dataList}
-            value={value}
-            onChange={
-              (e) => {
-                setValue(e)
-              }
+          }
+        />
+        <Select
+          dark={dark}
+          style={{ width: 300, marginBottom: 16 }}
+          addonAfter='请选择'
+          placeholder="请选择"
+          dataList={dataList}
+          value={value}
+          onChange={
+            (e) => {
+              setValue(e)
             }
-          />
-          <Select
-            style={{ width: 300, marginBottom: 16 }}
-            addonAfter='请选择'
-            placeholder="请选择"
-            dataList={dataList}
-            value={value}
-            onChange={
-              (e) => {
-                setValue(e)
-              }
-            }
-          />
-          <Select
-            style={{ width: 300, marginBottom: 16 }}
-            addonAfter={
-              <Select
-                placeholder="选择"
-                value={value}
-                dataList={dataList}
-                style={{
-                  border: 0,
-                  borderLeft: '1px solid #f2f2f2'
-                }}
-                onChange={
-                  (e) => {
-                    setValue(e)
-                  }
+          }
+        />
+        <Select
+          dark={dark}
+          style={{ width: 300, marginBottom: 16 }}
+          addonAfter={
+            <Select
+              dark={dark}
+              placeholder="选择"
+              value={value}
+              dataList={dataList}
+              style={{
+                border: 0,
+                borderLeft: dark ? '1px solid #333' : '1px solid #f2f2f2'
+              }}
+              onChange={
+                (e) => {
+                  setValue(e)
                 }
-              />
-            }
-            placeholder="请选择"
-            dataList={dataList}
-            value={value}
-            onChange={
-              (e) => {
-                setValue(e)
               }
+            />
+          }
+          placeholder="请选择"
+          dataList={dataList}
+          value={value}
+          onChange={
+            (e) => {
+              setValue(e)
             }
-          />
-          <Select
-            style={{ width: 300, marginBottom: 16 }}
-            mode="multiple"
-            clear
-            addonBefore='多选'
-            placeholder="请选择"
-            dataList={dataList}
-            value={valueList}
-            onChange={
-              (e) => {
-                setValueList(e)
-              }
+          }
+        />
+        <Select
+          dark={dark}
+          style={{ width: 300, marginBottom: 16 }}
+          mode="multiple"
+          clear
+          addonBefore='多选'
+          placeholder="请选择"
+          dataList={dataList}
+          value={valueList}
+          onChange={
+            (e) => {
+              setValueList(e)
             }
-          />
-        </div>
-        <div className="app-select-right">
-          <Select
-            style={{ width: 300, marginBottom: 16 }}
-            dark
-            clear
-            placeholder="请选择"
-            dataList={dataList}
-            value={value}
-            onChange={
-              (e) => {
-                setValue(e)
-              }
-            }
-          />
-          <Select
-            dark
-            style={{ width: 300, marginBottom: 16 }}
-            placeholder="请选择"
-            readonly={true}
-            dataList={dataList}
-            value={value}
-            onChange={
-              (e) => {
-                setValue(e)
-              }
-            }
-          />
-          <Select
-            dark
-            style={{ width: 300, marginBottom: 16 }}
-            addonBefore={
-              <i className="iconfont icon-chazhao" style={{ color: 'var(--theme-color)' }} />
-            }
-            placeholder="请选择"
-            dataList={dataList}
-            value={value}
-            onChange={
-              (e) => {
-                setValue(e)
-              }
-            }
-          />
-          <Select
-            dark
-            style={{ width: 300, marginBottom: 16 }}
-            addonAfter='请选择'
-            placeholder="请选择"
-            dataList={dataList}
-            value={value}
-            onChange={
-              (e) => {
-                setValue(e)
-              }
-            }
-          />
-          <Select
-            dark
-            style={{ width: 300, marginBottom: 16 }}
-            addonAfter={
-              <Select
-                dark
-                placeholder="请选择"
-                value={value}
-                dataList={dataList}
-                style={{
-                  border: 0,
-                  borderLeft: '1px solid #334'
-                }}
-                onChange={
-                  (e) => {
-                    setValue(e)
-                  }
-                }
-              />
-            }
-            placeholder="请选择"
-            dataList={dataList}
-            value={value}
-            onChange={
-              (e) => {
-                setValue(e)
-              }
-            }
-          />
-          <Select
-            dark
-            style={{ width: 300, marginBottom: 16 }}
-            mode="multiple"
-            addonBefore='多选'
-            clear
-            placeholder="请选择"
-            dataList={dataList}
-            value={valueList}
-            onChange={
-              (e) => {
-                setValueList(e)
-              }
-            }
-          />
-        </div>
+          }
+        />
       </div>
     )
   }

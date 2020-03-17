@@ -1,6 +1,9 @@
 import * as React from "react"
 import './index.less'
 import { Table, Button } from '../../Yui/index'
+import { observer, inject } from 'mobx-react'
+@inject('UI')
+@observer
 export default class extends React.Component {
   state = {
     data: [{
@@ -29,7 +32,9 @@ export default class extends React.Component {
       count: 4
     }]
   }
+props: any
   render() {
+    const { dark } = this.props.UI
     const colmun = [{
       label: '序号',
       dataIndex: 'no',
@@ -50,7 +55,7 @@ export default class extends React.Component {
       dataIndex: "opeartion",
       render: (value, record) => {
         return ['删除', '修改'].map(m => {
-          return <Button type='primary' style={{ width: 50, marginRight: 10 }} label={m} onClick={
+          return <Button dark={dark} type={dark ? 'normal' : 'primary'} style={{ width: 50, marginRight: 10 }} label={m} onClick={
             () => {
               alert('123')
             }
@@ -60,24 +65,13 @@ export default class extends React.Component {
     }]
     return (
       <div className="app-table">
-        <div className="app-table-left">
-          <Table style={{height: 400, marginBottom: 40}} data={this.state.data} colmun={colmun} />
-          <Table style={{height: 400, marginBottom: 40}} data={this.state.data} colmun={colmun} styleHeader={{
+          <Table dark={dark} style={{height: 400, marginBottom: 40}} data={this.state.data} colmun={colmun} />
+          <Table dark={dark} style={{height: 400, marginBottom: 40}} data={this.state.data} colmun={colmun} styleHeader={{
             background: 'var(--theme-color)',
             color: '#fff'
           }} />
-          <Table style={{height: 400, marginBottom: 40}} data={this.state.data} colmun={colmun} line={true} />
-          <Table style={{height: 400}} data={this.state.data} colmun={colmun} colmunSort={true} />
-        </div>
-        <div className="app-table-right">
-          <Table style={{height: 400, marginBottom: 40}} dark data={this.state.data} colmun={colmun} />
-          <Table style={{height: 400, marginBottom: 40}} dark data={this.state.data} colmun={colmun} styleHeader={{
-            background: '#16b4a7',
-            color: '#fff'
-          }} />
-          <Table style={{height: 400, marginBottom: 40}} dark data={this.state.data} colmun={colmun} line={true} />
-          <Table dark data={this.state.data} colmun={colmun} colmunSort={true} />
-        </div>
+          <Table dark={dark} style={{height: 400, marginBottom: 40}} data={this.state.data} colmun={colmun} line={true} />
+          <Table dark={dark} style={{height: 400}} data={this.state.data} colmun={colmun} colmunSort={true} />
       </div>
     )
   }
