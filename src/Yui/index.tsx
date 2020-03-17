@@ -9,6 +9,7 @@ import { Pagination } from './pagination/index'
 import { Loading } from './loading/index'
 import { Nav } from './nav/index'
 import { Tab } from './tab/index'
+import { Tree } from './tree/index'
 import './theme.less'
 export {
   Input,
@@ -21,5 +22,6 @@ export {
   Pagination,
   Loading,
   Nav,
-  Tab
+  Tab,
+  Tree
 }
