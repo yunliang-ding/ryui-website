@@ -4,6 +4,7 @@ import { Button } from './button/index'
 import { CheckBox } from './checkbox/index'
 import { Radio } from './radio/index'
 import { Alert } from './alert/index'
+import { Table } from './table/index'
 import './theme.less'
 export {
   Input,
@@ -11,5 +12,6 @@ export {
   Button,
   CheckBox,
   Radio,
-  Alert
+  Alert,
+  Table
 }
