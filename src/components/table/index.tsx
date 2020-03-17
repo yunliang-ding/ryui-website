@@ -32,7 +32,7 @@ export default class extends React.Component {
       count: 4
     }]
   }
-props: any
+  props: any
   render() {
     const { dark } = this.props.UI
     const colmun = [{
@@ -65,13 +65,13 @@ props: any
     }]
     return (
       <div className="app-table">
-          <Table dark={dark} style={{height: 400, marginBottom: 40}} data={this.state.data} colmun={colmun} />
-          <Table dark={dark} style={{height: 400, marginBottom: 40}} data={this.state.data} colmun={colmun} styleHeader={{
-            background: 'var(--theme-color)',
-            color: '#fff'
-          }} />
-          <Table dark={dark} style={{height: 400, marginBottom: 40}} data={this.state.data} colmun={colmun} line={true} />
-          <Table dark={dark} style={{height: 400}} data={this.state.data} colmun={colmun} colmunSort={true} />
+        <Table dark={dark} style={{ height: 400, marginBottom: 40 }} data={this.state.data} colmun={colmun} />
+        <Table dark={dark} style={{ height: 400, marginBottom: 40 }} data={this.state.data} colmun={colmun} styleHeader={{
+          background: 'var(--theme-color)',
+          color: '#fff'
+        }} />
+        <Table dark={dark} style={{ height: 400, marginBottom: 40 }} data={this.state.data} colmun={colmun} line={true} />
+        <Table dark={dark} style={{ height: 400 }} data={this.state.data} colmun={colmun} colmunSort={true} />
       </div>
     )
   }

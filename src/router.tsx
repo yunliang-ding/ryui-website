@@ -30,6 +30,7 @@ export default class extends React.Component {
           <Route path='pagination' component={Pagination} />
           <Route path='loading' component={Loading} />
           <Route path='nav' component={Nav} />
+          <Route path='tab' component={Tab} />
           <Route path='tree' component={Tree} />
         </Route>
       </Router>

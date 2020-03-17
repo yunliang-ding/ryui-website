@@ -1,6 +1,9 @@
 import * as React from "react"
 import { Tree } from '../../Yui/index'
 import './index.less'
+import { observer, inject } from 'mobx-react'
+@inject('UI')
+@observer
 export default class extends React.Component {
   state = {
     info1: '点击显示节点信息',
@@ -15,13 +18,13 @@ export default class extends React.Component {
       isOpen: true,
       node: [{
         key: Math.random(),
-        icon: 'icon-logo-javascript',
-        color: '#f5f42d',
-        label: 'index.js',
+        icon: 'icon-react',
+        color: '#1296db',
+        label: 'index.jsx',
         isLeaf: true
       }, {
         key: Math.random(),
-        icon: 'icon-json1',
+        icon: 'icon-less',
         color: '#1E9FFF',
         label: 'index.less',
         isLeaf: true,
@@ -35,9 +38,9 @@ export default class extends React.Component {
         isOpen: true,
         node: [{
           key: Math.random(),
-          icon: 'icon-logo-javascript',
-          color: '#f5f42d',
-          label: 'index.js',
+          icon: 'icon-react',
+          color: '#1296db',
+          label: 'index.jsx',
           isLeaf: true,
         }]
       }]
@@ -51,21 +54,21 @@ export default class extends React.Component {
       isOpen: true,
       node: [{
         key: Math.random(),
-        icon: 'icon-logo-javascript',
-        color: '#f5f42d',
-        label: 'index.js',
+        icon: 'icon-react',
+        color: '#1296db',
+        label: 'index.jsx',
         isLeaf: true,
       }, {
         key: Math.random(),
-        icon: 'icon-json1',
+        icon: 'icon-less',
         color: '#1E9FFF',
         label: 'index.less',
         isLeaf: true,
       }, {
         key: Math.random(),
-        icon: 'icon-logo-javascript',
-        color: '#f5f42d',
-        label: 'store.js',
+        icon: 'icon-react',
+        color: '#1296db',
+        label: 'store.jsx',
         isLeaf: true,
       }]
     }, {
@@ -77,35 +80,35 @@ export default class extends React.Component {
       isLeaf: false,
       node: [{
         key: Math.random(),
-        icon: 'icon-logo-javascript',
-        color: '#f5f42d',
-        label: 'index.js',
+        icon: 'icon-react',
+        color: '#1296db',
+        label: 'index.jsx',
         isLeaf: true,
       }, {
         key: Math.random(),
-        icon: 'icon-json1',
+        icon: 'icon-less',
         color: '#1E9FFF',
         label: 'index.less',
         isLeaf: true,
       }, {
         key: Math.random(),
-        icon: 'icon-logo-javascript',
-        color: '#f5f42d',
-        label: 'store.js',
+        icon: 'icon-react',
+        color: '#1296db',
+        label: 'store.jsx',
         isLeaf: true,
       }]
     }, {
       key: Math.random(),
-      icon: 'icon-logo-javascript',
-      color: '#f5f42d',
-      label: 'app.js',
+      icon: 'icon-react',
+      color: '#1296db',
+      label: 'app.jsx',
       icon2: 'icon-jiantou32',
       isLeaf: true,
     }, {
       key: Math.random(),
-      icon: 'icon-uniEE',
+      icon: 'icon-react',
       color: '#FF5722',
-      label: 'react.sql',
+      label: 'react.jsx',
       icon2: 'icon-jiantou32',
       isLeaf: true,
     }],
@@ -120,13 +123,13 @@ export default class extends React.Component {
         isOpen: true,
         node: [{
           key: Math.random(),
-          icon: 'icon-logo-javascript',
-          color: '#f5f42d',
-          label: 'index.js',
+          icon: 'icon-react',
+          color: '#1296db',
+          label: 'index.jsx',
           isLeaf: true
         }, {
           key: Math.random(),
-          icon: 'icon-json1',
+          icon: 'icon-less',
           color: '#1E9FFF',
           label: 'index.less',
           isLeaf: true,
@@ -140,9 +143,9 @@ export default class extends React.Component {
           isOpen: true,
           node: [{
             key: Math.random(),
-            icon: 'icon-logo-javascript',
-            color: '#f5f42d',
-            label: 'index.js',
+            icon: 'icon-react',
+            color: '#1296db',
+            label: 'index.jsx',
             isLeaf: true,
           }]
         }]
@@ -156,21 +159,21 @@ export default class extends React.Component {
         isOpen: true,
         node: [{
           key: Math.random(),
-          icon: 'icon-logo-javascript',
-          color: '#f5f42d',
-          label: 'index.js',
+          icon: 'icon-react',
+          color: '#1296db',
+          label: 'index.jsx',
           isLeaf: true,
         }, {
           key: Math.random(),
-          icon: 'icon-json1',
+          icon: 'icon-less',
           color: '#1E9FFF',
           label: 'index.less',
           isLeaf: true,
         }, {
           key: Math.random(),
-          icon: 'icon-logo-javascript',
-          color: '#f5f42d',
-          label: 'store.js',
+          icon: 'icon-react',
+          color: '#1296db',
+          label: 'store.jsx',
           isLeaf: true,
         }]
       }, {
@@ -182,87 +185,94 @@ export default class extends React.Component {
         isLeaf: false,
         node: [{
           key: Math.random(),
-          icon: 'icon-logo-javascript',
-          color: '#f5f42d',
-          label: 'index.js',
+          icon: 'icon-react',
+          color: '#1296db',
+          label: 'index.jsx',
           isLeaf: true,
         }, {
           key: Math.random(),
-          icon: 'icon-json1',
+          icon: 'icon-less',
           color: '#1E9FFF',
           label: 'index.less',
           isLeaf: true,
         }, {
           key: Math.random(),
-          icon: 'icon-logo-javascript',
-          color: '#f5f42d',
-          label: 'store.js',
+          icon: 'icon-react',
+          color: '#1296db',
+          label: 'store.jsx',
           isLeaf: true,
         }]
       }, {
         key: Math.random(),
-        icon: 'icon-logo-javascript',
-        color: '#f5f42d',
-        label: 'app.js',
+        icon: 'icon-react',
+        color: '#1296db',
+        label: 'app.jsx',
         icon2: 'icon-jiantou32',
         isLeaf: true,
       }, {
         key: Math.random(),
-        icon: 'icon-uniEE',
+        icon: 'icon-react',
         color: '#FF5722',
-        label: 'react.sql',
+        label: 'react.jsx',
         icon2: 'icon-jiantou32',
         isLeaf: true,
       }],
     tabs: [{
       key: Math.random(),
-      icon: 'icon-logo-javascript',
-      color: '#f5f42d',
-      label: 'index.js',
-      tip: '/user/Tabs/src/index.js',
+      icon: 'icon-react',
+      color: '#1296db',
+      label: 'index.jsx',
+      tip: '/user/Tabs/src/index.jsx',
       active: false
     }, {
       key: Math.random(),
-      icon: 'icon-json1',
+      icon: 'icon-less',
       color: '#1E9FFF',
       label: 'index.less',
-      tip: '/user/Tabs/src/index.js',
+      tip: '/user/Tabs/src/index.jsx',
       active: true
     }, {
       key: Math.random(),
-      icon: 'icon-logo-javascript',
-      color: '#f5f42d',
-      label: 'webpack.config.prod.js',
-      tip: '/user/Tabs/src/index.js',
+      icon: 'icon-react',
+      color: '#1296db',
+      label: 'webpack.config.prod.jsx',
+      tip: '/user/Tabs/src/index.jsx',
       active: false
     }, {
       key: Math.random(),
-      icon: 'icon-logo-javascript',
-      color: '#f5f42d',
-      label: 'index.js',
-      tip: '/user/Tabs/src/index.js',
+      icon: 'icon-react',
+      color: '#1296db',
+      label: 'index.jsx',
+      tip: '/user/Tabs/src/index.jsx',
       active: false
     }, {
       key: Math.random(),
-      icon: 'icon-json1',
+      icon: 'icon-less',
       color: '#1E9FFF',
       label: 'index.less',
-      tip: '/user/Tabs/src/index.js',
+      tip: '/user/Tabs/src/index.jsx',
       active: false
     }, {
       key: Math.random(),
-      icon: 'icon-logo-javascript',
-      color: '#f5f42d',
-      label: 'webpack.config.prod.js',
-      tip: '/user/Tabs/src/index.js',
+      icon: 'icon-react',
+      color: '#1296db',
+      label: 'webpack.config.prod.jsx',
+      tip: '/user/Tabs/src/index.jsx',
       active: false
     }]
   }
+  props: any
   render() {
+    const { dark } = this.props.UI
     return (
       <div className="app-tree">
         <Tree
-          style={{width: 200}}
+          style={{
+            width: 200,
+            height: 500,
+            background: dark ? '#333' : '#dcdcdc'
+          }}
+          dark={dark}
           type="simple"
           treeData={this.state.data}
           onClick={
@@ -277,7 +287,13 @@ export default class extends React.Component {
           }
         />
         <Tree
-          style={{width: 200}}
+          style={{
+            width: 200,
+            height: 500,
+            marginLeft: 50,
+            background: dark ? '#333' : '#dcdcdc'
+          }}
+          dark={dark}
           treeData={this.state.data2}
           onClick={
             (e) => {

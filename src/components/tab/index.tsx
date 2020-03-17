@@ -1,45 +1,51 @@
 import * as React from "react"
 import { Tab } from '../../Yui/index'
 import './index.less'
+import { observer, inject } from 'mobx-react'
+@inject('UI')
+@observer
 export default class extends React.Component {
   state = {
     info: null,
     data: [{
       key: 1,
       icon: 'icon-react',
-      color: 'var(--theme-color)',
-      label: '面板1',
+      color: '#1296db',
+      label: 'index1.jsx',
       tip: '/user/Tabs/src/index.js',
       active: false
     }, {
       key: 2,
       icon: 'icon-react',
-      color: 'var(--theme-color)',
-      label: '面板2',
+      color: '#1296db',
+      label: 'index1.jsx',
       tip: '/user/Tabs/src/index.js',
       active: false
     }, {
       key: 3,
       icon: 'icon-react',
-      color: 'var(--theme-color)',
-      label: '面板3',
+      color: '#1296db',
+      label: 'index1.jsx',
       tip: '/user/Tabs/src/index.js',
       active: false
     }, {
       key: 4,
       icon: 'icon-react',
-      color: 'var(--theme-color)',
-      label: '面板4',
+      color: '#1296db',
+      label: 'index1.jsx',
       tip: '/user/Tabs/src/index.js',
       active: false
     }],
     value: 3
   }
+  props: any
   render() {
+    const { dark } = this.props.UI
     return (
       <div className="app-tab">
         <Tab
-          style={{width: 800}}
+          dark={dark}
+          style={{ width: 800 }}
           data={this.state.data}
           value={this.state.value}
           onClick={
@@ -52,8 +58,9 @@ export default class extends React.Component {
         />
         <br />
         <Tab
+          dark={dark}
           close
-          style={{width: 800}}
+          style={{ width: 800 }}
           data={this.state.data}
           value={this.state.value}
           onRemove={

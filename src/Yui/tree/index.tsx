@@ -165,7 +165,7 @@ class Tree extends React.Component {
                   node.isLeaf
                     ?
                     <span>
-                      <CheckBox value={node.selected ? [node.key] : []} dataList={[{ label: node.label, value: node.key }]} onChange={
+                      <CheckBox style={{height:16}} value={node.selected ? [node.key] : []} dataList={[{ label: node.label, value: node.key }]} onChange={
                         (e) => {
                           console.log(e)
                         }
@@ -182,8 +182,9 @@ class Tree extends React.Component {
     });
   }
   render() {
-    let tree_dom = this.callBack(this.state.treeData, 16);
-    return <div className="yui-tree" style={this.props.style}>
+    let tree_dom = this.callBack(this.state.treeData, 16)
+    const theme = this.props.dark ? '-dark' : ''
+    return <div className={"yui-tree"+theme} style={this.props.style}>
       {tree_dom}
     </div>
   }

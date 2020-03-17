@@ -24,7 +24,9 @@ class Layout extends React.Component {
       setDark,
     } = this.props.UI
     return (
-      <div className="app-layout">
+      <div className="app-layout" style={{
+        background: dark ? '#111' : '#fff'
+      }}>
         <div className='app-layout-header'>
           <Nav
             dark={dark}
@@ -70,7 +72,9 @@ class Layout extends React.Component {
           </div>
         </div>
         <div className='app-layout-body'>
-          <div className='app-layout-body-left'>
+          <div className='app-layout-body-left' style={{
+            width: collapsed ? 40 : 200
+          }}>
             <Nav
               dark={dark}
               style={{ width: 200, height: 'calc(100% - 32px)' }}
@@ -98,7 +102,8 @@ class Layout extends React.Component {
             />
           </div>
           <div className='app-layout-body-right' style={{
-            background: dark ? '#111' : '#fff'
+            background: dark ? '#111' : '#fff',
+            width: collapsed ? 'calc(100% - 40px)' : 'calc(100% - 200px)'
           }}>
             <div className='app-layout-body-theme'>
               <Radio dark={dark} addonBefore='主题' dataList={darkList} value={dark} onChange={
