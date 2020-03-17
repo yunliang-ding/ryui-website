@@ -6,6 +6,7 @@ import { Radio } from './radio/index'
 import { Alert } from './alert/index'
 import { Table } from './table/index'
 import { Pagination } from './pagination/index'
+import { Loading } from './loading/index'
 import './theme.less'
 export {
   Input,
@@ -15,5 +16,6 @@ export {
   Radio,
   Alert,
   Table,
-  Pagination
+  Pagination,
+  Loading
 }

@@ -9,6 +9,7 @@ import Radio from './components/radio/index'
 import Alert from './components/alert/index'
 import Table from './components/table/index'
 import Pagination from './components/pagination/index'
+import Loading from './components/loading/index'
 export default class extends React.Component {
   render() {
     return (
@@ -24,6 +25,7 @@ export default class extends React.Component {
           <Route path='alert' component={Alert} />
           <Route path='table' component={Table} />
           <Route path='pagination' component={Pagination} />
+          <Route path='loading' component={Loading} />
         </Route>
       </Router>
     )
