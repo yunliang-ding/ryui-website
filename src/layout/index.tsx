@@ -4,6 +4,7 @@ import './index.less'
 import { Nav, Select, Button, Radio, Tab } from '../Yui/index'
 import { observer, inject } from 'mobx-react'
 import { Monaco } from '../monaco/index'
+import code from './code'
 @inject('UI')
 @observer
 class Layout extends React.Component {
@@ -47,6 +48,7 @@ class Layout extends React.Component {
       type,
       setType
     } = this.props.UI
+    console.log(toJS(selectKey))
     return (
       <div className="app-layout" style={{
         background: dark ? '#1e1e1e' : '#fff'
@@ -104,7 +106,7 @@ class Layout extends React.Component {
           }}>
             <Nav
               dark={dark}
-              style={{ width: 200, height: 'calc(100% - 32px)' }}
+              style={{ width: 200, height: 'calc(100% - 32px)', minHeight: 600 }}
               model="menu"
               navList={menus}
               menuClick={
@@ -142,7 +144,7 @@ class Layout extends React.Component {
                 path={'input'}
                 theme={dark ? 'vs-dark' : 'vs'}
                 language={'javascript'}
-                value={`import * from react`}
+                value={code[selectKey] || ''}
               />
             </div>
             <div className='app-layout-body-right-components'>

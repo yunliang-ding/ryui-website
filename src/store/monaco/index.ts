@@ -3,6 +3,7 @@ import 'monaco-editor/esm/vs/basic-languages/javascript/javascript.contribution'
 import { textMateService } from './syntaxHighlighter'
 const { typescriptDefaults, javascriptDefaults }: any = monaco.languages.typescript
 class MonacoServices{
+  editorMonaco: monaco.editor.IStandaloneCodeEditor
   compilerOptions = {
     target: 99,
     plugins: [
@@ -23,14 +24,14 @@ class MonacoServices{
    */
   init = (dom, options): void => {
     let oldDecorations = []
-    let model = monaco.editor.createModel(options.value, options.language, this.getUri(options.path))
     let editorMonaco: monaco.editor.IStandaloneCodeEditor = monaco.editor.create(dom,  {
       selectOnLineNumbers: true,
       automaticLayout: true,
       fontSize: 12,
       fontWeight: "400",
-      model,
+      language: options.language,
       theme: options.theme,
+      value: options.value,
       minimap: {
         enabled: false
       }
@@ -38,9 +39,13 @@ class MonacoServices{
     editorMonaco.onDidChangeModelContent(() => { // onChange 事件
       oldDecorations = this.textMateColor(editorMonaco, options.language, editorMonaco.getValue(), oldDecorations)
     })
+    this.editorMonaco = editorMonaco
     oldDecorations = this.textMateColor(editorMonaco, options.language, options.value, oldDecorations)
     typescriptDefaults._compilerOptions = this.compilerOptions
     javascriptDefaults._compilerOptions = this.compilerOptions
+  }
+  setValue = (value) => {
+    this.editorMonaco.setValue(value)
   }
   dispose = (editorMonaco: monaco.editor.IStandaloneCodeEditor) => {
     editorMonaco.dispose()

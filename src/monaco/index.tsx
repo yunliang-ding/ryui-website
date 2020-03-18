@@ -12,6 +12,7 @@ class Monaco extends React.Component<any, any> {
   }
   componentDidUpdate () {
     this.props.Monaco.setTheme(this.props.theme)
+    this.props.Monaco.setValue(this.props.value)
   }
   componentDidMount() {
     this.props.Monaco.init(this.monacoNode, {
