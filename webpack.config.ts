@@ -92,7 +92,7 @@ const config = {
   },
   plugins: [
     new MonacoWebpackPlugin({
-      languages: ['javascript', 'json', 'html', 'css', 'less', 'typescript']
+      languages: ['javascript', 'html', 'typescript']
     })
   ],
   mode: process.env.NODE_ENV == "development" ? "development" : "production"
