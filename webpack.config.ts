@@ -1,5 +1,6 @@
 const path = require("path")
 const os = require('os')
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 function getIPAdress() {
   let localIPAddress = "";
   let interfaces = os.networkInterfaces();
@@ -47,7 +48,6 @@ const config = {
       }
     }, {
       test: /\.(png|jpg|gif|svg|ttf)$/,
-      exclude: /(node_modules)/,
       use: {
         loader: 'file-loader',
         options: {
@@ -55,10 +55,11 @@ const config = {
           outputPath: 'images/'
         }
       }
-    },{
+    }, {
       test: /\.(less|css)$/,
       include: [ //样式只应用到这两个文件夹下面的css文件中
-        path.resolve(__dirname, './src'),
+        path.resolve(__dirname, 'node_modules'),
+        path.resolve(__dirname, './src')
       ],
       use: [
         require.resolve('style-loader'),
@@ -89,6 +90,11 @@ const config = {
   performance: {
     hints: false
   },
+  plugins: [
+    new MonacoWebpackPlugin({
+      languages: ['javascript', 'json', 'html', 'css', 'less', 'typescript']
+    })
+  ],
   mode: process.env.NODE_ENV == "development" ? "development" : "production"
 }
 module.exports = config

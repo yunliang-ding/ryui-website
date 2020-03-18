@@ -22,7 +22,7 @@ class UI {
   @action setTheme = (theme: string): void => {
     this.theme = theme
   }
-  @observable dark = false
+  @observable dark = true
   @observable darkList = [{
     label: '黑色',
     value: true

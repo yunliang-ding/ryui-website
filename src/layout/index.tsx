@@ -3,6 +3,7 @@ import { toJS } from 'mobx'
 import './index.less'
 import { Nav, Select, Button, Radio } from '../Yui/index'
 import { observer, inject } from 'mobx-react'
+import { Monaco } from '../monaco/index'
 @inject('UI')
 @observer
 class Layout extends React.Component {
@@ -46,7 +47,7 @@ class Layout extends React.Component {
     } = this.props.UI
     return (
       <div className="app-layout" style={{
-        background: dark ? '#111' : '#fff'
+        background: dark ? '#1e1e1e' : '#fff'
       }}>
         <div className='app-layout-header'>
           <Nav
@@ -129,23 +130,28 @@ class Layout extends React.Component {
             />
           </div>
           <div className='app-layout-body-right' style={{
-            background: dark ? '#111' : '#fff',
+            background: dark ? '#1a1a1a' : '#fff',
             width: collapsed ? 'calc(100% - 40px)' : 'calc(100% - 200px)'
           }}>
-            <div className='app-layout-body-theme'>
-              <Radio dark={dark} addonBefore='主题' dataList={darkList} value={dark} onChange={
-                (e) => {
-                  setDark(e)
-                }
-              } />
-            </div>
-            <div className='app-layout-body-right-components'>
-              {this.props.children}
-            </div>
             <div className='app-layout-body-right-ccstudio' style={{
               borderColor: dark ? '#222' : '#dcdcdc'
             }}>
-              <i className='iconfont icon-development'></i>
+              <Monaco
+                path={'input'}
+                theme={dark ? 'vs-dark' : 'vs'}
+                language={'javascript'}
+                value={`import * from react`}
+              />
+            </div>
+            <div className='app-layout-body-right-components'>
+              {this.props.children}
+              <div className='app-layout-body-theme'>
+                <Radio dark={dark} addonBefore='主题' dataList={darkList} value={dark} onChange={
+                  (e) => {
+                    setDark(e)
+                  }
+                } />
+              </div>
             </div>
           </div>
         </div>
