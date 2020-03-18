@@ -1,7 +1,7 @@
 import * as React from "react"
 import { toJS } from 'mobx'
 import './index.less'
-import { Nav, Select, Button, Radio } from '../Yui/index'
+import { Nav, Select, Button, Radio, Tab } from '../Yui/index'
 import { observer, inject } from 'mobx-react'
 import { Monaco } from '../monaco/index'
 @inject('UI')
@@ -15,7 +15,7 @@ class Layout extends React.Component {
     } = this.props.UI
     let selectKey = location.hash.substring(2)
     let openKey = ''
-    if (['input', 'radio', 'checkbox', 'select', 'button'].indexOf(selectKey) > -1) {
+    if (['input', 'radio', 'checkBox', 'select', 'button'].indexOf(selectKey) > -1) {
       openKey = '1'
     } else if (['alert', 'loading'].indexOf(selectKey) > -1) {
       openKey = '2'
@@ -43,7 +43,9 @@ class Layout extends React.Component {
       openkey,
       setOpenkey,
       selectKey,
-      setSelectKey
+      setSelectKey,
+      type,
+      setType
     } = this.props.UI
     return (
       <div className="app-layout" style={{
@@ -151,6 +153,29 @@ class Layout extends React.Component {
                     setDark(e)
                   }
                 } />
+              </div>
+              <div className='app-layout-body-type'>
+                <Tab
+                  dark={dark}
+                  style={{ width: 180, height: 36 }}
+                  data={[{
+                    key: 1,
+                    icon: 'icon-view-1',
+                    color: 'var(--theme-color)',
+                    label: '预览'
+                  }, {
+                    key: 2,
+                    icon: 'icon-hezi',
+                    color: 'var(--theme-color)',
+                    label: '属性'
+                  }]}
+                  value={type}
+                  onClick={
+                    (e) => {
+                      setType(e.key)
+                    }
+                  }
+                />
               </div>
             </div>
           </div>

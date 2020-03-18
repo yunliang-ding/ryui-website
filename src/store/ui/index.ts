@@ -118,6 +118,10 @@ class UI {
   @action setOpenkey = (openkey) => {
     this.openkey = openkey
   }
+  @observable type = 1
+  @action setType = (type) => {
+    this.type = type
+  }
   @observable selectKey = []
   @action setSelectKey = (selectKey) => {
     this.selectKey = selectKey
