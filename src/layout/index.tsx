@@ -140,6 +140,12 @@ class Layout extends React.Component {
             <div className='app-layout-body-right-ccstudio' style={{
               borderColor: dark ? '#222' : '#dcdcdc'
             }}>
+              <div className='app-layout-body-run'>
+                <Button dark={dark} style={{ width: 60, margin: 4 }} label="重置" onClick={() => {
+                }} />
+                <Button dark={dark} type="primary" style={{ width: 60, margin: 4 }} label="运行" onClick={() => {
+                }} />
+              </div>
               <Monaco
                 path={'input'}
                 theme={dark ? 'vs-dark' : 'vs'}

@@ -1,4 +1,5 @@
 import { observable, action } from 'mobx'
+const $: any = document.querySelector.bind(document)
 class UI {
   @observable version = 2
   @observable versionList = [{
@@ -12,15 +13,22 @@ class UI {
     this.version = version
   }
   @observable theme = 'green'
-  @observable themeList = [{
+  @observable themeList = [ {
+    label: '绿色主题',
+    value: 'green'
+  },{
     label: '红色主题',
     value: 'red'
   }, {
-    label: '绿色主题',
-    value: 'green'
+    label: '紫色主题',
+    value: 'pink'
+  }, {
+    label: '蓝色主题',
+    value: 'blue'
   }]
   @action setTheme = (theme: string): void => {
     this.theme = theme
+    $('#theme-css').href = `./css/${theme}.css`
   }
   @observable dark = true
   @observable darkList = [{
@@ -111,7 +119,7 @@ class UI {
       label: 'Nav'
     }]
   }]
-  @action setCollapsed = (collapsed:boolean): void =>  {
+  @action setCollapsed = (collapsed: boolean): void => {
     this.collapsed = collapsed
   }
   @observable openkey = []
