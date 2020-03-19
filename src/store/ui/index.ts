@@ -71,6 +71,10 @@ class UI {
       key: 'radio',
       icon: 'icon-cebianlan',
       label: 'Radio'
+    },{
+      key: 'switch',
+      icon: 'icon-cebianlan',
+      label: 'Switch'
     }, {
       key: 'select',
       icon: 'icon-cebianlan',

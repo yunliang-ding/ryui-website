@@ -495,7 +495,7 @@ export default class extends React.Component {
 `
 const alert = `import * as React from "react"
 import './index.less'
-import { Alert, Button } from '../../Yui/index'
+import { Alert, Button } from 'Yui'
 import { observer, inject } from 'mobx-react'
 @inject('UI')
 @observer
@@ -564,7 +564,7 @@ export default class extends React.Component {
 `
 const loading = `import * as React from "react"
 import './index.less'
-import { Loading, Button } from '../../Yui/index'
+import { Loading, Button } from 'Yui'
 import { observer, inject } from 'mobx-react'
 @inject('UI')
 @observer
@@ -606,7 +606,7 @@ export default class extends React.Component {
 `
 const table = `import * as React from "react"
 import './index.less'
-import { Table, Button } from '../../Yui/index'
+import { Table, Button } from 'Yui'
 import { observer, inject } from 'mobx-react'
 @inject('UI')
 @observer
@@ -684,7 +684,7 @@ export default class extends React.Component {
 }
 `
 const tab = `import * as React from "react"
-import { Tab } from '../../Yui/index'
+import { Tab } from 'Yui'
 import './index.less'
 import { observer, inject } from 'mobx-react'
 @inject('UI')
@@ -763,7 +763,7 @@ export default class extends React.Component {
 }
 `
 const pagination = `import * as React from "react"
-import { Pagination } from '../../Yui/index'
+import { Pagination } from 'Yui'
 import './index.less'
 import { observer, inject } from 'mobx-react'
 @inject('UI')
@@ -785,7 +785,7 @@ export default class extends React.Component {
 }
 `
 const tree = `import * as React from "react"
-import { Tree } from '../../Yui/index'
+import { Tree } from 'Yui'
 import './index.less'
 import { observer, inject } from 'mobx-react'
 @inject('UI')
@@ -1098,7 +1098,7 @@ export default class extends React.Component {
 }
 `
 const nav = `import * as React from "react"
-import { Nav, Select, Button } from '../../Yui/index'
+import { Nav, Select, Button } from 'Yui'
 import './index.less'
 import { observer, inject } from 'mobx-react'
 @inject('UI')
@@ -1268,6 +1268,34 @@ export default class extends React.Component {
   }
 }
 `
+const Switch = `import * as React from "react"
+import { Switch } from 'Yui'
+import './index.less'
+import { observer, inject } from 'mobx-react'
+@inject('UI')
+@observer
+export default class extends React.Component {
+  props: any
+  render() {
+    const { dark } = this.props.UI
+    return (
+      <div className="app-switch">
+        <Switch dark={dark} checked onChange={
+          (e) => {
+            console.log(e)
+          }
+        }/>
+        <br />
+        <Switch dark={dark} checked disabled onChange={
+          (e) => {
+            console.log(e)
+          }
+        }/>
+      </div>
+    )
+  }
+}
+`
 export default {
   input,
   checkBox,
@@ -1280,5 +1308,6 @@ export default {
   tab,
   pagination,
   tree,
-  nav
+  nav,
+  'switch': Switch
 }

@@ -10,6 +10,7 @@ import { Loading } from './loading/index'
 import { Nav } from './nav/index'
 import { Tab } from './tab/index'
 import { Tree } from './tree/index'
+import { Switch } from './switch/index'
 import './theme.less'
 export {
   Input,
@@ -23,5 +24,6 @@ export {
   Loading,
   Nav,
   Tab,
-  Tree
+  Tree,
+  Switch
 }

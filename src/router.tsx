@@ -13,6 +13,7 @@ import Loading from './components/loading/index'
 import Nav from './components/nav/index'
 import Tab from './components/tab/index'
 import Tree from './components/tree/index'
+import Switch from './components/switch/index'
 export default class extends React.Component {
   render() {
     return (
@@ -32,6 +33,7 @@ export default class extends React.Component {
           <Route path='nav' component={Nav} />
           <Route path='tab' component={Tab} />
           <Route path='tree' component={Tree} />
+          <Route path='switch' component={Switch} />
         </Route>
       </Router>
     )

@@ -1,0 +1,35 @@
+.yui-switch,
+.yui-switch-dark,
+.yui-switch-checked,
+.yui-switch-checked-dark{
+  width: 42px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  .yui-switch-addon,.yui-switch-addon-checked{
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    border-radius: 100%;
+    transition: .6s;
+  }
+  .yui-switch-addon-checked{
+    left:1px;
+    right:auto;
+    transition: .6s;
+  }
+}
+.yui-switch-checked{
+  background: var(--theme-color) !important;
+}
+.yui-switch-dark{
+  background: #444 !important;
+}
+.yui-switch-checked-dark{
+  background: #111 !important;
+}
