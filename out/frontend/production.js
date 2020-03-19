@@ -1,7 +1,7 @@
 const fs = require('fs')
 const express = require('express')
 const app = express()
-const prefix = '/yui-2.X'
+const prefix = '/yui-2.0.0'
 const port = 5000
 // 开启静态资源访问
 app.use(express.static('./frontend/public')) 

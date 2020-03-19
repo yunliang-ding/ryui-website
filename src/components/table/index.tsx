@@ -55,7 +55,7 @@ export default class extends React.Component {
       dataIndex: "opeartion",
       render: (value, record) => {
         return ['删除', '修改'].map(m => {
-          return <Button dark={dark} type={dark ? 'normal' : 'primary'} style={{ width: 50, marginRight: 10 }} label={m} onClick={
+          return <Button dark={dark} type='primary' style={{ width: 50, marginRight: 10 }} label={m} onClick={
             () => {
               alert('123')
             }

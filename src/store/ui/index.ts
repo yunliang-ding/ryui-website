@@ -1,6 +1,6 @@
 import { observable, action } from 'mobx'
 const $: any = document.querySelector.bind(document)
-class UI{
+class UI {
   @observable version = 2
   @observable versionList = [{
     label: 'v 1.0.1',
@@ -13,18 +13,18 @@ class UI{
     this.version = version
   }
   @observable theme = 'blue'
-  @observable themeList = [ {
+  @observable themeList = [{
+    label: '蓝色主题',
+    value: 'blue'
+  }, {
     label: '绿色主题',
     value: 'green'
-  },{
+  }, {
     label: '红色主题',
     value: 'red'
   }, {
     label: '紫色主题',
     value: 'pink'
-  }, {
-    label: '蓝色主题',
-    value: 'blue'
   }]
   @action setTheme = (theme: string): void => {
     this.theme = theme
@@ -73,7 +73,7 @@ class UI{
       key: 'radio',
       icon: 'icon-cebianlan',
       label: 'Radio　单选框'
-    },{
+    }, {
       key: 'switch',
       icon: 'icon-cebianlan',
       label: 'Switch　开关'
@@ -118,7 +118,7 @@ class UI{
       icon: 'icon-cebianlan',
       disabled: true,
       label: 'Drawer　抽屉'
-    },  {
+    }, {
       key: 'empty',
       icon: 'icon-cebianlan',
       disabled: true,
