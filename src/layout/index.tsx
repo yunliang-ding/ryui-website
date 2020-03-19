@@ -69,21 +69,6 @@ class Layout extends React.Component {
               }
             }
           />
-          <div className='app-layout-header-version'>
-            <Select
-              dark={dark}
-              style={{
-                width: 120
-              }}
-              dataList={versionList}
-              value={version}
-              onChange={
-                (e) => {
-                  setVersion(e)
-                }
-              }
-            />
-          </div>
           <div className='app-layout-header-theme'>
             <Select
               dark={dark}
@@ -104,9 +89,24 @@ class Layout extends React.Component {
           <div className='app-layout-body-left' style={{
             width: collapsed ? 40 : 200
           }}>
+            <Select
+              dark={dark}
+              style={{
+                width: 200,
+                height: 32,
+                border: 0
+              }}
+              dataList={versionList}
+              value={version}
+              onChange={
+                (e) => {
+                  setVersion(e)
+                }
+              }
+            />
             <Nav
               dark={dark}
-              style={{ width: 200, height: 'calc(100% - 32px)'}}
+              style={{ width: 200, height: 'calc(100% - 64px)'}}
               model="menu"
               navList={menus}
               menuClick={

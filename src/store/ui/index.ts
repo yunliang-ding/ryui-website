@@ -3,16 +3,16 @@ const $: any = document.querySelector.bind(document)
 class UI{
   @observable version = 2
   @observable versionList = [{
-    label: '版本1.0',
+    label: 'v 1.0.1',
     value: 1
   }, {
-    label: '版本2.0',
+    label: 'v 2.0.0',
     value: 2
   }]
   @action setVersion = (version: number): void => {
     this.version = version
   }
-  @observable theme = 'green'
+  @observable theme = 'blue'
   @observable themeList = [ {
     label: '绿色主题',
     value: 'green'
