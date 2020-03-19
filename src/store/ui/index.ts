@@ -48,10 +48,12 @@ class UI{
   }, {
     key: Math.random(),
     label: '移动H5组件',
+    disabled: true,
     active: false
   }, {
     key: Math.random(),
     label: '组件中心',
+    disabled: true,
     active: false
   }]
   @observable collapsed = false
@@ -78,11 +80,16 @@ class UI{
     }, {
       key: 'select',
       icon: 'icon-cebianlan',
-      label: 'Select　下拉选'
+      label: 'Select　下拉框'
     }, {
       key: 'button',
       icon: 'icon-cebianlan',
       label: 'Button　按钮'
+    }, {
+      key: 'badge',
+      icon: 'icon-cebianlan',
+      disabled: true,
+      label: 'Badge　角标展示'
     }]
   }, {
     key: '2',
@@ -91,11 +98,31 @@ class UI{
     subMenu: [{
       key: 'alert',
       icon: 'icon-cebianlan',
-      label: 'Alert　提示'
+      label: 'Alert　警告提示'
     }, {
       key: 'loading',
       icon: 'icon-cebianlan',
       label: 'Loading　加载'
+    }, {
+      key: 'message',
+      icon: 'icon-cebianlan',
+      disabled: true,
+      label: 'Message　全局提示'
+    }, {
+      key: 'modal',
+      icon: 'icon-cebianlan',
+      disabled: true,
+      label: 'Modal　对话框'
+    }, {
+      key: 'drawer',
+      icon: 'icon-cebianlan',
+      disabled: true,
+      label: 'Drawer　抽屉'
+    },  {
+      key: 'empty',
+      icon: 'icon-cebianlan',
+      disabled: true,
+      label: 'Empty　空数据展示'
     }]
   }, {
     key: '3',
@@ -116,11 +143,16 @@ class UI{
     }, {
       key: 'tree',
       icon: 'icon-cebianlan',
-      label: 'Tree　树组件'
+      label: 'Tree　树形控件'
     }, {
       key: 'nav',
       icon: 'icon-cebianlan',
       label: 'Nav　导航栏'
+    }, {
+      key: 'cascader',
+      disabled: true,
+      icon: 'icon-cebianlan',
+      label: 'Cascader　级联选择'
     }]
   }]
   @action setCollapsed = (collapsed: boolean): void => {

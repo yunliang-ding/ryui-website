@@ -106,7 +106,7 @@ class Layout extends React.Component {
           }}>
             <Nav
               dark={dark}
-              style={{ width: 200, height: 'calc(100% - 32px)', minHeight: 600 }}
+              style={{ width: 200, height: 'calc(100% - 32px)'}}
               model="menu"
               navList={menus}
               menuClick={

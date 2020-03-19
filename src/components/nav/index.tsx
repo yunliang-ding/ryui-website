@@ -6,17 +6,18 @@ import { observer, inject } from 'mobx-react'
 @observer
 export default class extends React.Component {
   [x: string]: any
-  props:any
+  props: any
   state = {
     value: 0,
     navList: [{
       key: Math.random(),
       label: <span>通用</span>,
-      active: false
+      active: true
     }, {
       key: Math.random(),
       label: <span>布局</span>,
-      active: true
+      disabled: true,
+      active: false
     }, {
       key: Math.random(),
       label: <span>导航</span>,
@@ -29,11 +30,12 @@ export default class extends React.Component {
     navListDark: [{
       key: Math.random(),
       label: <span>通用</span>,
-      active: false
+      active: true
     }, {
       key: Math.random(),
       label: <span>布局</span>,
-      active: true
+      disabled: true,
+      active: false
     }, {
       key: Math.random(),
       label: <span>导航</span>,
@@ -53,13 +55,23 @@ export default class extends React.Component {
         label: '我的信息'
       }, {
         key: '1-3',
+        icon: 'icon-fenxiang',
+        label: '个人中心'
+      }, {
+        key: '1-4',
         icon: 'icon-tuichu',
-        label: '我的提交',
+        disabled: true,
+        label: '我的提交'
       }]
     }, {
       key: '2',
+      disabled: true,
       icon: 'icon-icon_yingyongguanli',
       label: '信息管理'
+    }, {
+      key: '3',
+      icon: 'icon-icon_yingyongguanli',
+      label: '信息中心'
     }],
     collapsed: false,
     dataList: [{
@@ -139,7 +151,7 @@ export default class extends React.Component {
       />
       <br />
       <Button
-        dark={dark} 
+        dark={dark}
         type="primary"
         style={{ width: this.state.collapsed ? 40 : 200 }}
         label={

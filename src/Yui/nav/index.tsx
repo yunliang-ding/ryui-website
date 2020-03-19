@@ -22,6 +22,7 @@ class Nav extends React.Component {
     })
   }
   navClick = (nav) => {
+    if(nav.disabled) return
     let navList = this.state.navList.map(m => {
       m.active = m.key == nav.key
       return m
@@ -35,6 +36,7 @@ class Nav extends React.Component {
     })
   }
   menuClick = (nav) => {
+    if(nav.disabled) return
     this.state.navList.map(m => {
       if (m.key == nav.key) {
         if (m.subMenu) {
@@ -78,6 +80,10 @@ class Nav extends React.Component {
           return (
             <div
               key={item.key}
+              style={{
+                cursor: item.disabled ? 'not-allowed' : 'pointer',
+                opacity: item.disabled ? 0.5 : 1
+              }}
               className={item.active ? "yui-nav-compont-item-active" : "yui-nav-compont-item"}
               onClick={
                 () => {
@@ -124,6 +130,10 @@ class Nav extends React.Component {
                 subMenu.push(
                   <div
                     key={sub.key}
+                    style={{
+                      cursor: sub.disabled ? 'not-allowed' : 'pointer',
+                      opacity: sub.disabled ? 0.5 : 1
+                    }}
                     className={sub.active ? "yui-nav-compont-menu-item-subMeun-active" : "yui-nav-compont-menu-item-subMeun"}
                     onClick={
                       () => {
@@ -138,6 +148,10 @@ class Nav extends React.Component {
               nav.push(
                 <div
                   key={item.key}
+                  style={{
+                    cursor: item.disabled ? 'not-allowed' : 'pointer',
+                    opacity: item.disabled ? 0.5 : 1
+                  }}
                   className={select ? "yui-nav-compont-menu-item-active" : "yui-nav-compont-menu-item"}
                   onClick={
                     () => {
@@ -164,6 +178,10 @@ class Nav extends React.Component {
               nav.push(
                 <div
                   key={item.key}
+                  style={{
+                    cursor: item.disabled ? 'not-allowed' : 'pointer',
+                    opacity: item.disabled ? 0.5 : 1
+                  }}
                   className={item.active ? "yui-nav-compont-menu-item2-active" : "yui-nav-compont-menu-item2"}
                   onClick={
                     () => {
@@ -189,6 +207,10 @@ class Nav extends React.Component {
                 nav.push(
                   <div
                     key={item.key}
+                    style={{
+                      cursor: item.disabled ? 'not-allowed' : 'pointer',
+                      opacity: item.disabled ? 0.5 : 1
+                    }}
                     className="yui-nav-compont-menu-item"
                     onClick={
                       () => {
@@ -204,6 +226,10 @@ class Nav extends React.Component {
                 nav.push(
                   <div
                     key={item.key}
+                    style={{
+                      cursor: item.disabled ? 'not-allowed' : 'pointer',
+                      opacity: item.disabled ? 0.5 : 1
+                    }}
                     className={item.active ? "yui-nav-compont-menu-item2-active" : "yui-nav-compont-menu-item2"}
                     onClick={
                       () => {
