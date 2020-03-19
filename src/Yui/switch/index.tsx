@@ -4,7 +4,7 @@ class Switch extends React.Component {
   props: any
   state: any
   constructor(props){
-    super()
+    super(props)
     this.state = {
       checked: props.checked
     }
@@ -16,14 +16,17 @@ class Switch extends React.Component {
   }
   render() {
     const {
-      disabled
+      disabled,
+      checkedNode,
+      loading,
+      unCheckedNode
     } = this.props
     const {
       checked
     } = this.state
     let theme = this.props.dark ? '-dark' : ''
     let style = this.props.style || {}
-    if(disabled){
+    if(disabled || loading){
       style.opacity = 0.5
       style.cursor = 'not-allowed'
     }
@@ -32,7 +35,7 @@ class Switch extends React.Component {
       style={style}
       onClick={
         () => {
-          if(!disabled){
+          if(!disabled && !loading){
             this.setState({
               checked: !checked
             }, () => {
@@ -44,7 +47,20 @@ class Switch extends React.Component {
         }
       }
     >
-      <div className={checked ? 'yui-switch-addon-checked' : 'yui-switch-addon'} />
+      <div className={checked ? 'yui-switch-addon-checked' : 'yui-switch-addon'}>
+        {
+          loading && <i className='iconfont icon-loading' style={{
+            fontSize: 10,
+            color: checked ? 'var(--theme-color)' : 'none',
+            animation: 'spin 1.2s linear infinite'
+          }}/>
+        }
+      </div>
+      <div className={checked ? 'yui-switch-addon-checked-text' : 'yui-switch-addon-text'}>
+        {
+          checked ? checkedNode : unCheckedNode
+        }
+      </div>
     </div>
   }
 }

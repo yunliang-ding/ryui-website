@@ -1,6 +1,6 @@
 import { observable, action } from 'mobx'
 const $: any = document.querySelector.bind(document)
-class UI {
+class UI{
   @observable version = 2
   @observable versionList = [{
     label: '版本1.0',
@@ -62,27 +62,27 @@ class UI {
     subMenu: [{
       key: 'input',
       icon: 'icon-cebianlan',
-      label: 'Input'
+      label: 'Input　输入框'
     }, {
       key: 'checkBox',
       icon: 'icon-cebianlan',
-      label: 'CheckBox'
+      label: 'CheckBox　多选框'
     }, {
       key: 'radio',
       icon: 'icon-cebianlan',
-      label: 'Radio'
+      label: 'Radio　单选框'
     },{
       key: 'switch',
       icon: 'icon-cebianlan',
-      label: 'Switch'
+      label: 'Switch　开关'
     }, {
       key: 'select',
       icon: 'icon-cebianlan',
-      label: 'Select'
+      label: 'Select　下拉选'
     }, {
       key: 'button',
       icon: 'icon-cebianlan',
-      label: 'Button'
+      label: 'Button　按钮'
     }]
   }, {
     key: '2',
@@ -91,11 +91,11 @@ class UI {
     subMenu: [{
       key: 'alert',
       icon: 'icon-cebianlan',
-      label: 'Alert'
+      label: 'Alert　提示'
     }, {
       key: 'loading',
       icon: 'icon-cebianlan',
-      label: 'Loading'
+      label: 'Loading　加载'
     }]
   }, {
     key: '3',
@@ -104,23 +104,23 @@ class UI {
     subMenu: [{
       key: 'table',
       icon: 'icon-cebianlan',
-      label: 'Table'
+      label: 'Table　表格'
     }, {
       key: 'tab',
       icon: 'icon-cebianlan',
-      label: 'Tab'
+      label: 'Tab　选项卡'
     }, {
       key: 'pagination',
       icon: 'icon-cebianlan',
-      label: 'Pagination'
+      label: 'Pagination　分页'
     }, {
       key: 'tree',
       icon: 'icon-cebianlan',
-      label: 'Tree'
+      label: 'Tree　树组件'
     }, {
       key: 'nav',
       icon: 'icon-cebianlan',
-      label: 'Nav'
+      label: 'Nav　导航栏'
     }]
   }]
   @action setCollapsed = (collapsed: boolean): void => {
