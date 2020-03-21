@@ -11,6 +11,7 @@ import { Nav } from './nav/index'
 import { Tab } from './tab/index'
 import { Tree } from './tree/index'
 import { Switch } from './switch/index'
+import { Tooltip } from './tooltip/index'
 import './theme.less'
 export {
   Input,
@@ -25,5 +26,6 @@ export {
   Nav,
   Tab,
   Tree,
-  Switch
+  Switch,
+  Tooltip
 }

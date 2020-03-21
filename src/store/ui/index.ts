@@ -89,7 +89,11 @@ class UI {
       key: 'badge',
       icon: 'icon-cebianlan',
       disabled: true,
-      label: 'Badge　角标展示'
+      label: 'Slider　滑动条'
+    }, {
+      key: 'tooltip',
+      icon: 'icon-cebianlan',
+      label: 'Tooltip　提示信息'
     }]
   }, {
     key: '2',

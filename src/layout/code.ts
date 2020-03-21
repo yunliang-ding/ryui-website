@@ -1,11 +1,6 @@
 const input = `import * as React from "react"
 import { Input } from 'Yui'
-import './index.less'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
 export default class extends React.Component {
-  props: any;
   state = {
     value: ''
   }
@@ -61,12 +56,7 @@ export default class extends React.Component {
 `
 const checkBox = `import * as React from "react"
 import { Select, CheckBox } from 'Yui'
-import './index.less'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
 export default class extends React.Component {
-  props: any;
   state = {
     value: 0,
     valueList: [1],
@@ -168,12 +158,7 @@ export default class extends React.Component {
 `
 const radio = `import * as React from "react"
 import { Select, Radio } from 'Yui'
-import './index.less'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
 export default class extends React.Component {
-  props: any
   state = {
     value: 0,
     dataList: [{
@@ -264,12 +249,7 @@ export default class extends React.Component {
 `
 const select = `import * as React from "react"
 import { Select } from 'Yui'
-import './index.less'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
 export default class extends React.Component {
-  props: any;
   state = {
     dataList: [{
       key: Math.random(),
@@ -426,12 +406,7 @@ export default class extends React.Component {
 `
 const button = `import * as React from "react"
 import { Button } from 'Yui'
-import './index.less'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
 export default class extends React.Component {
-  props: any
   render() {
     const { dark } = this.props.UI
     return (
@@ -494,11 +469,7 @@ export default class extends React.Component {
 }
 `
 const alert = `import * as React from "react"
-import './index.less'
 import { Alert, Button } from 'Yui'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
 export default class extends React.Component {
   state = {
     show1: false,
@@ -511,7 +482,6 @@ export default class extends React.Component {
       [key]: value
     })
   }
-  props: any
   render() {
     const { dark } = this.props.UI
     return (
@@ -563,16 +533,11 @@ export default class extends React.Component {
 }
 `
 const loading = `import * as React from "react"
-import './index.less'
 import { Loading, Button } from 'Yui'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
 export default class extends React.Component {
   state = {
     loading: true
   }
-  props: any
   render() {
     const { dark } = this.props.UI
     return (
@@ -605,11 +570,7 @@ export default class extends React.Component {
 }
 `
 const table = `import * as React from "react"
-import './index.less'
 import { Table, Button } from 'Yui'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
 export default class extends React.Component {
   state = {
     data: [{
@@ -638,7 +599,7 @@ export default class extends React.Component {
       count: 4
     }]
   }
-  props: any
+  
   render() {
     const { dark } = this.props.UI
     const colmun = [{
@@ -685,10 +646,6 @@ export default class extends React.Component {
 `
 const tab = `import * as React from "react"
 import { Tab } from 'Yui'
-import './index.less'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
 export default class extends React.Component {
   state = {
     info: null,
@@ -716,7 +673,7 @@ export default class extends React.Component {
     }],
     value: 3
   }
-  props: any
+  
   render() {
     const { dark } = this.props.UI
     return (
@@ -764,12 +721,7 @@ export default class extends React.Component {
 `
 const pagination = `import * as React from "react"
 import { Pagination } from 'Yui'
-import './index.less'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
 export default class extends React.Component {
-  props: any
   render() {
     const { dark } = this.props.UI
     return (
@@ -786,10 +738,6 @@ export default class extends React.Component {
 `
 const tree = `import * as React from "react"
 import { Tree } from 'Yui'
-import './index.less'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
 export default class extends React.Component {
   state = {
     info1: '点击显示节点信息',
@@ -1047,7 +995,7 @@ export default class extends React.Component {
       active: false
     }]
   }
-  props: any
+  
   render() {
     const { dark } = this.props.UI
     return (
@@ -1099,13 +1047,7 @@ export default class extends React.Component {
 `
 const nav = `import * as React from "react"
 import { Nav, Select, Button } from '../../Yui/index'
-import './index.less'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
 export default class extends React.Component {
-  [x: string]: any
-  props: any
   state = {
     value: 0,
     navList: [{
@@ -1279,16 +1221,10 @@ export default class extends React.Component {
     </div>
   }
 }
-
 `
 const Switch = `import * as React from "react"
 import { Switch } from 'Yui'
-import './index.less'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
 export default class extends React.Component {
-  props: any
   render() {
     const { dark } = this.props.UI
     return (
@@ -1361,7 +1297,54 @@ export default class extends React.Component {
     )
   }
 }
-
+`
+const tooltip = `import * as React from "react"
+import { Tooltip, Button } from 'Yui'
+export default class extends React.Component {
+  render() {
+    const { dark } = this.props.UI
+    return (
+      <div className="app-tooltip">
+        <div style={{marginBottom: 20}}>
+          <Tooltip
+            title={<span>音乐不是我的全部</span>}
+            trigger='hover'
+            placement='right'
+          >
+            <Button dark={dark} style={{ width: 100 }}  label="Right" />
+          </Tooltip>
+        </div>
+        <div style={{marginBottom: 50}}>
+          <Tooltip
+            title={<span>音乐不是我的全部</span>}
+            trigger='hover'
+            placement='left'
+          >
+            <Button dark={dark} style={{ width: 100 }}  label="Left" />
+          </Tooltip>
+        </div>
+        <div style={{marginBottom: 20}}>
+          <Tooltip
+            title={<span>音乐不是我的全部</span>}
+            trigger='hover'
+            placement='top'
+          >
+            <Button dark={dark} style={{ width: 100 }}  label="Top" />
+          </Tooltip>
+        </div>
+         <div style={{marginBottom: 20}}>
+          <Tooltip
+            title={<span>音乐不是我的全部</span>}
+            trigger='hover'
+            placement='bottom'
+          >
+            <Button dark={dark} style={{ width: 100 }}  label="Bottom" />
+          </Tooltip>
+        </div>
+      </div>
+    )
+  }
+}
 `
 export default {
   input,
@@ -1376,5 +1359,6 @@ export default {
   pagination,
   tree,
   nav,
-  'switch': Switch
+  'switch': Switch,
+  tooltip
 }

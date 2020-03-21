@@ -1,0 +1,47 @@
+.yui-tooltips{
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  .yui-tooltips-inner{
+    box-shadow: 0 0 2px 2px #121111;
+    background: #1e1e1e;
+    color: #ccc;
+    padding: 6;
+    font-size: 12px;
+    position: absolute;
+    top: 0;
+    border-radius: 4px;
+    height:30px;
+    white-space: nowrap;
+    display:flex;
+    visibility: hidden;
+    align-items: center;
+    justify-content: center;
+    .yui-tooltips-inner-layer, .yui-tooltips-inner-content{
+      width:100%;
+      height:100%;
+      z-index:1;
+      background: #1e1e1e;
+      position: absolute;
+    }
+    .yui-tooltips-inner-content{
+      z-index:2;
+      position: relative;
+    }
+    .yui-tooltips-inner-allows{
+      width: 10px;
+      height: 10px;
+      box-shadow: 0 0 2px 2px #121111;
+      background: #1e1e1e;
+      display: block;
+      position: absolute;
+      transform: rotate(45deg);
+      z-index: 0;
+    }
+  }
+}
+.yui-tooltips:hover{
+  .yui-tooltips-inner{
+    visibility: visible;
+  }
+}
