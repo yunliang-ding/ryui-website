@@ -12,6 +12,7 @@ export default class extends React.Component {
       <div className="app-tooltip">
         <div style={{marginBottom: 20}}>
           <Tooltip
+            dark={dark}
             title={<span>音乐不是我的全部</span>}
             trigger='hover'
             placement='right'
@@ -21,6 +22,7 @@ export default class extends React.Component {
         </div>
         <div style={{marginBottom: 50}}>
           <Tooltip
+            dark={dark}
             title={<span>音乐不是我的全部</span>}
             trigger='hover'
             placement='left'
@@ -30,6 +32,7 @@ export default class extends React.Component {
         </div>
         <div style={{marginBottom: 20}}>
           <Tooltip
+            dark={dark}
             title={<span>音乐不是我的全部</span>}
             trigger='hover'
             placement='top'
@@ -39,6 +42,7 @@ export default class extends React.Component {
         </div>
          <div style={{marginBottom: 20}}>
           <Tooltip
+            dark={dark}
             title={<span>音乐不是我的全部</span>}
             trigger='hover'
             placement='bottom'

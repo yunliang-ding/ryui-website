@@ -35,7 +35,8 @@ class Tooltip extends React.Component {
     }
   }
   render() {
-    return <div className='yui-tooltips' ref={(node) => { this.node = node }}>
+    let theme = this.props.dark ? '-dark' : ''
+    return <div className={'yui-tooltips'+theme} ref={(node) => { this.node = node }}>
       {this.props.children}
       <div className='yui-tooltips-inner' ref={(innerNode) => { this.innerNode = innerNode }}>
         <div className='yui-tooltips-inner-content'>

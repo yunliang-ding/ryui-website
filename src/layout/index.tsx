@@ -5,6 +5,7 @@ import { Nav, Select, Button, Radio, Tab } from '../Yui/index'
 import { observer, inject } from 'mobx-react'
 import { Monaco } from '../monaco/index'
 import code from './code'
+const $:any = document.querySelector.bind(document)
 @inject('UI')
 @observer
 class Layout extends React.Component {
@@ -92,7 +93,7 @@ class Layout extends React.Component {
             <Select
               dark={dark}
               style={{
-                width: 200,
+                width: collapsed ? 40 : 200,
                 height: 32,
                 border: 0
               }}

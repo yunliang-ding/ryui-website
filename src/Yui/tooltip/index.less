@@ -1,11 +1,11 @@
-.yui-tooltips{
+.yui-tooltips,.yui-tooltips-dark{
   cursor: pointer;
   position: relative;
   width: fit-content;
   .yui-tooltips-inner{
     box-shadow: 0 0 2px 2px #121111;
     background: #1e1e1e;
-    color: #ccc;
+    color: #fff;
     padding: 6;
     font-size: 12px;
     position: absolute;
@@ -40,8 +40,22 @@
     }
   }
 }
-.yui-tooltips:hover{
+.yui-tooltips:hover, .yui-tooltips-dark:hover{
   .yui-tooltips-inner{
     visibility: visible;
+  }
+}
+.yui-tooltips{
+  .yui-tooltips-inner{
+    box-shadow: 0 0 2px 2px #e8e6e6;
+    background: #fff;
+    .yui-tooltips-inner-layer, .yui-tooltips-inner-content{
+      background: #fff;
+      color:#222;
+    }
+    .yui-tooltips-inner-allows{
+      box-shadow: 0 0 2px 2px #e8e6e6;
+      background: #fff;
+    }
   }
 }

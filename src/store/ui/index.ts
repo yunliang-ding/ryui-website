@@ -3,10 +3,10 @@ const $: any = document.querySelector.bind(document)
 class UI {
   @observable version = 2
   @observable versionList = [{
-    label: 'v 1.0.1',
+    label: '1.0',
     value: 1
   }, {
-    label: 'v 2.0.0',
+    label: '2.0',
     value: 2
   }]
   @action setVersion = (version: number): void => {
