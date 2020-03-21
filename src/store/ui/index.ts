@@ -86,9 +86,8 @@ class UI {
       icon: 'icon-cebianlan',
       label: 'Button　按钮'
     }, {
-      key: 'badge',
+      key: 'sider',
       icon: 'icon-cebianlan',
-      disabled: true,
       label: 'Slider　滑动条'
     }, {
       key: 'tooltip',

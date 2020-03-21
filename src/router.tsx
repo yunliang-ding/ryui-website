@@ -15,6 +15,7 @@ import Tab from './components/tab/index'
 import Tree from './components/tree/index'
 import Switch from './components/switch/index'
 import Tooltip from './components/tooltip/index'
+import Sider from './components/sider/index'
 export default class extends React.Component {
   render() {
     return (
@@ -36,6 +37,7 @@ export default class extends React.Component {
           <Route path='tree' component={Tree} />
           <Route path='switch' component={Switch} /> 
           <Route path='tooltip' component={Tooltip} />
+          <Route path='sider' component={Sider} />
         </Route>
       </Router>
     )
