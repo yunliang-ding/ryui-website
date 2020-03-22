@@ -10,7 +10,28 @@ export default class extends React.Component {
     const { dark } = this.props.UI
     return (
       <div className="app-sider">
-        <Sider dark={dark} />
+        <Sider 
+          dark={dark}
+          siderWidth={300}
+          progress={45}
+          onChange={
+            (e) => {
+              console.log(e)
+            }
+          }
+        />
+        <br />
+        <Sider 
+          dark={dark}
+          siderWidth={300}
+          siderHeight={12}
+          progress={45}
+          onChange={
+            (e) => {
+              console.log(e)
+            }
+          }
+        />
       </div>
     )
   }
