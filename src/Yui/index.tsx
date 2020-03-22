@@ -13,6 +13,7 @@ import { Tree } from './tree/index'
 import { Switch } from './switch/index'
 import { Tooltip } from './tooltip/index'
 import { Slider } from './slider/index'
+import { Message } from './message/index'
 import './theme.less'
 export {
   Input,
@@ -29,5 +30,6 @@ export {
   Tree,
   Switch,
   Tooltip,
-  Slider
+  Slider,
+  Message
 }

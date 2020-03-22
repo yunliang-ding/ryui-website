@@ -16,6 +16,7 @@ import Tree from './components/tree/index'
 import Switch from './components/switch/index'
 import Tooltip from './components/tooltip/index'
 import Slider from './components/slider/index'
+import Message from './components/message/index'
 export default class extends React.Component {
   render() {
     return (
@@ -38,6 +39,7 @@ export default class extends React.Component {
           <Route path='switch' component={Switch} /> 
           <Route path='tooltip' component={Tooltip} />
           <Route path='slider' component={Slider} />
+          <Route path='message' component={Message} />
         </Route>
       </Router>
     )

@@ -109,7 +109,6 @@ class UI {
     }, {
       key: 'message',
       icon: 'icon-cebianlan',
-      disabled: true,
       label: 'Message　全局提示'
     }, {
       key: 'modal',
