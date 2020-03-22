@@ -13,6 +13,19 @@ export default class extends React.Component {
         <Slider 
           dark={dark}
           siderWidth={300}
+          progress={20}
+          onChange={
+            (e) => {
+              console.log(e)
+            }
+          }
+        />
+        <br />
+        <br />
+        <Slider 
+          dark={dark}
+          siderWidth={300}
+          siderHeight={12}
           progress={45}
           onChange={
             (e) => {
@@ -21,11 +34,13 @@ export default class extends React.Component {
           }
         />
         <br />
+        <br />
         <Slider 
           dark={dark}
+          showTip
+          siderHeight={10}
           siderWidth={300}
-          siderHeight={12}
-          progress={45}
+          progress={80}
           onChange={
             (e) => {
               console.log(e)

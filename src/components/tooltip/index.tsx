@@ -37,7 +37,7 @@ export default class extends React.Component {
             trigger='hover'
             placement='top'
           >
-            <Button dark={dark} style={{ width: 100 }}  label="Top" />
+            <Button dark={dark} style={{ width: 145, height: 120 }}  label="Top" />
           </Tooltip>
         </div>
          <div style={{marginBottom: 20}}>

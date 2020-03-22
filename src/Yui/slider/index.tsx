@@ -1,5 +1,6 @@
 import * as React from 'react'
 import './index.less'
+import { Tooltip } from '../index'
 class Slider extends React.Component {
   props: any
   state: any
@@ -109,16 +110,31 @@ class Slider extends React.Component {
         }
       />
       <div className='yui-sider-track' ref={(node) => { this.trackNode = node }} />
-      <div className='yui-sider-radius' ref={(node) => { this.radiusNode = node }} style={{
-        height: height + 4,
-        width: height + 4
-      }} onMouseDown={
-        (e) => {
-          this.canMove = true
-          this.openLayer()
-          this.startX = e.pageX
-        }
-      } />
+      {
+        <div className='yui-sider-radius' ref={(node) => { this.radiusNode = node }} style={{
+          height: height + 4,
+          width: height + 4
+        }} onMouseDown={
+          (e) => {
+            this.canMove = true
+            this.openLayer()
+            this.startX = e.pageX
+          }
+        }>
+          {
+            this.props.showTip && <Tooltip
+              dark={this.props.dark}
+              title={
+                this.state.progress
+              }
+              trigger='hover'
+              placement='top'
+            >
+              &nbsp;&nbsp;
+            </Tooltip>
+          }
+        </div>
+      }
     </div>
   }
 }

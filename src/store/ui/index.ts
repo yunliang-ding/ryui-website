@@ -74,10 +74,6 @@ class UI {
       icon: 'icon-cebianlan',
       label: 'Radio　单选框'
     }, {
-      key: 'switch',
-      icon: 'icon-cebianlan',
-      label: 'Switch　开关'
-    }, {
       key: 'select',
       icon: 'icon-cebianlan',
       label: 'Select　下拉框'
@@ -86,13 +82,17 @@ class UI {
       icon: 'icon-cebianlan',
       label: 'Button　按钮'
     }, {
-      key: 'slider',
+      key: 'switch',
       icon: 'icon-cebianlan',
-      label: 'Slider　滑动条'
+      label: 'Switch　开关'
     }, {
       key: 'tooltip',
       icon: 'icon-cebianlan',
       label: 'Tooltip　提示信息'
+    }, {
+      key: 'slider',
+      icon: 'icon-cebianlan',
+      label: 'Slider　滑动条'
     }]
   }, {
     key: '2',
