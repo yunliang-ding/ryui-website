@@ -25,7 +25,7 @@ export default class extends React.Component {
         <br />
         <Button dark={dark} label='error' style={{width:100}}  onClick={
           () => {
-            message.error('error!')
+            message.error(`Unable to open 'message': File is a directory.`)
           }
         } />
         <br />

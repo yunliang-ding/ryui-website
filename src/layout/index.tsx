@@ -19,7 +19,7 @@ class Layout extends React.Component {
     let openKey = ''
     if (['input', 'radio', 'switch', 'checkBox', 'select', 'button', 'slider', 'tooltip'].indexOf(selectKey) > -1) {
       openKey = '1'
-    } else if (['alert', 'loading'].indexOf(selectKey) > -1) {
+    } else if (['alert', 'loading', 'message'].indexOf(selectKey) > -1) {
       openKey = '2'
     } else if (['table', 'tab', 'pagination', 'nav', 'tree'].indexOf(selectKey) > -1) {
       openKey = '3'
