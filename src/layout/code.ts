@@ -1350,6 +1350,40 @@ export default class extends React.Component {
   }
 }
 `
+const slider = `import * as React from "react"
+import { Slider } from 'Yui'
+export default class extends React.Component {
+  render() {
+    const { dark } = this.props.UI
+    return (
+      <div className="app-sider">
+        <Slider 
+          dark={dark}
+          siderWidth={300}
+          progress={45}
+          onChange={
+            (e) => {
+              console.log(e)
+            }
+          }
+        />
+        <br />
+        <Slider 
+          dark={dark}
+          siderWidth={300}
+          siderHeight={12}
+          progress={45}
+          onChange={
+            (e) => {
+              console.log(e)
+            }
+          }
+        />
+      </div>
+    )
+  }
+}
+`
 export default {
   input,
   checkBox,
@@ -1364,5 +1398,6 @@ export default {
   tree,
   nav,
   'switch': Switch,
-  tooltip
+  tooltip,
+  slider
 }
