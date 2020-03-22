@@ -5,9 +5,6 @@ import { observer, inject } from 'mobx-react'
 @inject('UI')
 @observer
 export default class extends React.Component {
-  state = {
-    loading: true
-  }
   props: any
   render() {
     const { dark } = this.props.UI

@@ -19,7 +19,7 @@ class Message {
   duration: any
   dark: any
   constructor(props) {
-    this.duration = props.duration
+    this.duration = props.duration || 3
     this.dark = props.dark
   }
   open = (type, content) => {
@@ -29,6 +29,9 @@ class Message {
     messageContainer.className = 'yui-message'+theme
     messageContainer.style.top = 50 + length * 60 + 'px'
     $('body').appendChild(messageContainer)
+    setTimeout(() => {
+      messageContainer.remove()
+    }, this.duration * 1000)
     ReactDOM.render(this.renderMessage(type, content), messageContainer)
   }
   colse = (node) => {
