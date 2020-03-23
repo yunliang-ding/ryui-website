@@ -25,9 +25,23 @@ class Input extends React.Component {
         {this.props.addonAfter}
       </span>
     }
-    if (type == 'text') {
+    if (type === 'textArea') {
+      input = <textarea 
+        readOnly={this.props.readonly}
+        className={'yui-input-textArea' + theme}
+        value={this.props.value}
+        onChange={
+          (e) => {
+            this.props.onChange(e)
+          }
+        }
+        style={this.props.style}
+      >
+        {this.props.value}
+      </textarea>
+    } else {
       input = <input className={'input' + theme}
-        type='text'
+        type={this.props.type}
         style={this.props.style}
         value={this.props.value}
         placeholder={this.props.placeholder}
@@ -45,8 +59,6 @@ class Input extends React.Component {
           placeholder={this.props.placeholder}
         />
       }
-    } else if (type == 'textArea') {
-      input = <textarea className={'yui-input-textArea' + theme} style={this.props.style}>{this.props.value}</textarea>
     }
     return (
       <div className='yui-input'>
