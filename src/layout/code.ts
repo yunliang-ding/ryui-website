@@ -1,6 +1,5 @@
-const input = `import * as React from "react"
-import { Input } from 'Yui'
-export default class extends React.Component {
+const input = `const { Input } = Yui
+class Demo extends React.Component{
   state = {
     value: ''
   }
@@ -10,7 +9,7 @@ export default class extends React.Component {
     })
   }
   render() {
-    const { dark } = this.props.UI
+    const dark = true
     return <div className="app-input">
       <div style={{ width: 300, marginBottom: 20 }}>
         <Input dark={dark} placeholder='姓名' value={this.state.value} onChange={
@@ -53,6 +52,7 @@ export default class extends React.Component {
     </div>
   }
 }
+ReactDOM.render(<Demo />, document.querySelector('#root'))
 `
 const checkBox = `import * as React from "react"
 import { Select, CheckBox } from 'Yui'

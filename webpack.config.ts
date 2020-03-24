@@ -1,5 +1,6 @@
 const path = require("path")
 const os = require('os')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 function getIPAdress() {
   let localIPAddress = "";
@@ -55,22 +56,46 @@ const config = {
           outputPath: 'images/'
         }
       }
-    }, {
-      test: /\.(less|css)$/,
+    },{
+      test: /\.css$/,
+      use: [
+        { loader: MiniCssExtractPlugin.loader },
+        { loader: 'css-loader' }
+      ]
+    },
+    {
+      test: /\.less/,
       include: [ //样式只应用到这两个文件夹下面的css文件中
         path.resolve(__dirname, 'node_modules'),
         path.resolve(__dirname, './src')
       ],
       use: [
-        require.resolve('style-loader'),
+        { loader: MiniCssExtractPlugin.loader },
         {
-          loader: require.resolve('css-loader')
+          loader: 'css-loader'
         },
         {
-          loader: require.resolve('less-loader')
+          loader: 'less-loader',
+          options: { javascriptEnabled: true }
         }
-      ],
+      ]
     },
+    // {
+    //   test: /\.(less|css)$/,
+    //   include: [ //样式只应用到这两个文件夹下面的css文件中
+    //     path.resolve(__dirname, 'node_modules'),
+    //     path.resolve(__dirname, './src')
+    //   ],
+    //   use: [
+    //     require.resolve('style-loader'),
+    //     {
+    //       loader: require.resolve('css-loader')
+    //     },
+    //     {
+    //       loader: require.resolve('less-loader')
+    //     }
+    //   ],
+    // },
     {
       test: /\.(tsx|ts)?$/,
       exclude: /(node_modules)/,
@@ -93,7 +118,10 @@ const config = {
   plugins: [
     new MonacoWebpackPlugin({
       languages: ['javascript', 'html', 'typescript']
-    })
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'app.css'
+    }),
   ],
   mode: process.env.NODE_ENV == "development" ? "development" : "production"
 }
