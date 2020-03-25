@@ -116,7 +116,7 @@ class Layout extends React.Component{
                 (openkey, selectKey) => {
                   setOpenkey(toJS(openkey))
                   setSelectKey(toJS(selectKey))
-                  window.location.hash = selectKey[0]
+                  window.location.hash =`/${selectKey[0]}`
                   this.props.Compile.setCode(code[selectKey])
                 }
               }
