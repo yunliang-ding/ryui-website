@@ -18,9 +18,10 @@ class Compile {
     this.excuteCode()
   }
   compileCode = () => {
+    const es6 = transform(`${this.code}`, { presets: ['es2015', 'react', 'stage-1'] }).code
     return transform(`
-      ((require, mountNode) => {
-        ${this.code}
+      ((require) => {
+        ${es6}
       });
     `, { presets: ['es2015', 'react', 'stage-1'] }).code
   }

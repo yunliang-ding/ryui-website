@@ -13,7 +13,6 @@ class Layout extends React.Component{
     super(props)
   }
   componentDidMount() {
-    console.log(code)
     const {
       setOpenkey,
       setSelectKey

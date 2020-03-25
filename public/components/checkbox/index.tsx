@@ -1,6 +1,6 @@
-const React = require('react')
-const ReactDom = require('react-dom')
-const { Select, CheckBox } = require('Yui')
+import React from 'react'
+import ReactDom from 'react-dom'
+import { Select, CheckBox } from 'Yui'
 class Demo extends React.Component {
   state = {
     value: 0,

@@ -1,6 +1,6 @@
-const React = require('react')
-const ReactDom = require('react-dom')
-const { Loading, Button } = require('Yui')
+import React from 'react'
+import ReactDom from 'react-dom'
+import { Loading, Button } from 'Yui'
 class Demo extends React.Component {
   state = {
     loading: true

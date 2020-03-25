@@ -1,6 +1,6 @@
-const React = require('react')
-const ReactDom = require('react-dom')
-const { Button } = require('Yui')
+import React from 'react'
+import ReactDom from 'react-dom'
+import { Button } from 'Yui'
 class Demo extends React.Component {
   render() {
     const dark = true
