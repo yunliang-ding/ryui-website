@@ -1,6 +1,5 @@
 import * as React from "react"
-import './index.less'
-import { Message, Button } from '../../Yui/index'
+import { Message, Button } from 'Yui'
 import { observer, inject } from 'mobx-react'
 @inject('UI')
 @observer
@@ -13,7 +12,7 @@ export default class extends React.Component {
       dark
     })
     return (
-      <div className="app-message">
+      <div className="app-preview">
         <Button dark={dark} label='success' style={{width:100}} onClick={
           () => {
             message.success('success!')

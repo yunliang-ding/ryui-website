@@ -1,10 +1,7 @@
-import * as React from "react"
-import './index.less'
-import { Table, Button } from '../../Yui/index'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
-export default class extends React.Component {
+const React = require('react')
+const ReactDom = require('react-dom')
+const { Table, Button } = require('Yui')
+class Demo extends React.Component {
   state = {
     data: [{
       key: Math.random(),
@@ -32,9 +29,8 @@ export default class extends React.Component {
       count: 4
     }]
   }
-  props: any
   render() {
-    const { dark } = this.props.UI
+    const dark = true
     const colmun = [{
       label: '序号',
       dataIndex: 'no',
@@ -52,7 +48,7 @@ export default class extends React.Component {
       dataIndex: 'count'
     }, {
       label: '操作',
-      dataIndex: "opeartion",
+      dataIndex: 'opeartion',
       render: (value, record) => {
         return ['删除', '修改'].map(m => {
           return <Button dark={dark} type='primary' style={{ width: 50, marginRight: 10 }} label={m} onClick={
@@ -64,7 +60,7 @@ export default class extends React.Component {
       }
     }]
     return (
-      <div className="app-table">
+      <div className='app-preview' style={{justifyContent: 'flex-start'}}>
         <Table dark={dark} style={{ height: 400, marginBottom: 40 }} data={this.state.data} colmun={colmun} />
         <Table dark={dark} style={{ height: 400, marginBottom: 40 }} data={this.state.data} colmun={colmun} styleHeader={{
           background: 'var(--theme-color)',
@@ -76,3 +72,4 @@ export default class extends React.Component {
     )
   }
 }
+ReactDom.render(<Demo />, document.querySelector('#codeWapper'))

@@ -1,26 +1,20 @@
-import * as React from "react"
-import './index.less'
-import { Alert, Button } from '../../Yui/index'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
-export default class extends React.Component {
+const React = require('react')
+const ReactDom = require('react-dom')
+const { Alert, Button } = require('Yui')
+class Demo extends React.Component {
   state = {
     show1: false,
-    show2: false,
-    show3: false,
-    show4: false
+    show2: false
   }
   setClose = (key, value) => {
     this.setState({
       [key]: value
     })
   }
-  props: any
   render() {
-    const { dark } = this.props.UI
+    const dark = true
     return (
-      <div className="app-alert">
+      <div className="app-preview">
         <div style={{ height: 60 }}>
           <Button dark={dark} type={dark ? "normal" : 'primary'} style={{ width: 100 }} label="基本提示框" onClick={
             () => {
@@ -66,3 +60,4 @@ export default class extends React.Component {
     )
   }
 }
+ReactDom.render(<Demo />, document.querySelector('#codeWapper'))

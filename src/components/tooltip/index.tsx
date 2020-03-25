@@ -1,6 +1,5 @@
 import * as React from "react"
-import { Tooltip, Button } from '../../Yui/index'
-import './index.less'
+import { Tooltip, Button } from 'Yui'
 import { observer, inject } from 'mobx-react'
 @inject('UI')
 @observer
@@ -9,7 +8,7 @@ export default class extends React.Component {
   render() {
     const { dark } = this.props.UI
     return (
-      <div className="app-tooltip">
+      <div className="app-preview">
         <div style={{marginBottom: 20}}>
           <Tooltip
             dark={dark}

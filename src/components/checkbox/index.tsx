@@ -1,11 +1,7 @@
-import * as React from "react"
-import { Select, CheckBox } from '../../Yui/index'
-import './index.less'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
-export default class extends React.Component {
-  props: any;
+const React = require('react')
+const ReactDom = require('react-dom')
+const { Select, CheckBox } = require('Yui')
+class Demo extends React.Component {
   state = {
     value: 0,
     valueList: [1],
@@ -40,9 +36,9 @@ export default class extends React.Component {
   }
   render() {
     const { dataList, valueList, value } = this.state
-    const { dark } = this.props.UI
+    const dark = true
     return (
-      <div className="app-checkbox">
+      <div className="app-preview">
         <div style={{ width: 300, marginBottom: 20 }}>
           <CheckBox dark={dark} dataList={dataList} value={valueList} onChange={
             (e) => {
@@ -104,3 +100,4 @@ export default class extends React.Component {
     )
   }
 }
+ReactDom.render(<Demo />, document.querySelector('#codeWapper'))

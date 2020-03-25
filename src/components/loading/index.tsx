@@ -1,18 +1,14 @@
-import * as React from "react"
-import './index.less'
-import { Loading, Button } from '../../Yui/index'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
-export default class extends React.Component {
+const React = require('react')
+const ReactDom = require('react-dom')
+const { Loading, Button } = require('Yui')
+class Demo extends React.Component {
   state = {
     loading: true
   }
-  props: any
   render() {
-    const { dark } = this.props.UI
+    const dark = true
     return (
-      <div className="app-loading">
+      <div className="app-preview">
         <br />
         <Button dark={dark} style={{ width: 100 }} label={this.state.loading ? "点击完成": '点击加载'} onClick={
           () => {
@@ -39,3 +35,4 @@ export default class extends React.Component {
     )
   }
 }
+ReactDom.render(<Demo />, document.querySelector('#codeWapper'))`

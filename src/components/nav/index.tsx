@@ -1,6 +1,5 @@
 import * as React from "react"
-import { Nav, Select, Button } from '../../Yui/index'
-import './index.less'
+import { Nav, Select, Button } from 'Yui'
 import { observer, inject } from 'mobx-react'
 @inject('UI')
 @observer
@@ -128,7 +127,7 @@ export default class extends React.Component {
         }
       }
     />
-    return <div className="app-nav">
+    return <div className="app-preview">
       <Nav dark={dark} logo={
         <i className="iconfont icon-UI1" style={{ fontSize: 30, color: 'var(--theme-color)' }} />
       }

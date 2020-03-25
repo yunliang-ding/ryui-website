@@ -1,11 +1,7 @@
-import * as React from "react"
-import { Select } from '../../Yui/index'
-import './index.less'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
-export default class extends React.Component {
-  props: any;
+const React = require('react')
+const ReactDom = require('react-dom')
+const { Select } = require('Yui')
+class Demo extends React.Component {
   state = {
     dataList: [{
       key: Math.random(),
@@ -54,9 +50,9 @@ export default class extends React.Component {
     } = this.state
     const setValue = this.setValue
     const setValueList = this.setValueList
-    const { dark } = this.props.UI
+    const dark = true
     return (
-      <div className="app-select">
+      <div className="app-preview">
         <Select
           dark={dark}
           clear
@@ -159,3 +155,4 @@ export default class extends React.Component {
     )
   }
 }
+ReactDom.render(<Demo />, document.querySelector('#codeWapper'))

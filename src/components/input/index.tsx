@@ -1,11 +1,7 @@
-import * as React from "react"
-import { Input } from '../../Yui/index'
-import './index.less'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
-export default class extends React.Component {
-  props: any;
+const React = require('react')
+const ReactDom = require('react-dom')
+const { Input } = require('Yui')
+class Demo extends React.Component {
   state = {
     value: ''
   }
@@ -15,8 +11,8 @@ export default class extends React.Component {
     })
   }
   render() {
-    const { dark } = this.props.UI
-    return <div className="app-input">
+    const dark = true
+    return <div className="app-preview">
       <div style={{ width: 300, marginBottom: 20 }}>
         <Input dark={dark} placeholder='姓名' value={this.state.value} onChange={
           (e) => {
@@ -58,3 +54,6 @@ export default class extends React.Component {
     </div>
   }
 }
+ReactDom.render(<Demo />, document.querySelector('#codeWapper'))
+
+    

@@ -15,26 +15,6 @@ import { Tooltip } from './tooltip/index'
 import { Slider } from './slider/index'
 import { Message } from './message/index'
 import './theme.less'
-const Window:any = window
-const model = {
-  Input,
-  Select,
-  Button,
-  CheckBox,
-  Radio,
-  Alert,
-  Table,
-  Pagination,
-  Loading,
-  Nav,
-  Tab,
-  Tree,
-  Switch,
-  Tooltip,
-  Slider,
-  Message
-}
-Window.Yui = model
 export {
   Input,
   Select,

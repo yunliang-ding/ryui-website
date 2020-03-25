@@ -1,5 +1,7 @@
-const input = `const { Input } = Yui
-class Demo extends React.Component{
+const input = `const React = require('react')
+const ReactDom = require('react-dom')
+const { Input } = require('Yui')
+class Demo extends React.Component {
   state = {
     value: ''
   }
@@ -10,7 +12,7 @@ class Demo extends React.Component{
   }
   render() {
     const dark = true
-    return <div className="app-input">
+    return <div className="app-preview">
       <div style={{ width: 300, marginBottom: 20 }}>
         <Input dark={dark} placeholder='姓名' value={this.state.value} onChange={
           (e) => {
@@ -52,11 +54,12 @@ class Demo extends React.Component{
     </div>
   }
 }
-ReactDOM.render(<Demo />, document.querySelector('#root'))
+ReactDom.render(<Demo />, document.querySelector('#codeWapper'))
 `
-const checkBox = `import * as React from "react"
-import { Select, CheckBox } from 'Yui'
-export default class extends React.Component {
+const checkBox = `const React = require('react')
+const ReactDom = require('react-dom')
+const { Select, CheckBox } = require('Yui')
+class Demo extends React.Component {
   state = {
     value: 0,
     valueList: [1],
@@ -91,9 +94,9 @@ export default class extends React.Component {
   }
   render() {
     const { dataList, valueList, value } = this.state
-    const { dark } = this.props.UI
+    const dark = true
     return (
-      <div className="app-checkbox">
+      <div className="app-preview">
         <div style={{ width: 300, marginBottom: 20 }}>
           <CheckBox dark={dark} dataList={dataList} value={valueList} onChange={
             (e) => {
@@ -155,10 +158,12 @@ export default class extends React.Component {
     )
   }
 }
+ReactDom.render(<Demo />, document.querySelector('#codeWapper'))
 `
-const radio = `import * as React from "react"
-import { Select, Radio } from 'Yui'
-export default class extends React.Component {
+const radio = `const React = require('react')
+const ReactDom = require('react-dom')
+const { Select, Radio  } = require('Yui')
+class Demo extends React.Component {
   state = {
     value: 0,
     dataList: [{
@@ -187,9 +192,9 @@ export default class extends React.Component {
   }
   render() {
     const { dataList, value } = this.state
-    const { dark } = this.props.UI
+    const dark = true
     return (
-      <div className="app-radio">
+      <div className="app-preview">
         <div style={{ width: 300, marginBottom: 20 }}>
           <Radio dark={dark} dataList={dataList} value={value} onChange={
             (e) => {
@@ -246,10 +251,11 @@ export default class extends React.Component {
     )
   }
 }
-`
-const select = `import * as React from "react"
-import { Select } from 'Yui'
-export default class extends React.Component {
+ReactDom.render(<Demo />, document.querySelector('#codeWapper'))`
+const select = `const React = require('react')
+const ReactDom = require('react-dom')
+const { Select } = require('Yui')
+class Demo extends React.Component {
   state = {
     dataList: [{
       key: Math.random(),
@@ -298,9 +304,9 @@ export default class extends React.Component {
     } = this.state
     const setValue = this.setValue
     const setValueList = this.setValueList
-    const { dark } = this.props.UI
+    const dark = true
     return (
-      <div className="app-select">
+      <div className="app-preview">
         <Select
           dark={dark}
           clear
@@ -403,14 +409,16 @@ export default class extends React.Component {
     )
   }
 }
+ReactDom.render(<Demo />, document.querySelector('#codeWapper'))
 `
-const button = `import * as React from "react"
-import { Button } from 'Yui'
-export default class extends React.Component {
+const button = `const React = require('react')
+const ReactDom = require('react-dom')
+const { Button } = require('Yui')
+class Demo extends React.Component {
   render() {
-    const { dark } = this.props.UI
+    const dark = true
     return (
-      <div className="app-button">
+      <div className="app-preview" style={{flexDirection: 'row'}}>
         <div>
           <Button dark={dark} style={{ width: 100, margin: 4 }} label="normal" onClick={() => {
             alert('normal')
@@ -467,15 +475,14 @@ export default class extends React.Component {
     )
   }
 }
-`
-const alert = `import * as React from "react"
-import { Alert, Button } from 'Yui'
-export default class extends React.Component {
+ReactDom.render(<Demo />, document.querySelector('#codeWapper'))`
+const alert = `const React = require('react')
+const ReactDom = require('react-dom')
+const { Alert, Button } = require('Yui')
+class Demo extends React.Component {
   state = {
     show1: false,
-    show2: false,
-    show3: false,
-    show4: false
+    show2: false
   }
   setClose = (key, value) => {
     this.setState({
@@ -483,9 +490,9 @@ export default class extends React.Component {
     })
   }
   render() {
-    const { dark } = this.props.UI
+    const dark = true
     return (
-      <div className="app-alert">
+      <div className="app-preview">
         <div style={{ height: 60 }}>
           <Button dark={dark} type={dark ? "normal" : 'primary'} style={{ width: 100 }} label="基本提示框" onClick={
             () => {
@@ -531,17 +538,18 @@ export default class extends React.Component {
     )
   }
 }
-`
-const loading = `import * as React from "react"
-import { Loading, Button } from 'Yui'
-export default class extends React.Component {
+ReactDom.render(<Demo />, document.querySelector('#codeWapper'))`
+const loading = `const React = require('react')
+const ReactDom = require('react-dom')
+const { Loading, Button } = require('Yui')
+class Demo extends React.Component {
   state = {
     loading: true
   }
   render() {
-    const { dark } = this.props.UI
+    const dark = true
     return (
-      <div className="app-loading">
+      <div className="app-preview">
         <br />
         <Button dark={dark} style={{ width: 100 }} label={this.state.loading ? "点击完成": '点击加载'} onClick={
           () => {
@@ -568,10 +576,11 @@ export default class extends React.Component {
     )
   }
 }
-`
-const table = `import * as React from "react"
-import { Table, Button } from 'Yui'
-export default class extends React.Component {
+ReactDom.render(<Demo />, document.querySelector('#codeWapper'))`
+const table = `const React = require('react')
+const ReactDom = require('react-dom')
+const { Table, Button } = require('Yui')
+class Demo extends React.Component {
   state = {
     data: [{
       key: Math.random(),
@@ -599,9 +608,8 @@ export default class extends React.Component {
       count: 4
     }]
   }
-  
   render() {
-    const { dark } = this.props.UI
+    const dark = true
     const colmun = [{
       label: '序号',
       dataIndex: 'no',
@@ -619,10 +627,10 @@ export default class extends React.Component {
       dataIndex: 'count'
     }, {
       label: '操作',
-      dataIndex: "opeartion",
+      dataIndex: 'opeartion',
       render: (value, record) => {
         return ['删除', '修改'].map(m => {
-          return <Button dark={dark} type={dark ? 'normal' : 'primary'} style={{ width: 50, marginRight: 10 }} label={m} onClick={
+          return <Button dark={dark} type='primary' style={{ width: 50, marginRight: 10 }} label={m} onClick={
             () => {
               alert('123')
             }
@@ -631,7 +639,7 @@ export default class extends React.Component {
       }
     }]
     return (
-      <div className="app-table">
+      <div className='app-preview' style={{justifyContent: 'flex-start'}}>
         <Table dark={dark} style={{ height: 400, marginBottom: 40 }} data={this.state.data} colmun={colmun} />
         <Table dark={dark} style={{ height: 400, marginBottom: 40 }} data={this.state.data} colmun={colmun} styleHeader={{
           background: 'var(--theme-color)',
@@ -643,10 +651,11 @@ export default class extends React.Component {
     )
   }
 }
-`
-const tab = `import * as React from "react"
-import { Tab } from 'Yui'
-export default class extends React.Component {
+ReactDom.render(<Demo />, document.querySelector('#codeWapper'))`
+const tab = `const React = require('react')
+const ReactDom = require('react-dom')
+const { Tab } = require('Yui')
+class Demo extends React.Component {
   state = {
     info: null,
     data: [{
@@ -673,11 +682,10 @@ export default class extends React.Component {
     }],
     value: 3
   }
-  
   render() {
-    const { dark } = this.props.UI
+    const dark = true
     return (
-      <div className="app-tab">
+      <div className="app-preview">
         <Tab
           dark={dark}
           style={{ width: 500 }}
@@ -718,14 +726,15 @@ export default class extends React.Component {
     )
   }
 }
-`
-const pagination = `import * as React from "react"
-import { Pagination } from 'Yui'
-export default class extends React.Component {
+ReactDom.render(<Demo />, document.querySelector('#codeWapper'))`
+const pagination = `const React = require('react')
+const ReactDom = require('react-dom')
+const { Pagination } = require('Yui')
+class Demo extends React.Component {
   render() {
-    const { dark } = this.props.UI
+    const dark = true
     return (
-      <div className="app-pagination">
+      <div className="app-preview">
         <Pagination dark={dark} current={1} pagesize={10} total={80} onChange={
           (e) => {
             console.log(e)
@@ -735,709 +744,13 @@ export default class extends React.Component {
     )
   }
 }
-`
-const tree = `import * as React from "react"
-import { Tree } from 'Yui'
-export default class extends React.Component {
-  state = {
-    info1: '点击显示节点信息',
-    info2: '点击显示节点信息',
-    data: [{
-      key: Math.random(),
-      icon: 'icon-jiantou34',
-      icon2: 'icon-jiantou32',
-      isLeaf: false,
-      color: '',
-      label: 'Tree',
-      isOpen: true,
-      node: [{
-        key: Math.random(),
-        icon: 'icon-react',
-        color: '#1296db',
-        label: 'index.jsx',
-        isLeaf: true
-      }, {
-        key: Math.random(),
-        icon: 'icon-less',
-        color: '#1E9FFF',
-        label: 'index.less',
-        isLeaf: true,
-      }, {
-        key: Math.random(),
-        color: '',
-        icon: 'icon-jiantou34',
-        icon2: 'icon-jiantou32',
-        isLeaf: false,
-        label: 'Tree2',
-        isOpen: true,
-        node: [{
-          key: Math.random(),
-          icon: 'icon-react',
-          color: '#1296db',
-          label: 'index.jsx',
-          isLeaf: true,
-        }]
-      }]
-    }, {
-      key: Math.random(),
-      icon: 'icon-jiantou34',
-      color: '',
-      label: 'Button',
-      icon2: 'icon-jiantou32',
-      isLeaf: false,
-      isOpen: true,
-      node: [{
-        key: Math.random(),
-        icon: 'icon-react',
-        color: '#1296db',
-        label: 'index.jsx',
-        isLeaf: true,
-      }, {
-        key: Math.random(),
-        icon: 'icon-less',
-        color: '#1E9FFF',
-        label: 'index.less',
-        isLeaf: true,
-      }, {
-        key: Math.random(),
-        icon: 'icon-react',
-        color: '#1296db',
-        label: 'store.jsx',
-        isLeaf: true,
-      }]
-    }, {
-      key: Math.random(),
-      icon: 'icon-jiantou34',
-      color: '',
-      label: 'Select',
-      icon2: 'icon-jiantou32',
-      isLeaf: false,
-      node: [{
-        key: Math.random(),
-        icon: 'icon-react',
-        color: '#1296db',
-        label: 'index.jsx',
-        isLeaf: true,
-      }, {
-        key: Math.random(),
-        icon: 'icon-less',
-        color: '#1E9FFF',
-        label: 'index.less',
-        isLeaf: true,
-      }, {
-        key: Math.random(),
-        icon: 'icon-react',
-        color: '#1296db',
-        label: 'store.jsx',
-        isLeaf: true,
-      }]
-    }, {
-      key: Math.random(),
-      icon: 'icon-react',
-      color: '#1296db',
-      label: 'app.jsx',
-      icon2: 'icon-jiantou32',
-      isLeaf: true,
-    }, {
-      key: Math.random(),
-      icon: 'icon-react',
-      color: '#FF5722',
-      label: 'react.jsx',
-      icon2: 'icon-jiantou32',
-      isLeaf: true,
-    }],
-    data2: [
-      {
-        key: Math.random(),
-        icon: 'icon-jiantou34',
-        icon2: 'icon-jiantou32',
-        isLeaf: false,
-        color: '',
-        label: 'Tree',
-        isOpen: true,
-        node: [{
-          key: Math.random(),
-          icon: 'icon-react',
-          color: '#1296db',
-          label: 'index.jsx',
-          isLeaf: true
-        }, {
-          key: Math.random(),
-          icon: 'icon-less',
-          color: '#1E9FFF',
-          label: 'index.less',
-          isLeaf: true,
-        }, {
-          key: Math.random(),
-          color: '',
-          icon: 'icon-jiantou34',
-          icon2: 'icon-jiantou32',
-          isLeaf: false,
-          label: 'Tree2',
-          isOpen: true,
-          node: [{
-            key: Math.random(),
-            icon: 'icon-react',
-            color: '#1296db',
-            label: 'index.jsx',
-            isLeaf: true,
-          }]
-        }]
-      }, {
-        key: Math.random(),
-        icon: 'icon-jiantou34',
-        color: '',
-        label: 'Button',
-        icon2: 'icon-jiantou32',
-        isLeaf: false,
-        isOpen: true,
-        node: [{
-          key: Math.random(),
-          icon: 'icon-react',
-          color: '#1296db',
-          label: 'index.jsx',
-          isLeaf: true,
-        }, {
-          key: Math.random(),
-          icon: 'icon-less',
-          color: '#1E9FFF',
-          label: 'index.less',
-          isLeaf: true,
-        }, {
-          key: Math.random(),
-          icon: 'icon-react',
-          color: '#1296db',
-          label: 'store.jsx',
-          isLeaf: true,
-        }]
-      }, {
-        key: Math.random(),
-        icon: 'icon-jiantou34',
-        color: '',
-        label: 'Select',
-        icon2: 'icon-jiantou32',
-        isLeaf: false,
-        node: [{
-          key: Math.random(),
-          icon: 'icon-react',
-          color: '#1296db',
-          label: 'index.jsx',
-          isLeaf: true,
-        }, {
-          key: Math.random(),
-          icon: 'icon-less',
-          color: '#1E9FFF',
-          label: 'index.less',
-          isLeaf: true,
-        }, {
-          key: Math.random(),
-          icon: 'icon-react',
-          color: '#1296db',
-          label: 'store.jsx',
-          isLeaf: true,
-        }]
-      }, {
-        key: Math.random(),
-        icon: 'icon-react',
-        color: '#1296db',
-        label: 'app.jsx',
-        icon2: 'icon-jiantou32',
-        isLeaf: true,
-      }, {
-        key: Math.random(),
-        icon: 'icon-react',
-        color: '#FF5722',
-        label: 'react.jsx',
-        icon2: 'icon-jiantou32',
-        isLeaf: true,
-      }],
-    tabs: [{
-      key: Math.random(),
-      icon: 'icon-react',
-      color: '#1296db',
-      label: 'index.jsx',
-      tip: '/user/Tabs/src/index.jsx',
-      active: false
-    }, {
-      key: Math.random(),
-      icon: 'icon-less',
-      color: '#1E9FFF',
-      label: 'index.less',
-      tip: '/user/Tabs/src/index.jsx',
-      active: true
-    }, {
-      key: Math.random(),
-      icon: 'icon-react',
-      color: '#1296db',
-      label: 'webpack.config.prod.jsx',
-      tip: '/user/Tabs/src/index.jsx',
-      active: false
-    }, {
-      key: Math.random(),
-      icon: 'icon-react',
-      color: '#1296db',
-      label: 'index.jsx',
-      tip: '/user/Tabs/src/index.jsx',
-      active: false
-    }, {
-      key: Math.random(),
-      icon: 'icon-less',
-      color: '#1E9FFF',
-      label: 'index.less',
-      tip: '/user/Tabs/src/index.jsx',
-      active: false
-    }, {
-      key: Math.random(),
-      icon: 'icon-react',
-      color: '#1296db',
-      label: 'webpack.config.prod.jsx',
-      tip: '/user/Tabs/src/index.jsx',
-      active: false
-    }]
-  }
-  
-  render() {
-    const { dark } = this.props.UI
-    return (
-      <div className="app-tree">
-        <Tree
-          style={{
-            width: 200,
-            height: 500,
-            background: dark ? '#333' : '#dcdcdc'
-          }}
-          dark={dark}
-          type="simple"
-          treeData={this.state.data}
-          onClick={
-            (e) => {
-              console.log(e)
-            }
-          }
-          onChange={
-            (e) => {
-              console.log(e)
-            }
-          }
-        />
-        <Tree
-          style={{
-            width: 200,
-            height: 500,
-            marginLeft: 50,
-            background: dark ? '#333' : '#dcdcdc'
-          }}
-          dark={dark}
-          treeData={this.state.data2}
-          onClick={
-            (e) => {
-              console.log(e)
-            }
-          }
-          onChange={
-            (e) => {
-              console.log(e)
-            }
-          }
-        />
-      </div>
-    )
-  }
-}
-`
-const nav = `import * as React from "react"
-import { Nav, Select, Button } from '../../Yui/index'
-export default class extends React.Component {
-  state = {
-    value: 0,
-    navList: [{
-      key: Math.random(),
-      label: <span>通用</span>,
-      active: true
-    }, {
-      key: Math.random(),
-      label: <span>布局</span>,
-      disabled: true,
-      active: false
-    }, {
-      key: Math.random(),
-      label: <span>导航</span>,
-      active: false
-    }, {
-      key: Math.random(),
-      label: null,
-      active: false,
-    }],
-    navListDark: [{
-      key: Math.random(),
-      label: <span>通用</span>,
-      active: true
-    }, {
-      key: Math.random(),
-      label: <span>布局</span>,
-      disabled: true,
-      active: false
-    }, {
-      key: Math.random(),
-      label: <span>导航</span>,
-      active: false
-    }, {
-      key: Math.random(),
-      label: null,
-      active: false,
-    }],
-    menu: [{
-      key: '1',
-      icon: 'icon-github',
-      label: '个人中心',
-      subMenu: [{
-        key: '1-2',
-        icon: 'icon-fenxiang',
-        label: '我的信息'
-      }, {
-        key: '1-3',
-        icon: 'icon-fenxiang',
-        label: '个人中心'
-      }, {
-        key: '1-4',
-        icon: 'icon-tuichu',
-        disabled: true,
-        label: '我的提交'
-      }]
-    }, {
-      key: '2',
-      disabled: true,
-      icon: 'icon-icon_yingyongguanli',
-      label: '信息管理'
-    }, {
-      key: '3',
-      icon: 'icon-icon_yingyongguanli',
-      label: '信息中心'
-    }],
-    collapsed: false,
-    dataList: [{
-      key: Math.random(),
-      value: 0,
-      label: '读书'
-    }, {
-      key: Math.random(),
-      value: 1,
-      label: '唱歌',
-      disabled: true
-    }, {
-      key: Math.random(),
-      value: 2,
-      label: '游泳'
-    }],
-    selectValue: ''
-  }
-  setSelectValue = (selectValue) => {
-    this.setState({
-      selectValue
-    })
-  }
-  render() {
-    const { dark } = this.props.UI
-    let navList = this.state.navList;
-    let navListDark = this.state.navListDark;
-    navList[3].label = <Select
-      placeholder="选择"
-      style={{
-        border: 0,
-        width: 60
-      }}
-      dataList={this.state.dataList}
-      value={this.state.selectValue}
-      onChange={
-        (e) => {
-          this.setSelectValue(e)
-        }
-      }
-    />
-    navListDark[3].label = <Select
-      dark
-      placeholder="选择"
-      style={{
-        border: 0,
-        width: 60
-      }}
-      dataList={this.state.dataList}
-      value={this.state.selectValue}
-      onChange={
-        (e) => {
-          this.setSelectValue(e)
-        }
-      }
-    />
-    return <div className="app-nav">
-      <Nav dark={dark} logo={
-        <i className="iconfont icon-UI1" style={{ fontSize: 30, color: 'var(--theme-color)' }} />
-      }
-        navList={dark ? this.state.navListDark : this.state.navList} menuClick={
-          (nav) => {
-            console.log(nav)
-          }
-        }
-      />
-      <br />
-      <Nav dark={dark} logo={
-        <i className="iconfont icon-UI1" style={{ fontSize: 30, color: 'var(--theme-color)' }} />
-      }
-        type="right"
-        navList={dark ? this.state.navListDark : this.state.navList} menuClick={
-          (nav) => {
-            console.log(nav)
-          }
-        }
-      />
-      <br />
-      <Button
-        dark={dark}
-        type="primary"
-        style={{ width: this.state.collapsed ? 40 : 200 }}
-        label={
-          <i className={this.state.collapsed ? "iconfont icon-zhankai1" : "iconfont icon-shouqi"} style={{ color: '#fff' }} />
-        }
-        onClick={() => {
-          this.setState({
-            collapsed: !this.state.collapsed
-          })
-        }}
-      />
-      <Nav
-        dark={dark}
-        style={{ width: 200, height: 300 }}
-        model="menu"
-        navList={this.state.menu}
-        menuClick={
-          (openkey, selectKey) => {
-            console.log(openkey, selectKey)
-          }
-        }
-        openKey={['1']}
-        selectKey={['1-2']}
-        collapsed={this.state.collapsed}
-      />
-    </div>
-  }
-}
-`
-const Switch = `import * as React from "react"
-import { Switch } from 'Yui'
-export default class extends React.Component {
-  render() {
-    const { dark } = this.props.UI
-    return (
-      <div className="app-switch">
-        <Switch
-          dark={dark}
-          checked
-          onChange={
-            (e) => {
-              console.log(e)
-            }
-          } 
-        />
-        <br />
-        <Switch
-          dark={dark}
-          disabled
-          onChange={
-            (e) => {
-              console.log(e)
-            }
-          } 
-        />
-        <br />
-        <Switch
-          dark={dark}
-          checked
-          checkedNode={<span>开</span>}
-          unCheckedNode={<span>关</span>}
-          onChange={
-            (e) => {
-              console.log(e)
-            }
-          } 
-        />
-        <br />
-        <Switch
-          dark={dark}
-          checked
-          checkedNode={<i className='iconfont icon-duihao'></i>}
-          unCheckedNode={<i className='iconfont icon-guanbi'></i>}
-          onChange={
-            (e) => {
-              console.log(e)
-            }
-          } 
-        />
-        <br />
-        <Switch
-          dark={dark}
-          checked
-          loading
-          onChange={
-            (e) => {
-              console.log(e)
-            }
-          } 
-        />
-        <br />
-        <Switch
-          dark={dark}
-          loading
-          onChange={
-            (e) => {
-              console.log(e)
-            }
-          } 
-        />
-      </div>
-    )
-  }
-}
-`
-const tooltip = `import * as React from "react"
-import { Tooltip, Button } from 'Yui'
-export default class extends React.Component {
-  render() {
-    const { dark } = this.props.UI
-    return (
-      <div className="app-tooltip">
-        <div style={{marginBottom: 20}}>
-          <Tooltip
-            dark={dark}
-            title={<span>音乐不是我的全部</span>}
-            trigger='hover'
-            placement='right'
-          >
-            <Button dark={dark} style={{ width: 100 }}  label="Right" />
-          </Tooltip>
-        </div>
-        <div style={{marginBottom: 50}}>
-          <Tooltip
-            dark={dark}
-            title={<span>音乐不是我的全部</span>}
-            trigger='hover'
-            placement='left'
-          >
-            <Button dark={dark} style={{ width: 100 }}  label="Left" />
-          </Tooltip>
-        </div>
-        <div style={{marginBottom: 20}}>
-          <Tooltip
-            dark={dark}
-            title={<span>音乐不是我的全部</span>}
-            trigger='hover'
-            placement='top'
-          >
-            <Button dark={dark} style={{ width: 100 }}  label="Top" />
-          </Tooltip>
-        </div>
-         <div style={{marginBottom: 20}}>
-          <Tooltip
-            dark={dark}
-            title={<span>音乐不是我的全部</span>}
-            trigger='hover'
-            placement='bottom'
-          >
-            <Button dark={dark} style={{ width: 100 }}  label="Bottom" />
-          </Tooltip>
-        </div>
-      </div>
-    )
-  }
-}
-`
-const slider = `import * as React from "react"
-import { Slider } from 'Yui'
-export default class extends React.Component {
-  render() {
-    const { dark } = this.props.UI
-    return (
-      <div className="app-sider">
-        <Slider 
-          dark={dark}
-          siderWidth={300}
-          progress={20}
-          onChange={
-            (e) => {
-              console.log(e)
-            }
-          }
-        />
-        <br />
-        <br />
-        <Slider 
-          dark={dark}
-          siderWidth={300}
-          siderHeight={12}
-          progress={45}
-          onChange={
-            (e) => {
-              console.log(e)
-            }
-          }
-        />
-        <br />
-        <br />
-        <Slider 
-          dark={dark}
-          showTip
-          siderHeight={10}
-          siderWidth={300}
-          progress={80}
-          onChange={
-            (e) => {
-              console.log(e)
-            }
-          }
-        />
-      </div>
-    )
-  }
-}
-`
-const message = `import * as React from "react"
-import { Message, Button } from 'Yui'
-export default class extends React.Component {
-  render() {
-    const { dark } = this.props.UI
-    const message = new Message({
-      duration: 3,
-      dark
-    })
-    return (
-      <div className="app-message">
-        <Button dark={dark} label='success' style={{width:100}} onClick={
-          () => {
-            message.success('success!')
-          }
-        } />
-        <br />
-        <Button dark={dark} label='error' style={{width:100}}  onClick={
-          () => {
-            message.error('error!')
-          }
-        } />
-        <br />
-        <Button dark={dark} label='warning' style={{width:100}}  onClick={
-          () => {
-            message.warning('warning!')
-          }
-        } />
-        <br />
-        <Button dark={dark} label='normal' style={{width:100}}  onClick={
-          () => {
-            message.normal('normal!')
-          }
-        } />
-      </div>
-    )
-  }
-}
-`
+ReactDom.render(<Demo />, document.querySelector('#codeWapper'))`
+const tree = ``
+const nav = ``
+const Switch = ``
+const tooltip = ``
+const slider = ``
+const message = ``
 export default {
   input,
   checkBox,

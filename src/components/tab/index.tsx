@@ -1,10 +1,7 @@
-import * as React from "react"
-import { Tab } from '../../Yui/index'
-import './index.less'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
-export default class extends React.Component {
+const React = require('react')
+const ReactDom = require('react-dom')
+const { Tab } = require('Yui')
+class Demo extends React.Component {
   state = {
     info: null,
     data: [{
@@ -31,11 +28,10 @@ export default class extends React.Component {
     }],
     value: 3
   }
-  props: any
   render() {
-    const { dark } = this.props.UI
+    const dark = true
     return (
-      <div className="app-tab">
+      <div className="app-preview">
         <Tab
           dark={dark}
           style={{ width: 500 }}
@@ -76,3 +72,4 @@ export default class extends React.Component {
     )
   }
 }
+ReactDom.render(<Demo />, document.querySelector('#codeWapper'))

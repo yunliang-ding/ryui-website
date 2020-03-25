@@ -1,6 +1,5 @@
 import * as React from "react"
-import { Switch } from '../../Yui/index'
-import './index.less'
+import { Switch } from 'Yui'
 import { observer, inject } from 'mobx-react'
 @inject('UI')
 @observer
@@ -9,7 +8,7 @@ export default class extends React.Component {
   render() {
     const { dark } = this.props.UI
     return (
-      <div className="app-switch">
+      <div className="app-preview">
         <Switch
           dark={dark}
           checked

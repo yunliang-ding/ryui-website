@@ -1,28 +1,16 @@
 import * as React from "react"
 import { toJS } from 'mobx'
 import './index.less'
-import { Nav, Select, Button, Radio, Tab } from '../Yui/index'
+import { Nav, Select, Button, Radio, Tab } from 'Yui'
 import { observer, inject } from 'mobx-react'
-import { Monaco } from '../monaco/index'
-import code from './code'
-@inject('UI', 'Monaco')
+import { Monaco } from '../monaco'
+import code from './code.ts'
+@inject('UI', 'Monaco', 'Compile')
 @observer
 class Layout extends React.Component {
   props: any
   constructor(props){
     super(props)
-  }
-  wapperCode = (code:string) => {
-    return `
-      <meta charset="UTF-8" />
-      <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
-      <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
-      <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
-      <script src='https://yun-static.cdn.bcebos.com/app.js'></script>
-      <link rel="stylesheet" href="https://yun-static.cdn.bcebos.com/app.css">
-      <div id="root"></div>
-      <script type="text/babel">${code}</script>
-    `
   }
   componentDidMount() {
     const {
@@ -40,18 +28,7 @@ class Layout extends React.Component {
     }
     setOpenkey([openKey])
     setSelectKey([selectKey])
-  }
-  renderReact = (code:string) => {
-    let ifr:any = document.createElement("iframe");
-    ifr.setAttribute("frameborder", "0");
-    ifr.style.width = '100%'
-    ifr.style.height = '100%'
-    document.querySelector('#iframeWapper').innerHTML = ''
-    document.querySelector('#iframeWapper').appendChild(ifr);
-    let ifrw = (ifr.contentWindow) ? ifr.contentWindow : (ifr.contentDocument.document) ? ifr.contentDocument.document : ifr.contentDocument
-    ifrw.document.open()
-    ifrw.document.write(this.wapperCode(code)); 
-    ifrw.document.close()
+    this.props.Compile.setCode(code[selectKey])
   }
   render() {
     const {
@@ -140,6 +117,7 @@ class Layout extends React.Component {
                   setOpenkey(toJS(openkey))
                   setSelectKey(toJS(selectKey))
                   window.location.hash = selectKey[0]
+                  this.props.Compile.setCode(code[selectKey])
                 }
               }
               openKey={openkey}
@@ -167,22 +145,22 @@ class Layout extends React.Component {
             }}>
               <div className='app-layout-body-run'>
                 <Button dark={dark} style={{ width: 60, margin: 4 }} label="重置" onClick={() => {
-                  this.props.Monaco.setValue(code[selectKey])
+                  this.props.Monaco.editorMonaco.setValue(code[selectKey])
+                  this.props.Compile.setCode(code[selectKey])
                 }} />
                 <Button dark={dark} type="primary" style={{ width: 60, margin: 4 }} label="运行" onClick={() => {
-                  this.renderReact(this.props.Monaco.editorMonaco.getValue())
+                  this.props.Compile.setCode(this.props.Monaco.editorMonaco.getValue())
                 }} />
               </div>
               <Monaco
                 path={'input'}
                 theme={dark ? 'vs-dark' : 'vs'}
                 language={'javascript'}
-                value={code[selectKey] || ''}
+                value={code[selectKey] || ""}
               />
             </div>
             <div className='app-layout-body-right-components'>
-              <div id='iframeWapper'>
-              </div>
+              <div id='codeWapper' />
               <div className='app-layout-body-theme'>
                 <Radio dark={dark} addonBefore='主题' dataList={darkList} value={dark} onChange={
                   (e) => {

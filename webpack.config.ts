@@ -23,7 +23,10 @@ const config = {
     filename: 'app.js'
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json']
+    extensions: ['.ts', '.tsx', '.js', '.json'],
+    alias: {
+      Yui: path.join(__dirname, './src/Yui')
+    }
   },
   externals: {
     'react': 'React',

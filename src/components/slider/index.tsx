@@ -1,6 +1,5 @@
 import * as React from "react"
-import { Slider } from '../../Yui/index'
-import './index.less'
+import { Slider } from 'Yui'
 import { observer, inject } from 'mobx-react'
 @inject('UI')
 @observer
@@ -9,7 +8,7 @@ export default class extends React.Component {
   render() {
     const { dark } = this.props.UI
     return (
-      <div className="app-sider">
+      <div className="app-preview">
         <Slider 
           dark={dark}
           siderWidth={300}

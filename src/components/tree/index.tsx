@@ -1,6 +1,5 @@
 import * as React from "react"
-import { Tree } from '../../Yui/index'
-import './index.less'
+import { Tree } from 'Yui'
 import { observer, inject } from 'mobx-react'
 @inject('UI')
 @observer
@@ -265,7 +264,7 @@ export default class extends React.Component {
   render() {
     const { dark } = this.props.UI
     return (
-      <div className="app-tree">
+      <div className="app-preview" style={{flexDirection: 'row'}}>
         <Tree
           style={{
             width: 200,

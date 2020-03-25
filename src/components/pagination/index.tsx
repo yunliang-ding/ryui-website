@@ -1,15 +1,11 @@
-import * as React from "react"
-import { Pagination } from '../../Yui/index'
-import './index.less'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
-export default class extends React.Component {
-  props: any
+const React = require('react')
+const ReactDom = require('react-dom')
+const { Pagination } = require('Yui')
+class Demo extends React.Component {
   render() {
-    const { dark } = this.props.UI
+    const dark = true
     return (
-      <div className="app-pagination">
+      <div className="app-preview">
         <Pagination dark={dark} current={1} pagesize={10} total={80} onChange={
           (e) => {
             console.log(e)
@@ -19,3 +15,4 @@ export default class extends React.Component {
     )
   }
 }
+ReactDom.render(<Demo />, document.querySelector('#codeWapper'))

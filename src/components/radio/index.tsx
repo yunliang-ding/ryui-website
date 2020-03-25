@@ -1,11 +1,7 @@
-import * as React from "react"
-import { Select, Radio } from '../../Yui/index'
-import './index.less'
-import { observer, inject } from 'mobx-react'
-@inject('UI')
-@observer
-export default class extends React.Component {
-  props: any
+const React = require('react')
+const ReactDom = require('react-dom')
+const { Select, Radio  } = require('Yui')
+class Demo extends React.Component {
   state = {
     value: 0,
     dataList: [{
@@ -34,9 +30,9 @@ export default class extends React.Component {
   }
   render() {
     const { dataList, value } = this.state
-    const { dark } = this.props.UI
+    const dark = true
     return (
-      <div className="app-radio">
+      <div className="app-preview">
         <div style={{ width: 300, marginBottom: 20 }}>
           <Radio dark={dark} dataList={dataList} value={value} onChange={
             (e) => {
@@ -93,3 +89,4 @@ export default class extends React.Component {
     )
   }
 }
+ReactDom.render(<Demo />, document.querySelector('#codeWapper'))
