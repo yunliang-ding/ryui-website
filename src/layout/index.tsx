@@ -4,15 +4,16 @@ import './index.less'
 import { Nav, Select, Button, Radio, Tab } from 'Yui'
 import { observer, inject } from 'mobx-react'
 import { Monaco } from '../monaco'
-import code from './code.ts'
+const code = require('../../public/components/index.ts').default
 @inject('UI', 'Monaco', 'Compile')
 @observer
-class Layout extends React.Component {
+class Layout extends React.Component{
   props: any
   constructor(props){
     super(props)
   }
   componentDidMount() {
+    console.log(code)
     const {
       setOpenkey,
       setSelectKey

@@ -3,7 +3,7 @@ import './index.less'
 import { observer, inject } from 'mobx-react'
 @inject('Monaco')
 @observer
-class Monaco extends React.Component<any, any> {
+class Monaco extends React.Component{
   editor: any
   monacoNode: HTMLElement;
   props: any;

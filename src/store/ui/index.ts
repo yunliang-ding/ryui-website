@@ -66,7 +66,7 @@ class UI {
       icon: 'icon-cebianlan',
       label: 'Input　输入框'
     }, {
-      key: 'checkBox',
+      key: 'checkbox',
       icon: 'icon-cebianlan',
       label: 'CheckBox　多选框'
     }, {
@@ -82,7 +82,7 @@ class UI {
       icon: 'icon-cebianlan',
       label: 'Button　按钮'
     }, {
-      key: 'switch',
+      key: 'Switch',
       icon: 'icon-cebianlan',
       label: 'Switch　开关'
     }, {

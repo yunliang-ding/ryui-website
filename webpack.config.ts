@@ -36,7 +36,7 @@ const config = {
   module: {
     rules: [{
       test: /\.(js|jsx)$/,
-      exclude: /(node_modules)/,
+      exclude: [/node_modules/, /public/],
       use: {
         loader: 'babel-loader',
         options: {
@@ -83,25 +83,9 @@ const config = {
         }
       ]
     },
-    // {
-    //   test: /\.(less|css)$/,
-    //   include: [ //样式只应用到这两个文件夹下面的css文件中
-    //     path.resolve(__dirname, 'node_modules'),
-    //     path.resolve(__dirname, './src')
-    //   ],
-    //   use: [
-    //     require.resolve('style-loader'),
-    //     {
-    //       loader: require.resolve('css-loader')
-    //     },
-    //     {
-    //       loader: require.resolve('less-loader')
-    //     }
-    //   ],
-    // },
     {
       test: /\.(tsx|ts)?$/,
-      exclude: /(node_modules)/,
+      exclude: [/node_modules/, /public/],
       use: ['ts-loader']
     }]
   },
