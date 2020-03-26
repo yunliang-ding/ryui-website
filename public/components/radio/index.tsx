@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Select, Radio} from 'Yui'
+import { Select, Radio } from 'Yui'
 class Demo extends React.Component {
   state = {
     value: 0,
@@ -33,34 +33,56 @@ class Demo extends React.Component {
     const dark = true
     return (
       <div className="app-preview">
-        <div style={{ width: 300, marginBottom: 20 }}>
-          <Radio dark={dark} dataList={dataList} value={value} onChange={
+        <Radio
+          dark={dark}
+          dataList={dataList}
+          value={value}
+          onChange={
             (e) => {
               this.setValue(e)
             }
-          } />
-        </div>
-        <div style={{ width: 300, marginBottom: 20 }}>
-          <Radio dark={dark} readonly={true} dataList={dataList} value={value} />
-        </div>
-        <div style={{ width: 360, marginBottom: 20 }} >
-          <Radio dark={dark} addonBefore='爱好' dataList={dataList} value={value} onChange={
+          }
+        />
+        <br />
+        <Radio
+          dark={dark}
+          readonly={true}
+          dataList={dataList}
+          value={value}
+        />
+        <br />
+        <Radio
+          dark={dark}
+          style={{ width: 400 }}
+          addonBefore='爱好'
+          dataList={dataList}
+          value={value}
+          onChange={
             (e) => {
               this.setValue(e)
             }
-          } />
-        </div>
-        <div style={{ width: 360, marginBottom: 20 }} >
-          <Radio dark={dark} addonAfter={
-            <i className="iconfont icon-chazhao" style={{ color: 'var(--theme-color)' }} />
-          } dataList={dataList} value={value} onChange={
+          }
+        />
+        <br />
+        <Radio
+          dark={dark}
+          style={{ width: 400 }}
+          addonAfter={
+            <i className="iconfont icon-chazhao" />
+          }
+          dataList={dataList}
+          value={value}
+          onChange={
             (e) => {
               this.setValue(e)
             }
-          } />
-        </div>
-        <div style={{ width: 400, marginBottom: 20 }}>
-          <Radio dark={dark} addonBefore={
+          }
+        />
+        <br />
+        <Radio
+          dark={dark}
+          style={{ width: 400 }}
+          addonBefore={
             <Select
               dark={dark}
               style={{
@@ -76,15 +98,14 @@ class Demo extends React.Component {
               }
             />
           }
-            dataList={dataList}
-            value={value}
-            onChange={
-              (e) => {
-                this.setValue(e)
-              }
+          dataList={dataList}
+          value={value}
+          onChange={
+            (e) => {
+              this.setValue(e)
             }
-          />
-        </div>
+          }
+        />
       </div>
     )
   }

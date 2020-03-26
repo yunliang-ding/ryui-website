@@ -87,8 +87,12 @@ class Radio extends React.Component {
         }
       </div>
     }
+    let style = this.props.style || {}
+    Object.assign(style, {
+      border: (this.props.addonBefore || this.props.addonAfter) ? (theme ? '1px solid #333' : '1px solid #f2f2f2') : 0 
+    })
     return (
-      <div className={"yui-radio"+theme} style={{ border: (this.props.addonBefore || this.props.addonAfter) ? (theme ? '1px solid #333' : '1px solid #f2f2f2') : 0 }}>
+      <div className={"yui-radio"+theme} style={style}>
         {addonBefore}
         {radio}
         {addonAfter}

@@ -13,47 +13,79 @@ class Demo extends React.Component {
   render() {
     const dark = true
     return <div className="app-preview">
-      <div style={{ width: 300, marginBottom: 20 }}>
-        <Input dark={dark} placeholder='姓名' value={this.state.value} onChange={
+      <Input
+        dark={dark}
+        style={{ width: 300 }}
+        placeholder='姓名'
+        value={this.state.value}
+        onChange={
           (e) => {
             this.setValue(e.target.value)
           }
-        } />
-      </div>
-      <div style={{ width: 300, marginBottom: 20 }}>
-        <Input dark={dark} readonly={true} placeholder='姓名' value={this.state.value} />
-      </div>
-      <div style={{ width: 300, marginBottom: 20 }}>
-        <Input dark={dark} placeholder='姓名' value={this.state.value} onChange={
+        }
+      />
+      <br />
+      <Input
+        dark={dark}
+        style={{ width: 300 }}
+        readonly={true}
+        placeholder='姓名'
+        value={this.state.value}
+      />
+      <br />
+      <Input
+        dark={dark}
+        style={{ width: 250 }}
+        placeholder='姓名'
+        value={this.state.value}
+        onChange={
           (e) => {
             this.setValue(e.target.value)
           }
-        } addonBefore='姓名' />
-      </div>
-      <div style={{ width: 300, marginBottom: 20 }}>
-        <Input dark={dark} placeholder='姓名' value={this.state.value} onChange={
+        }
+        addonBefore='姓名'
+      />
+      <br />
+      <Input
+        dark={dark}
+        style={{ width: 250 }}
+        placeholder='姓名'
+        value={this.state.value}
+        onChange={
           (e) => {
             this.setValue(e.target.value)
           }
-        } addonAfter={<i className="iconfont icon-chazhao" style={{ color: 'var(--theme-color)' }} />} />
-      </div>
-      <div style={{ width: 300, marginBottom: 20 }}>
-        <Input dark={dark} placeholder='姓名' value={this.state.value} onChange={
+        }
+        addonAfter={<i className="iconfont icon-chazhao" />}
+      />
+      <br />
+      <Input
+        dark={dark}
+        type='date'
+        style={{ width: 300 }}
+        placeholder='姓名'
+        value={this.state.value}
+        onChange={
           (e) => {
             this.setValue(e.target.value)
           }
-        } />
-      </div>
-      <div style={{ width: 300, marginBottom: 20 }}>
-        <Input dark={dark} type="textArea" placeholder='姓名' value={this.state.value} onChange={
+        }
+      />
+      <br />
+      <Input
+        dark={dark}
+        style={{ width: 300 }}
+        type="textArea"
+        placeholder='姓名'
+        value={this.state.value}
+        onChange={
           (e) => {
             this.setValue(e.target.value)
           }
-        } />
-      </div>
+        }
+      />
     </div>
   }
 }
 ReactDom.render(<Demo />, document.querySelector('#codeWapper'))
 
-    

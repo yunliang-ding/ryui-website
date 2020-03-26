@@ -39,38 +39,61 @@ class Demo extends React.Component {
     const dark = true
     return (
       <div className="app-preview">
-        <div style={{ width: 300, marginBottom: 20 }}>
-          <CheckBox dark={dark} dataList={dataList} value={valueList} onChange={
+        <CheckBox
+          dark={dark}
+          dataList={dataList}
+          value={valueList}
+          onChange={
             (e) => {
               this.setValueList(e)
             }
-          } />
-        </div>
-        <div style={{ width: 300, marginBottom: 20 }}>
-          <CheckBox dark={dark} readonly={true} dataList={dataList} value={valueList} onChange={
+          }
+        />
+        <br />
+        <CheckBox
+          dark={dark}
+          readonly={true}
+          dataList={dataList}
+          value={valueList}
+          onChange={
             (e) => {
               this.setValueList(e)
             }
-          } />
-        </div>
-        <div style={{ width: 430, marginBottom: 20 }} >
-          <CheckBox dark={dark} addonBefore='爱好' dataList={dataList} value={valueList} onChange={
+          }
+        />
+        <br />
+        <CheckBox
+          dark={dark}
+          style={{ width: 400 }}
+          addonBefore='爱好'
+          dataList={dataList}
+          value={valueList}
+          onChange={
             (e) => {
               this.setValueList(e)
             }
-          } />
-        </div>
-        <div style={{ width: 430, marginBottom: 20 }} >
-          <CheckBox dark={dark} addonAfter={
-            <i className="iconfont icon-chazhao" style={{ color: 'var(--theme-color)' }} />
-          } dataList={dataList} value={valueList} onChange={
+          }
+        />
+        <br />
+        <CheckBox
+          dark={dark}
+          style={{ width: 400 }}
+          addonAfter={
+            <i className="iconfont icon-chazhao" />
+          }
+          dataList={dataList}
+          value={valueList}
+          onChange={
             (e) => {
               this.setValueList(e)
             }
-          } />
-        </div>
-        <div style={{ width: 430, marginBottom: 20 }}>
-          <CheckBox dark={dark} addonBefore={
+          }
+        />
+        <br />
+        <CheckBox
+          dark={dark}
+          style={{ width: 400 }}
+          addonBefore={
             <Select
               dark={dark}
               style={{
@@ -87,15 +110,14 @@ class Demo extends React.Component {
               }
             />
           }
-            dataList={dataList}
-            value={valueList}
-            onChange={
-              (e) => {
-                this.setValueList(e)
-              }
+          dataList={dataList}
+          value={valueList}
+          onChange={
+            (e) => {
+              this.setValueList(e)
             }
-          />
-        </div>
+          }
+        />
       </div>
     )
   }
