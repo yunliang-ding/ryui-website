@@ -36,7 +36,7 @@ class Select extends React.Component {
       }
     }
     if (this.selectBodyNode) {
-      this.selectBodyNode.style.top = parseInt(window.getComputedStyle(this.selectNode).height)
+      this.selectBodyNode.style.top = parseInt(window.getComputedStyle(this.selectNode).height) + 10
     }
   }
   render() {
@@ -89,7 +89,7 @@ class Select extends React.Component {
           }
         </div>
         {
-          this.state.isOpen && <div className='yui-select-spin' />
+          this.state.isOpen && [<div className='yui-select-spin' />, <div className='yui-select-allow' />]
         }
         {
           this.state.isOpen && <div className={"yui-select-body" + theme} ref={(node) => { this.selectBodyNode = node }}>

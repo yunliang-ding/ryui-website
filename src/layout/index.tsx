@@ -1,7 +1,7 @@
 import * as React from "react"
 import { toJS } from 'mobx'
 import './index.less'
-import { Nav, Select, Button, Radio, Tab } from 'Yui'
+import { Nav, Select, Button, Radio, Tab, Tooltip } from 'Yui'
 import { observer, inject } from 'mobx-react'
 import { Monaco } from '../monaco'
 import SplitPane from 'react-split-pane'
@@ -158,13 +158,27 @@ class Layout extends React.Component {
                 borderColor: dark ? '#222' : '#dcdcdc'
               }}>
                 <div className='app-layout-body-run'>
-                  <Button dark={dark} style={{ width: 60, margin: 4 }} label="重置" onClick={() => {
-                    this.props.Monaco.editorMonaco.setValue(code[selectKey])
-                    this.props.Compile.setCode(code[selectKey])
-                  }} />
-                  <Button dark={dark} type="primary" style={{ width: 60, margin: 4 }} label="运行" onClick={() => {
-                    this.props.Compile.setCode(this.props.Monaco.editorMonaco.getValue())
-                  }} />
+                  <Tooltip
+                    dark={dark}
+                    title={<span>重制之后会立即运行代码</span>}
+                    trigger='hover'
+                    placement='bottom'
+                  >
+                    <Button dark={dark} style={{ width: 60, margin:'0 4px' }} label="重置" onClick={() => {
+                      this.props.Monaco.editorMonaco.setValue(code[selectKey])
+                      this.props.Compile.setCode(code[selectKey])
+                    }} />
+                  </Tooltip>
+                  <Tooltip
+                    dark={dark}
+                    title={<span>运行异常控制台会有错误信息</span>}
+                    trigger='hover'
+                    placement='bottom'
+                  >
+                    <Button dark={dark} type="primary" style={{ width: 60, margin:'0 4px' }} label="运行" onClick={() => {
+                      this.props.Compile.setCode(this.props.Monaco.editorMonaco.getValue())
+                    }} />
+                  </Tooltip>
                 </div>
                 <Monaco
                   path={'input'}

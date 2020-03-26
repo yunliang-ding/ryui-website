@@ -10,7 +10,7 @@ class Demo extends React.Component {
     return (
       <div className="app-preview">
         <br />
-        <Button dark={dark} style={{ width: 100 }} label={this.state.loading ? "点击完成": '点击加载'} onClick={
+        <Button dark={dark} style={{ width: 100 }} label={this.state.loading ? "点击完成" : '点击加载'} onClick={
           () => {
             this.setState({
               loading: !this.state.loading
@@ -18,18 +18,30 @@ class Demo extends React.Component {
           }
         } />
         <br />
-        <Loading dark={dark} style={{ height: 120, width: '80%' }} loading={this.state.loading}>
+        <Loading
+          dark={dark}
+          style={{ height: 120, width: '80%' }}
+          loading={this.state.loading}
+        >
         </Loading>
         <br />
-        <Loading dark={dark} style={{ height: 120, width: '80%' }} loading={this.state.loading} options={{
-          background: '#16b4a7',
-          iconColor: '#fff'
-        }}>
+        <Loading
+          dark={dark}
+          style={{ height: 120, width: '80%' }}
+          loading={this.state.loading}
+          options={{
+            background: '#16b4a7',
+            iconColor: '#fff'
+          }}>
         </Loading>
         <br />
-        <Loading dark={dark} style={{ height: 120, width: '80%' }} loading={this.state.loading} options={{
-          icon: 'icon-shuaxin'
-        }}>
+        <Loading
+          dark={dark}
+          style={{ height: 120, width: '80%' }}
+          loading={this.state.loading}
+          options={{
+            icon: 'icon-shuaxin'
+          }}>
         </Loading>
       </div>
     )

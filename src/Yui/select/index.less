@@ -18,6 +18,15 @@
     z-index:999;
     background: none;
   }
+  .yui-select-allow{
+    position: absolute;
+    top: 38px;
+    left: 10%;
+    background: #222;
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg);
+  }
   .yui-select-placeholder{
     opacity: 0.5;
   }
@@ -47,7 +56,7 @@
     justify-content: center;
     align-items: center;
     background: #f2f2f2;
-    flex:2;
+    padding:0 4px;
     .yui-select-compont{
       border:0
     }
@@ -57,7 +66,7 @@
     color:#888;
   }
   .yui-select-compont, .yui-select-compont-dark{
-    flex:6;
+    flex:8;
     min-height: 32px;
     font-size:12px;
     border-radius: 0;
@@ -70,7 +79,6 @@
     box-sizing: border-box;
     .yui-select-compont-multiple-label, .yui-select-compont-multiple-label-dark{
       padding:2px;
-      min-width:25%;
       display:inline-block;
       padding-left:4px;
       background-color: #fafafa;
@@ -84,7 +92,7 @@
     }
   }
   .yui-select-compont-disabled, .yui-select-compont-disabled-dark{
-    flex:6;
+    flex:8;
     height: 32px;
     font-size:12px;
     border-width: 1px;
@@ -108,10 +116,9 @@
   .yui-select-body, .yui-select-body-dark{
     position:absolute;
     top:34px;
-    left:0;
-    width:100%;
+    left:-1px;
+    width:calc(100% + 2px);
     box-shadow: 0px 0px 4px 0px #ded4d429;
-    border:1px solid #f2f2f2;
     user-select: none;
     z-index:999999;
     background: #fff;
@@ -144,26 +151,25 @@
   }
   .yui-select-body-dark{
     background-color: #222;
-    border:1px solid #1e1e1e;
-    box-shadow: 0px 0px 4px 0px #7a787800;
+    box-shadow: 1px 2px 4px 0px #101010;
     .yui-select-body-item-dark:hover{
       background-color: #1e1e1e;
     }
   }
   .yui-select-body::-webkit-scrollbar, .yui-select-body-dark::-webkit-scrollbar {/*滚动条整体样式*/
-    width: 6px;     /*高宽分别对应横竖滚动条的尺寸*/
-    height: 6px;
+    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 10px;
   }
   .yui-select-body-dark::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
-    border-radius: 6px;
-    background: #111;
+    border-radius: 0;
+    background: #666;
   }
   .yui-select-body-dark::-webkit-scrollbar-track {/*滚动条里面轨道*/
     border-radius: 0;
     background: #333;
   }
   .yui-select-body::-webkit-scrollbar-thumb{/*滚动条里面小方块*/
-    border-radius: 6px;
+    border-radius: 0;
     background: #ddd;
   }
   .yui-select-body::-webkit-scrollbar-track{/*滚动条里面轨道*/
@@ -193,4 +199,9 @@
   background: #222;
   color: #888;
   border-color: #333;
+}
+.yui-select{
+  .yui-select-allow{
+    background: #fff;
+  }
 }
