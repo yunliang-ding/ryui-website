@@ -4,12 +4,13 @@ import './index.less'
 import { Nav, Select, Button, Radio, Tab } from 'Yui'
 import { observer, inject } from 'mobx-react'
 import { Monaco } from '../monaco'
+import SplitPane from 'react-split-pane'
 const code = require('../../public/components/index.ts').default
 @inject('UI', 'Monaco', 'Compile')
 @observer
-class Layout extends React.Component{
+class Layout extends React.Component {
   props: any
-  constructor(props){
+  constructor(props) {
     super(props)
   }
   componentDidMount() {
@@ -109,14 +110,14 @@ class Layout extends React.Component{
             />
             <Nav
               dark={dark}
-              style={{ width: 200, height: 'calc(100% - 64px)'}}
+              style={{ width: 200, height: 'calc(100% - 64px)' }}
               model="menu"
               navList={menus}
               menuClick={
                 (openkey, selectKey) => {
                   setOpenkey(toJS(openkey))
                   setSelectKey(toJS(selectKey))
-                  window.location.hash =`/${selectKey[0]}`
+                  window.location.hash = `/${selectKey[0]}`
                   this.props.Compile.setCode(code[selectKey])
                 }
               }
@@ -140,58 +141,75 @@ class Layout extends React.Component{
             background: dark ? '#1a1a1a' : '#fff',
             width: collapsed ? 'calc(100% - 40px)' : 'calc(100% - 200px)'
           }}>
-            <div className='app-layout-body-right-ccstudio' style={{
-              borderColor: dark ? '#222' : '#dcdcdc'
-            }}>
-              <div className='app-layout-body-run'>
-                <Button dark={dark} style={{ width: 60, margin: 4 }} label="重置" onClick={() => {
-                  this.props.Monaco.editorMonaco.setValue(code[selectKey])
-                  this.props.Compile.setCode(code[selectKey])
-                }} />
-                <Button dark={dark} type="primary" style={{ width: 60, margin: 4 }} label="运行" onClick={() => {
-                  this.props.Compile.setCode(this.props.Monaco.editorMonaco.getValue())
-                }} />
-              </div>
-              <Monaco
-                path={'input'}
-                theme={dark ? 'vs-dark' : 'vs'}
-                language={'javascript'}
-                value={code[selectKey] || ""}
-              />
-            </div>
-            <div className='app-layout-body-right-components'>
-              <div id='codeWapper' />
-              <div className='app-layout-body-theme'>
-                <Radio dark={dark} addonBefore='主题' dataList={darkList} value={dark} onChange={
-                  (e) => {
-                    setDark(e)
-                  }
-                } />
-              </div>
-              <div className='app-layout-body-type'>
-                <Tab
-                  dark={dark}
-                  style={{ width: 180, height: 36 }}
-                  data={[{
-                    key: 1,
-                    icon: 'icon-view-1',
-                    color: 'var(--theme-color)',
-                    label: '预览'
-                  }, {
-                    key: 2,
-                    icon: 'icon-hezi',
-                    color: 'var(--theme-color)',
-                    label: '属性'
-                  }]}
-                  value={type}
-                  onClick={
-                    (e) => {
-                      setType(e.key)
-                    }
-                  }
+            <SplitPane
+              split="vertical"
+              step={10}
+              defaultSize='50%'
+              minSize={0}
+              maxSize='100%'
+              onDragStarted={() => (document.body.style.cursor = 'col-resize')}
+              onDragFinished={
+                () => {
+                  document.body.style.cursor = 'auto'
+                }
+              }
+            >
+              <div className='app-layout-body-right-ccstudio' style={{
+                borderColor: dark ? '#222' : '#dcdcdc'
+              }}>
+                <div className='app-layout-body-run'>
+                  <Button dark={dark} style={{ width: 60, margin: 4 }} label="重置" onClick={() => {
+                    this.props.Monaco.editorMonaco.setValue(code[selectKey])
+                    this.props.Compile.setCode(code[selectKey])
+                  }} />
+                  <Button dark={dark} type="primary" style={{ width: 60, margin: 4 }} label="运行" onClick={() => {
+                    this.props.Compile.setCode(this.props.Monaco.editorMonaco.getValue())
+                  }} />
+                </div>
+                <Monaco
+                  path={'input'}
+                  theme={dark ? 'vs-dark' : 'vs'}
+                  language={'javascript'}
+                  value={code[selectKey] || ""}
                 />
               </div>
-            </div>
+              <div className='app-layout-body-right-components'>
+                <div id='codeWapper' />
+                <pre id='error-message' style={{
+                  background: dark ? '#1b1b1b' : '#fff',
+                }} />
+                <div className='app-layout-body-theme'>
+                  <Radio dark={dark} addonBefore='主题' dataList={darkList} value={dark} onChange={
+                    (e) => {
+                      setDark(e)
+                    }
+                  } />
+                </div>
+                <div className='app-layout-body-type'>
+                  <Tab
+                    dark={dark}
+                    style={{ width: 180, height: 36 }}
+                    data={[{
+                      key: 1,
+                      icon: 'icon-view-1',
+                      color: 'var(--theme-color)',
+                      label: '预览'
+                    }, {
+                      key: 2,
+                      icon: 'icon-hezi',
+                      color: 'var(--theme-color)',
+                      label: '属性'
+                    }]}
+                    value={type}
+                    onClick={
+                      (e) => {
+                        setType(e.key)
+                      }
+                    }
+                  />
+                </div>
+              </div>
+            </SplitPane>
           </div>
         </div>
       </div>

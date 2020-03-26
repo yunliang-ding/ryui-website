@@ -1,5 +1,6 @@
 import { observable, action, runInAction } from 'mobx'
 import { transform } from 'babel-standalone'
+const $:any = document.querySelector.bind(document)
 class Compile {
   scope = {
     'react': require('react'),
@@ -13,6 +14,7 @@ class Compile {
   scopeArr = [this.require]
   @observable codeError = false
   @observable code = null
+  @observable codeErrorMessage = ''
   @action setCode = (code: string) => {
     this.code = code
     this.excuteCode()
@@ -31,11 +33,14 @@ class Compile {
       eval(a).apply(null, this.scopeArr)
       runInAction(() => {
         this.codeError = false
+        $('#error-message').innerHTML = null
+        $('#error-message').style.display = 'none'
       })
     } catch (e) {
       runInAction(() => {
         this.codeError = true
-        console.log('err', e)
+        $('#error-message').innerHTML = e
+        $('#error-message').style.display = 'block'
       })
     }
   }
