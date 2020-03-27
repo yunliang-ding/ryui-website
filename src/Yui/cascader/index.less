@@ -1,0 +1,111 @@
+.yui-cascader, .yui-cascader-dark{
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  width:100%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #262626;
+  background-color: #222;
+  height:32px;
+  .yui-cascader-allow{
+    position: absolute;
+    right:4px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .iconfont{
+      color: #444;
+    }
+  }
+  .yui-cascader-body-spin{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index:1;
+    background: none;
+  }
+  .yui-cascader-body-allow{
+    position: absolute;
+    top: 38px;
+    left: 10%;
+    background: #1e1e1e;
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg);
+    z-index:2;
+  }
+  .yui-cascader-body{
+    height: 160px;
+    display: flex;
+    position: absolute;
+    top: 42px;
+    z-index:3;
+    box-shadow: 0px 1px 2px #171616;
+    background: #1e1e1e;
+  }
+  .yui-cascader-body-content{
+    height: 100%;
+    .yui-cascader-body-content-item,.yui-cascader-body-content-item-active{
+      height: 32px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+      width: 100%;
+      cursor: pointer;
+      justify-content: space-between;
+      span{
+        margin-right:10px;
+        color: #ccc;
+      }
+      .iconfont{
+        color:#ccc;
+        font-size: 12px;
+        position: relative;
+        top: 2px;
+      }
+    }
+    .yui-cascader-body-content-item:hover{
+      background: #222;
+    }
+    .yui-cascader-body-content-item-active{
+      color: var(--theme-color);
+    }
+  }
+}
+.yui-cascader{
+  background: #fff;
+  border-color: #ccc;
+  .yui-cascader-allow{
+    .iconfont{
+      color:#999;
+    }
+  }
+  .yui-cascader-body-allow{
+    background: #fff;
+  }
+  .yui-cascader-body{
+    box-shadow: 0px 1px 2px #d2cece;
+    background: #fff;
+    .yui-cascader-body-content{
+      .yui-cascader-body-content-item,.yui-cascader-body-content-item-active{
+        span{
+          color: #333;
+        }
+        .iconfont{
+          color:#333;
+        }
+      }
+      .yui-cascader-body-content-item:hover{
+        background: #ddd;
+      }
+      .yui-cascader-body-content-item-active{
+        color: var(--theme-color);
+      }
+    }
+  }
+}

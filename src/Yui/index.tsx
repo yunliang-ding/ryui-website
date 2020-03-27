@@ -14,6 +14,7 @@ import { Switch } from './switch/index'
 import { Tooltip } from './tooltip/index'
 import { Slider } from './slider/index'
 import { Message } from './message/index'
+import { Cascader } from './cascader/index'
 import './theme.less'
 export {
   Input,
@@ -31,5 +32,6 @@ export {
   Switch,
   Tooltip,
   Slider,
-  Message
+  Message,
+  Cascader
 }

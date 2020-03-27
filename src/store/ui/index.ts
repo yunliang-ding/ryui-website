@@ -93,6 +93,10 @@ class UI {
       key: 'slider',
       icon: 'icon-cebianlan',
       label: 'Slider　滑动条'
+    }, {
+      key: 'cascader',
+      icon: 'icon-cebianlan',
+      label: 'Cascader　级联选择'
     }]
   }, {
     key: '2',
@@ -150,11 +154,6 @@ class UI {
       key: 'nav',
       icon: 'icon-cebianlan',
       label: 'Nav　导航栏'
-    }, {
-      key: 'cascader',
-      disabled: true,
-      icon: 'icon-cebianlan',
-      label: 'Cascader　级联选择'
     }]
   }]
   @action setCollapsed = (collapsed: boolean): void => {
