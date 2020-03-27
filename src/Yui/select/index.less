@@ -9,6 +9,9 @@
   border-color: #f2f2f2;
   background-color: #fff;
   height:fit-content;
+  &:hover{
+    border-color:var(--theme-color) !important;
+  }
   .yui-select-compont-value{
     width:100%;
     overflow: hidden;
@@ -142,8 +145,7 @@
       background: #f2f2f2;
     }
     .yui-select-body-item-active, .yui-select-body-item-active-dark{
-      background: var(--theme-background-color);
-      color:#fff;
+      color: var(--theme-background-color);
     }
     .yui-select-body-item-disabled, .yui-select-body-item-disabled-dark{
       cursor: not-allowed;
