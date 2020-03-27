@@ -36,7 +36,7 @@ class Select extends React.Component {
       }
     }
     if (this.selectBodyNode) {
-      this.selectBodyNode.style.top = parseInt(window.getComputedStyle(this.selectNode).height) + 10
+      this.selectBodyNode.style.top = parseInt(window.getComputedStyle(this.selectNode).height) + 4
     }
   }
   render() {
@@ -67,7 +67,9 @@ class Select extends React.Component {
     if (!this.props.mode) {
       select = <div className={"yui-select-compont" + theme} onClick={this.toggleSelect}>
         <div style={{ width: '90%', position: 'relative' }}>
-          {label || <span className='yui-select-placeholder'>{this.props.placeholder || '请选择'}</span>}
+          <div className='yui-select-compont-value' title={label}>
+            {label || <span className='yui-select-placeholder'>{this.props.placeholder || '请选择'}</span>}
+          </div>
           {
             this.props.clear && label && <div className='yui-select-clear' onClick={
               (e) => {
@@ -79,17 +81,17 @@ class Select extends React.Component {
             </div>
           }
         </div>
-        <div style={{ width: '10%', minWidth: 20 }}>
+        <div style={{ width: '10%', minWidth: 20, position: 'absolute', right: 0 }}>
           {
             this.state.isOpen
               ?
-              <i className={"iconfont icon-jiantou"} />
+              <i className={"iconfont icon-xiala1"} />
               :
-              <i className={"iconfont icon-jiantou32"} />
+              <i className={"iconfont icon-xialadown"} />
           }
         </div>
         {
-          this.state.isOpen && [<div className='yui-select-spin' />, <div className='yui-select-allow' />]
+          this.state.isOpen && <div className='yui-select-spin' />
         }
         {
           this.state.isOpen && <div className={"yui-select-body" + theme} ref={(node) => { this.selectBodyNode = node }}>
@@ -98,13 +100,20 @@ class Select extends React.Component {
                 return (
                   item.disabled
                     ?
-                    <span className={"yui-select-body-item-disabled" + theme} key={item.key} >{item.label}</span>
+                    <span title={item.label} className={"yui-select-body-item-disabled" + theme} key={item.key} >{item.label}</span>
                     :
-                    <span className={(item.value === value) ? "yui-select-body-item-active" + theme : "yui-select-body-item" + theme} key={item.key} onClick={
-                      () => {
-                        this.itemSelect(item.value)
+                    <span
+                      title={item.label}
+                      className={(item.value === value) ? "yui-select-body-item-active" + theme : "yui-select-body-item" + theme}
+                      key={item.key}
+                      onClick={
+                        () => {
+                          this.itemSelect(item.value)
+                        }
                       }
-                    }>{item.label}</span>
+                    >
+                      {item.label}
+                    </span>
                 )
               })
             }
@@ -162,9 +171,9 @@ class Select extends React.Component {
           {
             this.state.isOpen
               ?
-              <i className={"iconfont icon-jiantou"} />
+              <i className={"iconfont icon-xiala1"} />
               :
-              <i className={"iconfont icon-jiantou32"} />
+              <i className={"iconfont icon-xialadown"} />
           }
         </div>
         {
@@ -209,7 +218,7 @@ class Select extends React.Component {
           {label || this.props.placeholder || '请选择'}
         </div>
         <div style={{ width: '10%' }}>
-          <i className={"iconfont icon-jiantou32"} />
+          <i className={"iconfont icon-xialadown"} />
         </div>
       </div>
     }

@@ -9,6 +9,12 @@
   border-color: #f2f2f2;
   background-color: #fff;
   height:fit-content;
+  .yui-select-compont-value{
+    width:100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   .yui-select-spin{
     width: 100vw;
     height: 100vh;
@@ -17,15 +23,6 @@
     left:0;
     z-index:999;
     background: none;
-  }
-  .yui-select-allow{
-    position: absolute;
-    top: 38px;
-    left: 10%;
-    background: #222;
-    width: 12px;
-    height: 12px;
-    transform: rotate(45deg);
   }
   .yui-select-placeholder{
     opacity: 0.5;
@@ -77,6 +74,7 @@
     align-items: center;
     user-select: none;
     box-sizing: border-box;
+    position: relative;
     .yui-select-compont-multiple-label, .yui-select-compont-multiple-label-dark{
       padding:2px;
       display:inline-block;
@@ -118,7 +116,7 @@
     top:34px;
     left:-1px;
     width:calc(100% + 2px);
-    box-shadow: 0px 0px 4px 0px #ded4d429;
+    box-shadow: -1px 0px 4px 3px #ded4d429;
     user-select: none;
     z-index:999999;
     background: #fff;
@@ -136,6 +134,9 @@
       color:#888;
       cursor: pointer;
       box-sizing: border-box;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
     .yui-select-body-item:hover, .yui-select-body-item-dark:hover{
       background: #f2f2f2;
@@ -194,14 +195,13 @@
     background: #3333;
     color:#888;
   }
+  .icon-xiala1, .icon-xialadown{
+    font-size: 20px;
+    font-weight: 900;
+  }
 }
 .yui-select-dark{
   background: #222;
   color: #888;
   border-color: #333;
-}
-.yui-select{
-  .yui-select-allow{
-    background: #fff;
-  }
 }

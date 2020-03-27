@@ -6,7 +6,7 @@ class Demo extends React.Component {
     dataList: [{
       key: Math.random(),
       value: 0,
-      label: '读书'
+      label: '文字超出文本范围'
     }, {
       key: Math.random(),
       value: 1,
@@ -141,7 +141,6 @@ class Demo extends React.Component {
           style={{ width: 300, marginBottom: 16 }}
           mode="multiple"
           clear
-          addonBefore='多选'
           placeholder="请选择"
           dataList={dataList}
           value={valueList}

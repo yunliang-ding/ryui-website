@@ -105,7 +105,7 @@ class Cascader extends React.Component {
       }
     >
       <div className='yui-cascader-allow'>
-        <i className={isOpen ? 'iconfont icon-jiantou' : 'iconfont icon-jiantou32'}></i>
+        <i className={isOpen ? 'iconfont icon-xiala1' : 'iconfont icon-xialadown'}></i>
       </div>
       {
         label ? <div className='yui-cascader-label'>{label}</div> : <div className='yui-cascader-placeholder'>{placeholder || '请选择'}</div>
@@ -113,7 +113,6 @@ class Cascader extends React.Component {
       {
         this.state.isOpen && [
           <div className='yui-cascader-body-spin' />,
-          <div className='yui-cascader-body-allow' />,
           <div className='yui-cascader-body' onClick={
             (e) => {
               e.stopPropagation()
