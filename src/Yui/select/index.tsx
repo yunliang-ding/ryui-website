@@ -81,7 +81,7 @@ class Select extends React.Component {
             </div>
           }
         </div>
-        <div style={{ width: '10%', minWidth: 20, position: 'absolute', right: this.props.clear ? 0 : 4 }}>
+        <div className='yui-select-allow' style={{ right: this.props.clear ? 0 : 4 }}>
           {
             this.state.isOpen
               ?

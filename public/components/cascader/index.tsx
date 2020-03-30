@@ -67,7 +67,7 @@ class Demo extends React.Component {
           style={{ width: 200 }}
           dataList={this.dataList}
         />
-        <br /><br />
+        <br />
         <Cascader
           dark={dark}
           placeholder=''
@@ -82,7 +82,7 @@ class Demo extends React.Component {
             }
           }
         />
-        <br /> <br />
+        <br />
         <Cascader
           dark={dark}
           trigger='hover'

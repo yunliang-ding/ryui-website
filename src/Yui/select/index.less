@@ -18,6 +18,16 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  .yui-select-allow{
+    width: 10%;
+    min-width: 20px;
+    position: absolute;
+    right: 4px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .yui-select-spin{
     width: 100vw;
     height: 100vh;
@@ -117,9 +127,9 @@
   .yui-select-body, .yui-select-body-dark{
     position:absolute;
     top:34px;
-    left:-1px;
-    width:calc(100% + 2px);
-    box-shadow: -1px 0px 4px 3px #ded4d429;
+    left:0;
+    width:100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
     user-select: none;
     z-index:999999;
     background: #fff;
@@ -154,7 +164,7 @@
   }
   .yui-select-body-dark{
     background-color: #222;
-    box-shadow: 1px 2px 4px 0px #101010;
+    box-shadow: 0 2px 8px rgba(0,0,0,.75);
     .yui-select-body-item-dark:hover{
       background-color: #1e1e1e;
     }
