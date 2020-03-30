@@ -8,12 +8,13 @@ class Demo extends React.Component {
       <div className="app-preview">
         <Popover
           dark={dark}
-          content={<div>
-            <Button dark={dark} style={{ width: 100 }} label="姓名" /><br />
-            <Button dark={dark} style={{ width: 100 }} label="爱好" /><br />
-            <Button dark={dark} style={{ width: 100 }} label="职业" /><br />
+          content={<div style={{width:100, padding:8}}>
+            <div>item1</div>
+            <div>item2</div>
+            <div>item3</div>
           </div>}
-          placement='bottom'
+          showAllow
+          placement='right'
         >
           <Button dark={dark} style={{ width: 100 }} label="Click" />
         </Popover>
