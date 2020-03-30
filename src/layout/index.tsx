@@ -114,6 +114,7 @@ class Layout extends React.Component {
               style={{ width: 200, height: 'calc(100% - 64px)' }}
               model="menu"
               navList={menus}
+              collapsedWidth={45}
               menuClick={
                 (openkey, selectKey) => {
                   setOpenkey(toJS(openkey))
