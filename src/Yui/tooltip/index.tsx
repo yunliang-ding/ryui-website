@@ -30,7 +30,7 @@ class Tooltip extends React.Component {
       this.allowsNode.style.bottom = -2
     } else if (placement === 'bottom') {
       this.innerNode.style.left = (parentWidth - innerWidth) / 2
-      this.innerNode.style.top = innerHeight + 10
+      this.innerNode.style.top = parentHeight + 10
       this.allowsNode.style.top = -2
     }
   }

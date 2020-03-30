@@ -15,6 +15,7 @@ import { Tooltip } from './tooltip/index'
 import { Slider } from './slider/index'
 import { Message } from './message/index'
 import { Cascader } from './cascader/index'
+import { Popover } from './popover/index'
 import './theme.less'
 export {
   Input,
@@ -33,5 +34,6 @@ export {
   Tooltip,
   Slider,
   Message,
-  Cascader
+  Cascader,
+  Popover
 }

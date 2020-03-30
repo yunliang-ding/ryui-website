@@ -9,7 +9,6 @@ class Demo extends React.Component {
         <Tooltip
           dark={dark}
           title={<span>音乐不是我的全部</span>}
-          trigger='hover'
           placement='right'
         >
           <Button dark={dark} style={{ width: 100 }} label="Right" />
@@ -18,7 +17,6 @@ class Demo extends React.Component {
         <Tooltip
           dark={dark}
           title={<span>音乐不是我的全部</span>}
-          trigger='hover'
           placement='left'
         >
           <Button dark={dark} style={{ width: 100 }} label="Left" />
@@ -29,7 +27,6 @@ class Demo extends React.Component {
         <Tooltip
           dark={dark}
           title={<span>音乐不是我的全部</span>}
-          trigger='hover'
           placement='top'
         >
           <Button dark={dark} style={{ width: 145, height: 120 }} label="Top" />
@@ -38,7 +35,6 @@ class Demo extends React.Component {
         <Tooltip
           dark={dark}
           title={<span>音乐不是我的全部</span>}
-          trigger='hover'
           placement='bottom'
         >
           <Button dark={dark} style={{ width: 100 }} label="Bottom" />

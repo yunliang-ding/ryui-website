@@ -7,6 +7,7 @@ import loading from 'raw-loader!./loading/index.tsx'
 import message from 'raw-loader!./message/index.tsx'
 import nav from 'raw-loader!./nav/index.tsx'
 import pagination from 'raw-loader!./pagination/index.tsx'
+import popover from 'raw-loader!./popover/index.tsx'
 import radio from 'raw-loader!./radio/index.tsx'
 import select from 'raw-loader!./select/index.tsx'
 import slider from 'raw-loader!./slider/index.tsx'
@@ -25,6 +26,7 @@ export default {
   message,
   nav,
   pagination,
+  popover,
   radio,
   select,
   slider,

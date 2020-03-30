@@ -1,12 +1,13 @@
 import { observable, action } from 'mobx'
 const $: any = document.querySelector.bind(document)
 class UI {
-  @observable version = 2
+  @observable version = 1
   @observable versionList = [{
     label: '1.0',
     value: 1
   }, {
     label: '2.0',
+    disabled:true,
     value: 2
   }]
   @action setVersion = (version: number): void => {
@@ -89,6 +90,10 @@ class UI {
       key: 'tooltip',
       icon: 'icon-cebianlan',
       label: 'Tooltip　提示信息'
+    }, {
+      key: 'popover',
+      icon: 'icon-cebianlan',
+      label: 'Popover 气泡卡片'
     }, {
       key: 'slider',
       icon: 'icon-cebianlan',

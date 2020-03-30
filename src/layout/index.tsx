@@ -20,7 +20,7 @@ class Layout extends React.Component {
     } = this.props.UI
     let selectKey = location.hash.substring(2)
     let openKey = ''
-    if (['input', 'radio', 'Switch', 'checkbox', 'select', 'button', 'slider', 'tooltip', 'cascader'].indexOf(selectKey) > -1) {
+    if (['input', 'radio', 'Switch', 'checkbox', 'select', 'button', 'slider', 'tooltip', 'cascader', 'popover'].indexOf(selectKey) > -1) {
       openKey = '1'
     } else if (['alert', 'loading', 'message'].indexOf(selectKey) > -1) {
       openKey = '2'
@@ -92,12 +92,12 @@ class Layout extends React.Component {
         </div>
         <div className='app-layout-body'>
           <div className='app-layout-body-left' style={{
-            width: collapsed ? 40 : 200
+            width: collapsed ? 45 : 200
           }}>
             <Select
               dark={dark}
               style={{
-                width: collapsed ? 40 : 200,
+                width: collapsed ? 45 : 200,
                 height: 32,
                 border: 0
               }}
@@ -129,7 +129,7 @@ class Layout extends React.Component {
             <Button
               dark={dark}
               type="normal"
-              style={{ width: collapsed ? 40 : 200, height: 32 }}
+              style={{ width: collapsed ? 45 : 200, height: 32 }}
               label={
                 <i className={collapsed ? "iconfont icon-zhankai1" : "iconfont icon-shouqi"} style={{ color: 'var(--theme-color)' }} />
               }
@@ -140,12 +140,12 @@ class Layout extends React.Component {
           </div>
           <div className='app-layout-body-right' style={{
             background: dark ? '#1a1a1a' : '#fff',
-            width: collapsed ? 'calc(100% - 40px)' : 'calc(100% - 200px)'
+            width: collapsed ? 'calc(100% - 45px)' : 'calc(100% - 200px)'
           }}>
             <SplitPane
               split="vertical"
               step={10}
-              defaultSize='50%'
+              defaultSize='45%'
               minSize={0}
               maxSize='100%'
               onDragStarted={() => (document.body.style.cursor = 'col-resize')}
