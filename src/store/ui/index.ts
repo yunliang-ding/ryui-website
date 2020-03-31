@@ -130,10 +130,10 @@ class UI {
       disabled: true,
       label: 'Drawer　抽屉'
     }, {
-      key: 'empty',
+      key: 'progress',
       icon: 'icon-cebianlan',
       disabled: true,
-      label: 'Empty　空数据展示'
+      label: 'Progress　进度条'
     }]
   }, {
     key: '3',
