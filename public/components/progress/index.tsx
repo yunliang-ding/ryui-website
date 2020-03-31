@@ -5,7 +5,64 @@ class Demo extends React.Component {
   render() {
     return (
       <div className="app-preview">
-        <Progress value={56} />
+        <Progress
+          value={56}
+          style={{
+            width: 500
+          }}
+        />
+        <br />
+        <Progress
+          value={49}
+          background='#009688'
+          style={{
+            width: 500
+          }}
+        />
+        <br />
+        <Progress
+          value={49}
+          background='#a93910'
+          style={{
+            height: 4,
+            width: 500
+          }}
+        />
+        <br />
+        <br />
+        <br />
+        <div style={{
+          width: 500,
+          display: 'flex',
+          justifyContent: 'space-around'
+        }}>
+          <Progress
+            value={30}
+            type='circle'
+            style={{
+              height: 50,
+              width: 50
+            }}
+          />
+          <Progress
+            value={60}
+            type='circle'
+            background='#009688'
+            style={{
+              height: 100,
+              width: 100
+            }}
+          />
+          <Progress
+            value={80}
+            type='circle'
+            background='#a93910'
+            style={{
+              height: 150,
+              width: 150
+            }}
+          />
+        </div>
       </div>
     )
   }

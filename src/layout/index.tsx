@@ -63,7 +63,7 @@ class Layout extends React.Component {
             type={dark ? "normal" : "primary"}
             logo={
               <div>
-                <span style={{ fontSize: 18, color: 'var(--theme-color)', marginRight: 8, cursor: 'pointer' }}>React Yui</span>
+                <span style={{ fontSize: 18, color: 'var(--theme-color)', marginRight: 8, cursor: 'pointer' }}>RYUI</span>
                 <i className="iconfont icon-UI1" style={{ fontSize: 30, color: 'var(--theme-color)' }} />
               </div>
             }
