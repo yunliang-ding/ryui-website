@@ -30,11 +30,9 @@ class Demo extends React.Component {
   }
   render() {
     const { dataList, value } = this.state
-    const dark = true
     return (
       <div className="app-preview">
         <Radio
-          dark={dark}
           dataList={dataList}
           value={value}
           onChange={
@@ -45,14 +43,12 @@ class Demo extends React.Component {
         />
         <br />
         <Radio
-          dark={dark}
           readonly={true}
           dataList={dataList}
           value={value}
         />
         <br />
         <Radio
-          dark={dark}
           style={{ width: 400 }}
           addonBefore='爱好'
           dataList={dataList}
@@ -65,7 +61,6 @@ class Demo extends React.Component {
         />
         <br />
         <Radio
-          dark={dark}
           style={{ width: 400 }}
           addonAfter={
             <i className="iconfont icon-chazhao" />
@@ -80,11 +75,9 @@ class Demo extends React.Component {
         />
         <br />
         <Radio
-          dark={dark}
           style={{ width: 400 }}
           addonBefore={
             <Select
-              dark={dark}
               style={{
                 border: 0
               }}

@@ -3,11 +3,9 @@ import ReactDom from 'react-dom'
 import { Popover, Button } from 'Yui'
 class Demo extends React.Component {
   render() {
-    const dark = true
     return (
       <div className="app-preview">
         <Popover
-          dark={dark}
           content={<div style={{ width: 100, padding: 8 }}>
             <div>item1</div>
             <div>item2</div>
@@ -16,11 +14,10 @@ class Demo extends React.Component {
           trigger='hover'
           placement='right'
         >
-          <Button dark={dark} style={{ width: 100 }} label="Hover" />
+          <Button style={{ width: 100 }} label="Hover" />
         </Popover>
         <br /><br />
         <Popover
-          dark={dark}
           content={<div style={{ width: 100, padding: 8 }}>
             <div>item1</div>
             <div>item2</div>
@@ -28,11 +25,10 @@ class Demo extends React.Component {
           </div>}
           placement='bottom'
         >
-          <Button dark={dark} style={{ width: 100 }} label="Click" />
+          <Button style={{ width: 100 }} label="Click" />
         </Popover>
         <br /><br />
         <Popover
-          dark={dark}
           content={<div style={{ width: 100, padding: 8 }}>
             <div>item1</div>
             <div>item2</div>
@@ -41,7 +37,7 @@ class Demo extends React.Component {
           placement='bottom'
           trigger='contextMenu'
         >
-          <Button dark={dark} style={{ width: 100 }} label="Right Click" />
+          <Button style={{ width: 100 }} label="Right Click" />
         </Popover>
       </div>
     )

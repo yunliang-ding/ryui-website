@@ -17,28 +17,6 @@ class Demo extends React.Component {
       key: Math.random(),
       label: <span>导航</span>,
       active: false
-    }, {
-      key: Math.random(),
-      label: null,
-      active: false,
-    }],
-    navListDark: [{
-      key: Math.random(),
-      label: <span>通用</span>,
-      active: true
-    }, {
-      key: Math.random(),
-      label: <span>布局</span>,
-      disabled: true,
-      active: false
-    }, {
-      key: Math.random(),
-      label: <span>导航</span>,
-      active: false
-    }, {
-      key: Math.random(),
-      label: null,
-      active: false,
     }],
     menu: [{
       key: '1',
@@ -91,54 +69,23 @@ class Demo extends React.Component {
     })
   }
   render() {
-    const dark = true
-    let navList = this.state.navList;
-    let navListDark = this.state.navListDark;
-    navList[3].label = <Select
-      placeholder="选择"
-      style={{
-        border: 0,
-        width: 60
-      }}
-      dataList={this.state.dataList}
-      value={this.state.selectValue}
-      onChange={
-        (e) => {
-          this.setSelectValue(e)
-        }
-      }
-    />
-    navListDark[3].label = <Select
-      dark
-      placeholder="选择"
-      style={{
-        border: 0,
-        width: 60
-      }}
-      dataList={this.state.dataList}
-      value={this.state.selectValue}
-      onChange={
-        (e) => {
-          this.setSelectValue(e)
-        }
-      }
-    />
+    let {navList} = this.state
     return <div className="app-preview">
-      <Nav dark={dark} logo={
+      <Nav logo={
         <i className="iconfont icon-UI1" style={{ fontSize: 30, color: 'var(--theme-color)' }} />
       }
-        navList={dark ? this.state.navListDark : this.state.navList} menuClick={
+        navList={navList} menuClick={
           (nav) => {
             console.log(nav)
           }
         }
       />
       <br />
-      <Nav dark={dark} logo={
+      <Nav logo={
         <i className="iconfont icon-UI1" style={{ fontSize: 30, color: 'var(--theme-color)' }} />
       }
         type="right"
-        navList={dark ? this.state.navListDark : this.state.navList} menuClick={
+        navList={navList} menuClick={
           (nav) => {
             console.log(nav)
           }
@@ -146,7 +93,6 @@ class Demo extends React.Component {
       />
       <br />
       <Button
-        dark={dark}
         type="primary"
         style={{ width: this.state.collapsed ? 40 : 200 }}
         label={
@@ -159,7 +105,6 @@ class Demo extends React.Component {
         }}
       />
       <Nav
-        dark={dark}
         style={{ width: 200, height: 300 }}
         model="menu"
         navList={this.state.menu}

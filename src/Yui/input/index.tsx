@@ -1,5 +1,6 @@
 import * as React from 'react'
 import './index.less'
+const Window:any = window
 /**
   props:{
     type: string | default text
@@ -14,7 +15,7 @@ class Input extends React.Component {
     let addonAfter = null
     let type = this.props.type || 'text'
     let input = null;
-    let theme = this.props.dark ? '-dark' : ''
+    let theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     if (this.props.addonBefore) { // 前置按钮
       addonBefore = <span className={'yui-input-addonBefore' + theme}>
         {this.props.addonBefore}

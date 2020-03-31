@@ -58,18 +58,15 @@ class Demo extends React.Component {
     value: ['1', '1-2', '1-2-2']
   }
   render() {
-    const dark = true
     return (
       <div className="app-preview">
         <Cascader
-          dark={dark}
           placeholder='选择城市'
           style={{ width: 200 }}
           dataList={this.dataList}
         />
         <br />
         <Cascader
-          dark={dark}
           placeholder=''
           style={{ width: 200 }}
           dataList={this.dataList}
@@ -84,7 +81,6 @@ class Demo extends React.Component {
         />
         <br />
         <Cascader
-          dark={dark}
           trigger='hover'
           placeholder='trigger-hover'
           style={{ width: 200 }}

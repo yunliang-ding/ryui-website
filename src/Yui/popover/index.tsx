@@ -1,5 +1,6 @@
 import * as React from 'react'
 import './index.less'
+const Window:any = window
 class Popover extends React.Component {
   props: any
   state: any
@@ -49,7 +50,7 @@ class Popover extends React.Component {
   render() {
     const { visable } = this.state
     const { showAllow, trigger } = this.props
-    let theme = this.props.dark ? '-dark' : ''
+    let theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     return <div
       className={'yui-popover' + theme}
       ref={(node) => { this.node = node }}

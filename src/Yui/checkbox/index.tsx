@@ -1,5 +1,6 @@
 import * as React from "react"
 import './index.less'
+const Window:any = window
 class CheckBox extends React.Component {
   props: any;
   render() {
@@ -9,7 +10,7 @@ class CheckBox extends React.Component {
     let addonBefore = null
     let addonAfter = null
     let checkbox = null;
-    const theme = this.props.dark ? '-dark' : ''
+    const theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     if (this.props.addonBefore) { // 前置按钮
       addonBefore = <span className={"yui-checkbox-addonBefore" + theme}>
         {this.props.addonBefore}

@@ -36,11 +36,9 @@ class Demo extends React.Component {
   }
   render() {
     const { dataList, valueList, value } = this.state
-    const dark = true
     return (
       <div className="app-preview">
         <CheckBox
-          dark={dark}
           dataList={dataList}
           value={valueList}
           onChange={
@@ -51,7 +49,6 @@ class Demo extends React.Component {
         />
         <br />
         <CheckBox
-          dark={dark}
           readonly={true}
           dataList={dataList}
           value={valueList}
@@ -63,7 +60,6 @@ class Demo extends React.Component {
         />
         <br />
         <CheckBox
-          dark={dark}
           style={{ width: 400 }}
           addonBefore='爱好'
           dataList={dataList}
@@ -76,7 +72,6 @@ class Demo extends React.Component {
         />
         <br />
         <CheckBox
-          dark={dark}
           style={{ width: 400 }}
           addonAfter={
             <i className="iconfont icon-chazhao" />
@@ -91,11 +86,9 @@ class Demo extends React.Component {
         />
         <br />
         <CheckBox
-          dark={dark}
           style={{ width: 400 }}
           addonBefore={
             <Select
-              dark={dark}
               style={{
                 border: 0,
                 background: 'none'

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import './index.less'
 import { Tooltip } from '../index'
+const Window:any = window
 class Slider extends React.Component {
   props: any
   state: any
@@ -68,7 +69,7 @@ class Slider extends React.Component {
     }
   }
   render() {
-    let theme = this.props.dark ? '-dark' : ''
+    let theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     let height = this.props.siderHeight || 6
     let width = this.props.siderWidth || 300
     return <div className={'yui-sider' + theme} style={{

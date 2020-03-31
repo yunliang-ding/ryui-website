@@ -1,5 +1,6 @@
 import * as React from "react"
 import './index.less'
+const Window:any = window
 class Cascader extends React.Component {
   props: any;
   state: any;
@@ -86,11 +87,11 @@ class Cascader extends React.Component {
   }
   componentDidUpdate() {
     const { isOpen } = this.state
-    this.cascaderNode.style.borderColor = isOpen ? 'var(--theme-color)' : (this.props.dark ? '#262626' : '#ccc')
+    this.cascaderNode.style.borderColor = isOpen ? 'var(--theme-color)' : (this.props.dark || Window.yuiIsDark ? '#262626' : '#ccc')
   }
   render() {
     const { style, dark, placeholder, trigger } = this.props
-    let theme = dark ? '-dark' : ''
+    let theme = dark || Window.yuiIsDark ? '-dark' : ''
     const { isOpen, cols, label } = this.state
     let cascader = <div
       ref={(node) => { this.cascaderNode = node }}

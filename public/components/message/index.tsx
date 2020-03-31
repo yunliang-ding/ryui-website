@@ -3,32 +3,30 @@ import ReactDom from 'react-dom'
 import { Message, Button } from 'Yui'
 class Demo extends React.Component {
   render() {
-    const dark = true
     const message = new Message({
-      duration: 3,
-      dark
+      duration: 3
     })
     return (
       <div className="app-preview">
-        <Button dark={dark} label='success' style={{width:100}} onClick={
+        <Button label='success' style={{width:100}} onClick={
           () => {
             message.success('success!')
           }
         } />
         <br />
-        <Button dark={dark} label='error' style={{width:100}}  onClick={
+        <Button label='error' style={{width:100}}  onClick={
           () => {
             message.error(`Unable to open 'message': File is a directory.`)
           }
         } />
         <br />
-        <Button dark={dark} label='warning' style={{width:100}}  onClick={
+        <Button label='warning' style={{width:100}}  onClick={
           () => {
             message.warning('warning!')
           }
         } />
         <br />
-        <Button dark={dark} label='normal' style={{width:100}}  onClick={
+        <Button label='normal' style={{width:100}}  onClick={
           () => {
             message.normal('normal!')
           }

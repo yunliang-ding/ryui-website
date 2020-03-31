@@ -1,5 +1,7 @@
 import { observable, action } from 'mobx'
 const $: any = document.querySelector.bind(document)
+const Window:any = window
+Window.yuiIsDark = true
 class UI {
   @observable version = 1
   @observable versionList = [{
@@ -41,6 +43,7 @@ class UI {
   }]
   @action setDark = (dark: boolean): void => {
     this.dark = dark
+    Window.yuiIsDark = dark
   }
   @observable navList = [{
     key: Math.random(),

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import './index.less'
+const Window:any = window
 class Switch extends React.Component {
   props: any
   state: any
@@ -24,7 +25,7 @@ class Switch extends React.Component {
     const {
       checked
     } = this.state
-    let theme = this.props.dark ? '-dark' : ''
+    let theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     let style = this.props.style || {}
     if(disabled || loading){
       style.opacity = 0.5

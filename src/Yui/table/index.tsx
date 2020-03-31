@@ -3,6 +3,7 @@
  */
 import * as React from 'react'
 import './index.less'
+const Window:any = window
 class Table extends React.Component {
   state = {
     colmun: [],
@@ -22,7 +23,7 @@ class Table extends React.Component {
   }
   render() {
     let { colmun, data } = this.state;
-    let theme = this.props.dark ? '-dark' : ''
+    let theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     return (
       <div className={"yui-table"+theme} style={this.props.style}>
         <div className="yui-table-header" style={this.props.styleHeader}>

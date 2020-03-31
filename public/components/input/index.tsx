@@ -11,10 +11,8 @@ class Demo extends React.Component {
     })
   }
   render() {
-    const dark = true
     return <div className="app-preview">
       <Input
-        dark={dark}
         style={{ width: 300 }}
         placeholder='姓名'
         value={this.state.value}
@@ -26,7 +24,6 @@ class Demo extends React.Component {
       />
       <br />
       <Input
-        dark={dark}
         style={{ width: 300 }}
         readonly={true}
         placeholder='姓名'
@@ -34,7 +31,6 @@ class Demo extends React.Component {
       />
       <br />
       <Input
-        dark={dark}
         style={{ width: 250 }}
         placeholder='姓名'
         value={this.state.value}
@@ -47,7 +43,6 @@ class Demo extends React.Component {
       />
       <br />
       <Input
-        dark={dark}
         style={{ width: 250 }}
         placeholder='姓名'
         value={this.state.value}
@@ -60,7 +55,6 @@ class Demo extends React.Component {
       />
       <br />
       <Input
-        dark={dark}
         type='date'
         style={{ width: 300 }}
         placeholder='姓名'
@@ -73,7 +67,6 @@ class Demo extends React.Component {
       />
       <br />
       <Input
-        dark={dark}
         style={{ width: 300 }}
         type="textArea"
         placeholder='姓名'

@@ -29,11 +29,9 @@ class Demo extends React.Component {
     value: 3
   }
   render() {
-    const dark = true
     return (
       <div className="app-preview">
         <Tab
-          dark={dark}
           style={{ width: 500 }}
           data={this.state.data}
           value={this.state.value}
@@ -47,7 +45,6 @@ class Demo extends React.Component {
         />
         <br />
         <Tab
-          dark={dark}
           close
           style={{ width: 500 }}
           data={this.state.data}

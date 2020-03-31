@@ -1,5 +1,6 @@
 import * as React from 'react'
 import './index.less'
+const Window:any = window
 class Pagination extends React.Component {
   state = {
     current: null,
@@ -28,7 +29,7 @@ class Pagination extends React.Component {
     let pagesize = this.state.pagesize
     let totalPage = this.state.total / pagesize + (this.state.total % pagesize > 0 ? 1 : 0)
     let page = [];
-    let theme = this.props.dark ? '-dark' : ''
+    let theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     for (let i = 1; i < totalPage + 1; i++) {
       page.push(
         <div key={Math.random()} className={current == i ? "yui-pagination-item-active" : "yui-pagination-item"}

@@ -1,7 +1,7 @@
 import * as React from "react"
 import { toJS } from 'mobx'
 import './index.less'
-import { Nav, Select, Button, Radio, Tab, Tooltip } from 'Yui'
+import { Nav, Select, Button, Radio, Tab, Tooltip, Switch } from 'Yui'
 import { observer, inject } from 'mobx-react'
 import { Monaco } from '../monaco'
 import SplitPane from 'react-split-pane'
@@ -195,11 +195,18 @@ class Layout extends React.Component {
                   background: dark ? '#1b1b1b' : '#fff',
                 }} />
                 <div className='app-layout-body-theme'>
-                  <Radio dark={dark} addonBefore='主题' dataList={darkList} value={dark} onChange={
-                    (e) => {
-                      setDark(e)
-                    }
-                  } />
+                  <Switch
+                    style={{width:50}}
+                    checked={dark}
+                    checkedNode={<span>黑色</span>}
+                    unCheckedNode={<span>白色</span>}
+                    onChange={
+                      (e) => {
+                        this.props.Compile.setCode(this.props.Monaco.editorMonaco.getValue())
+                        setDark(e)
+                      }
+                    } 
+                  />
                 </div>
                 <div className='app-layout-body-type'>
                   <Tab

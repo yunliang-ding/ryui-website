@@ -3,11 +3,10 @@ import ReactDom from 'react-dom'
 import { Button } from 'Yui'
 class Demo extends React.Component {
   render() {
-    const dark = true
     return (
       <div className="app-preview" style={{ flexDirection: 'row' }}>
         <div>
-          <Button dark={dark} style={{ width: 100, margin: 12 }} label="normal" onClick={() => {
+          <Button  style={{ width: 100, margin: 12 }} label="normal" onClick={() => {
             alert('normal')
           }} />
           <Button type="primary" style={{ width: 100, margin: 12 }} label="primary" onClick={() => {
@@ -22,12 +21,12 @@ class Demo extends React.Component {
           <Button type="danger" style={{ width: 100, margin: 12 }} label="danger" onClick={() => {
 
           }} />
-          <Button dark={dark} type="disabled" style={{ width: 100, margin: 12 }} label="disabled" onClick={() => {
+          <Button  type="disabled" style={{ width: 100, margin: 12 }} label="disabled" onClick={() => {
 
           }} />
         </div>
         <div>
-          <Button dark={dark} style={{ width: 100, margin: 12 }} label={
+          <Button  style={{ width: 100, margin: 12 }} label={
             <i className="iconfont icon-fenxiang" />
           } onClick={() => {
             alert('iconfont')
@@ -52,7 +51,7 @@ class Demo extends React.Component {
           } onClick={() => {
 
           }} />
-          <Button dark={dark} type="disabled" style={{ width: 100, margin: 12 }} label={
+          <Button  type="disabled" style={{ width: 100, margin: 12 }} label={
             <i className="iconfont icon-chazhao" />
           } onClick={() => {
 

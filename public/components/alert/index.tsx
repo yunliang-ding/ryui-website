@@ -12,22 +12,20 @@ class Demo extends React.Component {
     })
   }
   render() {
-    const dark = true
     return (
       <div className="app-preview">
-        <Button dark={dark} style={{ width: 100 }} label="基本提示框" onClick={
+        <Button style={{ width: 100 }} label="基本提示框" onClick={
           () => {
             this.setClose('show1', true)
           }
         } />
         <br />
-        <Button dark={dark} style={{ width: 100 }} label="基本询问框" onClick={
+        <Button style={{ width: 100 }} label="基本询问框" onClick={
           () => {
             this.setClose('show2', true)
           }
         } />
         <Alert
-          dark={dark}
           show={this.state.show1}
           title={'我是提示框'}
           okText={'我知道了'}
@@ -46,7 +44,6 @@ class Demo extends React.Component {
           这个是一个提示信息
         </Alert>
         <Alert
-          dark={dark}
           show={this.state.show2}
           title={'我是询问框'}
           cancelText={'取消'}

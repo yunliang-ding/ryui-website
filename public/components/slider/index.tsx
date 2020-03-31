@@ -3,11 +3,9 @@ import ReactDom from 'react-dom'
 import { Slider} from 'Yui'
 class Demo extends React.Component {
   render() {
-    const dark = true
     return (
       <div className="app-preview">
         <Slider 
-          dark={dark}
           siderWidth={300}
           progress={20}
           onChange={
@@ -19,7 +17,6 @@ class Demo extends React.Component {
         <br />
         <br />
         <Slider 
-          dark={dark}
           siderWidth={300}
           siderHeight={12}
           progress={45}
@@ -32,7 +29,6 @@ class Demo extends React.Component {
         <br />
         <br />
         <Slider 
-          dark={dark}
           showTip
           siderHeight={10}
           siderWidth={300}

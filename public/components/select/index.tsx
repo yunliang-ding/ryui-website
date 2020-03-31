@@ -50,11 +50,9 @@ class Demo extends React.Component {
     } = this.state
     const setValue = this.setValue
     const setValueList = this.setValueList
-    const dark = true
     return (
       <div className="app-preview">
         <Select
-          dark={dark}
           clear
           style={{ width: 300, marginBottom: 16 }}
           placeholder="请选择"
@@ -67,7 +65,6 @@ class Demo extends React.Component {
           }
         />
         <Select
-          dark={dark}
           style={{ width: 300, marginBottom: 16 }}
           placeholder="请选择"
           readonly={true}
@@ -80,7 +77,6 @@ class Demo extends React.Component {
           }
         />
         <Select
-          dark={dark}
           style={{ width: 300, marginBottom: 16 }}
           addonBefore={
             <i className="iconfont icon-chazhao" style={{ color: 'var(--theme-color)' }} />
@@ -95,7 +91,6 @@ class Demo extends React.Component {
           }
         />
         <Select
-          dark={dark}
           style={{ width: 300, marginBottom: 16 }}
           addonAfter='请选择'
           placeholder="请选择"
@@ -108,17 +103,14 @@ class Demo extends React.Component {
           }
         />
         <Select
-          dark={dark}
           style={{ width: 300, marginBottom: 16 }}
           addonAfter={
             <Select
-              dark={dark}
               placeholder="选择"
               value={value}
               dataList={dataList}
               style={{
-                border: 0,
-                borderLeft: dark ? '1px solid #333' : '1px solid #f2f2f2'
+                border: 0
               }}
               onChange={
                 (e) => {
@@ -137,7 +129,6 @@ class Demo extends React.Component {
           }
         />
         <Select
-          dark={dark}
           style={{ width: 300, marginBottom: 16 }}
           mode="multiple"
           clear

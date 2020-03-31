@@ -1,5 +1,6 @@
 import * as React from 'react'
 import './index.less'
+const Window:any = window
 class Tab extends React.Component {
   props: any
   render() {
@@ -40,7 +41,7 @@ class Tab extends React.Component {
         })
       }
     </div>
-    let theme = this.props.dark ? '-dark' : ''
+    let theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     return <div className={"yui-tabs" + theme} style={this.props.style}>
       {tabs}
     </div>

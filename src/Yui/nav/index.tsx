@@ -1,5 +1,6 @@
 import * as React from 'react'
 import './index.less'
+const Window:any = window
 class Nav extends React.Component {
   state = {
     navList: [],
@@ -254,7 +255,7 @@ class Nav extends React.Component {
         width
       })
     }
-    const theme = this.props.dark ? '-dark' : ''
+    const theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     return <div className={"yui-nav"+theme} style={style}>
       {nav}
     </div>

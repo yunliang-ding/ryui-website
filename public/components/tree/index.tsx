@@ -259,16 +259,13 @@ class Demo extends React.Component {
     }]
   }
   render() {
-    const dark = true
     return (
       <div className="app-preview" style={{flexDirection: 'row'}}>
         <Tree
           style={{
             width: 200,
-            height: 500,
-            background: dark ? '#333' : '#dcdcdc'
+            height: 500
           }}
-          dark={dark}
           type="simple"
           treeData={this.state.data}
           onClick={
@@ -286,10 +283,8 @@ class Demo extends React.Component {
           style={{
             width: 200,
             height: 500,
-            marginLeft: 50,
-            background: dark ? '#333' : '#dcdcdc'
+            marginLeft: 50
           }}
-          dark={dark}
           treeData={this.state.data2}
           onClick={
             (e) => {

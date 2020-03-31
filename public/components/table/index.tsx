@@ -30,7 +30,6 @@ class Demo extends React.Component {
     }]
   }
   render() {
-    const dark = true
     const colmun = [{
       label: '序号',
       dataIndex: 'no',
@@ -51,7 +50,7 @@ class Demo extends React.Component {
       dataIndex: 'opeartion',
       render: (value, record) => {
         return ['删除', '修改'].map(m => {
-          return <Button dark={dark} type='primary' style={{ width: 50, marginRight: 10 }} label={m} onClick={
+          return <Button type='primary' style={{ width: 50, marginRight: 10 }} label={m} onClick={
             () => {
               alert('123')
             }
@@ -61,13 +60,13 @@ class Demo extends React.Component {
     }]
     return (
       <div className='app-preview' style={{justifyContent: 'flex-start'}}>
-        <Table dark={dark} style={{ height: 400, marginBottom: 40 }} data={this.state.data} colmun={colmun} />
-        <Table dark={dark} style={{ height: 400, marginBottom: 40 }} data={this.state.data} colmun={colmun} styleHeader={{
+        <Table style={{ height: 400, marginBottom: 40 }} data={this.state.data} colmun={colmun} />
+        <Table style={{ height: 400, marginBottom: 40 }} data={this.state.data} colmun={colmun} styleHeader={{
           background: 'var(--theme-color)',
           color: '#fff'
         }} />
-        <Table dark={dark} style={{ height: 400, marginBottom: 40 }} data={this.state.data} colmun={colmun} line={true} />
-        <Table dark={dark} style={{ height: 400 }} data={this.state.data} colmun={colmun} colmunSort={true} />
+        <Table style={{ height: 400, marginBottom: 40 }} data={this.state.data} colmun={colmun} line={true} />
+        <Table style={{ height: 400 }} data={this.state.data} colmun={colmun} colmunSort={true} />
       </div>
     )
   }

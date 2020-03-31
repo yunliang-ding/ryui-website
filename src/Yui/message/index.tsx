@@ -2,6 +2,7 @@ import * as React from 'react'
 import * as ReactDOM from "react-dom"
 const $: any = document.querySelector.bind(document)
 const $$: any = document.querySelectorAll.bind(document)
+const Window:any = window
 const typeMapping = {
   1: 'icon-message_SendSuccessfully',
   2: 'icon-cuo',
@@ -20,7 +21,7 @@ class Message {
   dark: any
   constructor(props) {
     this.duration = props.duration || 3
-    this.dark = props.dark
+    this.dark = props.dark || Window.yuiIsDark
   }
   open = (type, content) => {
     const theme = this.dark ? '-dark' : ''

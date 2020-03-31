@@ -1,5 +1,6 @@
 import * as React from "react"
 import './index.less'
+const Window:any = window
 class Button extends React.Component {
   props: any;
   click = (e) => {
@@ -9,7 +10,7 @@ class Button extends React.Component {
     let { label, type, style } = this.props
     type = type || 'normal'
     let button = null
-    let theme = this.props.dark ? '-dark' : ''
+    let theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     if (type == 'primary') {
       button = <div className="yui-button yui-button-primary" style={style} onClick={
         (e) => {

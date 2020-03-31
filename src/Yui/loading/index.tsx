@@ -1,5 +1,6 @@
 import * as React from 'react'
 import './index.less'
+const Window:any = window
 class Loading extends React.Component {
   state = {
     loading: false
@@ -25,7 +26,7 @@ class Loading extends React.Component {
     background = background || '#f2f2f2'
     iconColor = iconColor || 'var(--theme-color)'
     icon = icon || 'icon-loading6'
-    const theme = this.props.dark ? '-dark' : ''
+    const theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     return (
       <div className={"yui-loading"+theme} style={this.props.style}>
         <div className="yui-loading-body">

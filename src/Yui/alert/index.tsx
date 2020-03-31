@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Button } from '../index'
 import './index.less'
+const Window:any = window
 class Alert extends React.Component {
   props: any;
   state = {
@@ -27,8 +28,9 @@ class Alert extends React.Component {
     }
   }
   render() {
+    const dark = this.props.dark || Window.yuiIsDark
     let show = this.state.show;
-    let theme = this.props.dark ? '-dark' : ''
+    let theme = dark ? '-dark' : ''
     return (
       <div className={"yui-alert"+theme} style={{ display: show ? 'block' : 'none' }}>
         <div className="yui-alert-center">
@@ -40,7 +42,7 @@ class Alert extends React.Component {
             {this.props.children}
           </div>
           <div className="yui-alert-footer">
-            <Button dark={this.props.dark} type={this.props.dark ? "normal" : 'primary'} style={{ width: 80 }} label={this.props.okText || '确定'} onClick={
+            <Button dark={dark} type={dark ? "normal" : 'primary'} style={{ width: 80 }} label={this.props.okText || '确定'} onClick={
               () => {
                 if (this.props.onOk) {
                   this.props.onOk()
@@ -51,7 +53,7 @@ class Alert extends React.Component {
               }
             } />
             {
-              this.props.cancelText && <Button dark={this.props.dark} style={{ width: 80 }} label={this.props.cancelText} onClick={
+              this.props.cancelText && <Button dark={dark} style={{ width: 80 }} label={this.props.cancelText} onClick={
                 () => {
                   if (this.props.onCancel) {
                     this.props.onCancel()

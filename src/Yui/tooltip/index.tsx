@@ -1,5 +1,6 @@
 import * as React from 'react'
 import './index.less'
+const Window:any = window
 const $: any = document.querySelector.bind(document)
 class Tooltip extends React.Component {
   props: any
@@ -35,7 +36,7 @@ class Tooltip extends React.Component {
     }
   }
   render() {
-    let theme = this.props.dark ? '-dark' : ''
+    let theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     return <div className={'yui-tooltips' + theme} ref={(node) => { this.node = node }}>
       {this.props.children}
       <div className='yui-tooltips-inner' ref={(innerNode) => { this.innerNode = innerNode }}>

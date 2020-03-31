@@ -1,5 +1,6 @@
 import * as React from 'react'
 import './index.less'
+const Window:any = window
 import { CheckBox } from '../index';
 class Tree extends React.Component {
   state = {
@@ -183,7 +184,7 @@ class Tree extends React.Component {
   }
   render() {
     let tree_dom = this.callBack(this.state.treeData, 16)
-    const theme = this.props.dark ? '-dark' : ''
+    const theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     return <div className={"yui-tree"+theme} style={this.props.style}>
       {tree_dom}
     </div>

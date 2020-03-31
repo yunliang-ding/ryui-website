@@ -1,5 +1,6 @@
 import * as React from 'react'
 import './index.less'
+const Window:any = window
 /**
   props: {
     
@@ -32,7 +33,7 @@ class Select extends React.Component {
       if (this.state.isOpen) {
         this.selectNode.style.border = '1px solid var(--theme-color)'
       } else {
-        this.selectNode.style.border = this.props.dark ? '1px solid #333' : '1px solid #f2f2f2'
+        this.selectNode.style.border = this.props.dark || Window.yuiIsDark ? '1px solid #333' : '1px solid #f2f2f2'
       }
     }
     if (this.selectBodyNode) {
@@ -52,7 +53,7 @@ class Select extends React.Component {
     let addonBefore = null
     let addonAfter = null
     let select = null;
-    let theme = this.props.dark ? '-dark' : ''
+    let theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     let style = this.props.style || {}
     if (this.props.addonBefore) { // 前置按钮
       addonBefore = <span className={"yui-select-addonBefore" + theme}>
