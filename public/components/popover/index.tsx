@@ -13,7 +13,20 @@ class Demo extends React.Component {
             <div>item2</div>
             <div>item3</div>
           </div>}
+          trigger='hover'
           placement='right'
+        >
+          <Button dark={dark} style={{ width: 100 }} label="Hover" />
+        </Popover>
+        <br /><br />
+        <Popover
+          dark={dark}
+          content={<div style={{ width: 100, padding: 8 }}>
+            <div>item1</div>
+            <div>item2</div>
+            <div>item3</div>
+          </div>}
+          placement='bottom'
         >
           <Button dark={dark} style={{ width: 100 }} label="Click" />
         </Popover>
@@ -26,9 +39,9 @@ class Demo extends React.Component {
             <div>item3</div>
           </div>}
           placement='bottom'
-          trigger='hover'
+          trigger='contextMenu'
         >
-          <Button dark={dark} style={{ width: 100 }} label="Hover" />
+          <Button dark={dark} style={{ width: 100 }} label="Right Click" />
         </Popover>
       </div>
     )

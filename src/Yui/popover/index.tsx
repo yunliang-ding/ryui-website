@@ -58,7 +58,6 @@ class Popover extends React.Component {
           if (trigger === 'hover') {
             this.mouseEnter = false
             setTimeout(() => {
-              console.log('this.mouseEnter', this.mouseEnter)
               if (!this.mouseEnter) {
                 this.setVisable(false)
               }
@@ -74,10 +73,18 @@ class Popover extends React.Component {
           }
         }
       }
+      onContextMenu={
+        (e) => {
+          this.setVisable(!visable)
+          e.preventDefault()
+        }
+      }
       onClick={
         () => {
-          if (trigger === 'click' || trigger === undefined) {
+          if ([undefined, 'click'].indexOf(trigger) > -1) {
             this.setVisable(!visable)
+          } else if (trigger === 'contextMenu' && visable) {
+            this.setVisable(false)
           }
         }
       }
