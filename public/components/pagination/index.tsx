@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Pagination} from 'Yui'
+import { Pagination} from 'ryui'
 class Demo extends React.Component {
   render() {
     return (

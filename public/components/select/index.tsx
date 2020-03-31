@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Select} from 'Yui'
+import { Select} from 'ryui'
 class Demo extends React.Component {
   state = {
     dataList: [{

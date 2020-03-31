@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Loading, Button } from 'Yui'
+import { Loading, Button } from 'ryui'
 class Demo extends React.Component {
   state = {
     loading: true

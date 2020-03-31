@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Select, CheckBox } from 'Yui'
+import { Select, CheckBox } from 'ryui'
 class Demo extends React.Component {
   state = {
     value: 0,

@@ -1,7 +1,7 @@
 import * as React from "react"
 import { toJS } from 'mobx'
 import './index.less'
-import { Nav, Select, Button, Radio, Tab, Tooltip, Switch } from 'Yui'
+import { Nav, Select, Button, Radio, Tab, Tooltip, Switch } from 'ryui'
 import { observer, inject } from 'mobx-react'
 import { Monaco } from '../monaco'
 import SplitPane from 'react-split-pane'
@@ -63,7 +63,7 @@ class Layout extends React.Component {
             type={dark ? "normal" : "primary"}
             logo={
               <div>
-                <span style={{ fontSize: 18, color: 'var(--theme-color)', marginRight: 8, cursor: 'pointer' }}>Yui</span>
+                <span style={{ fontSize: 18, color: 'var(--theme-color)', marginRight: 8, cursor: 'pointer' }}>React Yui</span>
                 <i className="iconfont icon-UI1" style={{ fontSize: 30, color: 'var(--theme-color)' }} />
               </div>
             }

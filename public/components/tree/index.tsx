@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Tree } from 'Yui'
+import { Tree } from 'ryui'
 class Demo extends React.Component {
   state = {
     info1: '点击显示节点信息',

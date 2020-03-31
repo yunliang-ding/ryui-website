@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Button } from 'Yui'
+import { Button } from 'ryui'
 class Demo extends React.Component {
   render() {
     return (

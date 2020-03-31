@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Switch} from 'Yui'
+import { Switch} from 'ryui'
 class Demo extends React.Component {
   render() {
     return (

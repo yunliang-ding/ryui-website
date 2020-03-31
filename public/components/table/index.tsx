@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Table, Button } from 'Yui'
+import { Table, Button } from 'ryui'
 class Demo extends React.Component {
   state = {
     data: [{

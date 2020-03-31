@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Input } from 'Yui'
+import { Input } from 'ryui'
 class Demo extends React.Component {
   state = {
     value: ''

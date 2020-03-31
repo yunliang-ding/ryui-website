@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Cascader } from 'Yui'
+import { Cascader } from 'ryui'
 class Demo extends React.Component {
   dataList = [
     {

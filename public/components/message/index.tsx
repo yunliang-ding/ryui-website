@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Message, Button } from 'Yui'
+import { Message, Button } from 'ryui'
 class Demo extends React.Component {
   render() {
     const message = new Message({

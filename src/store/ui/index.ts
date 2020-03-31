@@ -56,7 +56,7 @@ class UI {
     active: false
   }, {
     key: Math.random(),
-    label: '组件中心',
+    label: '图表组件',
     disabled: true,
     active: false
   }]

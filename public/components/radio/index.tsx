@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Select, Radio } from 'Yui'
+import { Select, Radio } from 'ryui'
 class Demo extends React.Component {
   state = {
     value: 0,
