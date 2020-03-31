@@ -135,7 +135,6 @@ class UI {
     }, {
       key: 'progress',
       icon: 'icon-cebianlan',
-      disabled: true,
       label: 'Progress　进度条'
     }]
   }, {

@@ -16,6 +16,7 @@ import { Slider } from './slider/index'
 import { Message } from './message/index'
 import { Cascader } from './cascader/index'
 import { Popover } from './popover/index'
+import { Progress } from './progress/index'
 import './theme.less'
 export {
   Input,
@@ -35,5 +36,6 @@ export {
   Slider,
   Message,
   Cascader,
-  Popover
+  Popover,
+  Progress
 }

@@ -76,7 +76,7 @@ class Popover extends React.Component {
       }
       onContextMenu={
         (e) => {
-          this.setVisable(!visable)
+          this.setVisable(true)
           e.preventDefault()
         }
       }
