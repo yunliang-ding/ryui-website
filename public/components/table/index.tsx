@@ -57,7 +57,7 @@ class Demo extends React.Component {
             label: '管理员',
             value: 1
           }
-          
+
         ]}
         value={-1}
         onChange={
@@ -85,13 +85,32 @@ class Demo extends React.Component {
     }]
     return (
       <div className='app-preview' style={{ justifyContent: 'flex-start' }}>
-        <Table style={{ height: 400, marginBottom: 40 }} data={this.state.data} colmun={colmun} />
-        <Table style={{ height: 400, marginBottom: 40 }} data={this.state.data} colmun={colmun} styleHeader={{
-          background: 'var(--theme-color)',
-          color: '#fff'
-        }} />
-        <Table style={{ height: 400, marginBottom: 40 }} data={this.state.data} colmun={colmun} line={true} />
-        <Table style={{ height: 400 }} data={this.state.data} colmun={colmun} colmunSort={true} />
+        <Table
+          style={{ height: 400, marginBottom: 40 }}
+          data={this.state.data}
+          colmun={colmun}
+        />
+        <Table
+          style={{ height: 400, marginBottom: 40 }}
+          data={this.state.data}
+          colmun={colmun}
+          styleHeader={{
+            background: 'var(--theme-color)',
+            color: '#fff'
+          }}
+        />
+        <Table
+          style={{ height: 400, marginBottom: 40 }}
+          data={this.state.data}
+          colmun={colmun}
+          line={true}
+        />
+        <Table
+          style={{ height: 400 }}
+          data={this.state.data}
+          colmun={colmun}
+          colmunSort={true}
+        />
       </div>
     )
   }
