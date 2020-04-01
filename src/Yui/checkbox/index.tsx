@@ -28,10 +28,10 @@ class CheckBox extends React.Component {
             item.disabled
               ?
               <span className={"yui-checkbox-compont-item-disabled" + theme} key={item.key}>
+                <span className="value"></span>
                 <span className="label">
                   {item.label}
                 </span>
-                <span className="value"></span>
               </span>
               :
               <span className={"yui-checkbox-compont-item" + theme} key={item.key} onClick={
@@ -44,9 +44,6 @@ class CheckBox extends React.Component {
                   this.props.onChange(value)
                 }
               }>
-                <span className="label">
-                  {item.label}
-                </span>
                 <span className={value.includes(item.value) ? "value-active" : "value"}>
                   {
                     value.includes(item.value)
@@ -57,6 +54,9 @@ class CheckBox extends React.Component {
                       :
                       null
                   }
+                </span>
+                <span className="label">
+                  {item.label}
                 </span>
               </span>
           )
@@ -69,9 +69,6 @@ class CheckBox extends React.Component {
           dataList && dataList.map(item => {
             return (
               <span className={"yui-checkbox-compont-item" + theme} key={item.key}>
-                <span className="label">
-                  {item.label}
-                </span>
                 <span className={value.includes(item.value) ? "value-active" : "value"}>
                   {
                     value.includes(item.value)
@@ -82,6 +79,9 @@ class CheckBox extends React.Component {
                       :
                       null
                   }
+                </span>
+                <span className="label">
+                  {item.label}
                 </span>
               </span>
             )

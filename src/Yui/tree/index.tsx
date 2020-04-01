@@ -1,192 +1,121 @@
 import * as React from 'react'
 import './index.less'
-const Window:any = window
-import { CheckBox } from '../index';
+import { CheckBox } from '../index'
+const Window: any = window
 class Tree extends React.Component {
-  state = {
-    treeData: []
+  state: any
+  props: {
+    style: any
+    dark: boolean
+    checkable: boolean
+    defaultExpandedKeys: any
+    defaultCheckedKeys: any
+    onCheck: any
+    onExpande: any
+    treeData: any
   }
-  props: any;
-  componentWillReceiveProps(nextProps) {
+  constructor(props) {
+    super(props)
+    this.state = {
+      treeData: props.treeData,
+      checkedKeys: props.defaultCheckedKeys || [],
+      expandedKeys: props.defaultExpandedKeys || [],
+    }
+  }
+  componentWillReceiveProps(props){
+    this.state = {
+      checkedKeys: props.defaultCheckedKeys || [],
+      expandedKeys: props.defaultExpandedKeys || []
+    }
+  }
+  expandedKeysToggle = (key) => { //  设置 节点 Toggle
+    let index = this.state.expandedKeys.indexOf(key)
+    index > -1
+      ? this.state.expandedKeys.splice(index, 1)
+      : this.state.expandedKeys.push(key)
+    console.log(this.state.expandedKeys)
     this.setState({
-      treeData: nextProps.treeData
+      expandedKeys: this.state.expandedKeys
+    }, () => {
+      this.props.onExpande && this.props.onExpande(this.state.expandedKeys)
     })
   }
-  componentWillMount() {
-    this.setState({
-      treeData: this.props.treeData
-    })
-  }
-  setNodeOpen = (node, childen) => { //  设置 节点 Toggle
-    return node.map(m => {
-      if (m.key == childen.key) {
-        if (m.isOpen == undefined) {
-          m.isOpen = true
-        } else {
-          m.isOpen = !m.isOpen
-        }
-      } else {
-        if (m.node) {
-          this.setNodeOpen(m.node, childen)
-        }
-      }
-      return m
-    })
-  }
-  setSelected = (node, childen) => { //  设置 叶子 Toggle
-    return node.map(m => {
-      if (m.key == childen.key) {
-        if (m.selected == undefined) {
-          m.selected = true;
-        } else {
-          m.selected = !m.selected
-        }
-      } else {
-        m.selected = false
-        if (m.node) {
-          this.setSelected(m.node, childen)
-        }
-      }
-      return m
-    })
-  }
-  setChecked = (node, childen) => { //  设置 叶子 Toggle
-    return node.map(m => {
-      if (m.key == childen.key) {
-        if (m.selected == undefined) {
-          m.selected = true;
-        } else {
-          m.selected = !m.selected
-        }
-      } else {
-        if (m.node) {
-          this.setChecked(m.node, childen)
-        }
-      }
-      return m
-    })
-  }
-  nodeClick = (node) => {
-    if (this.props.onClick) {
-      this.props.onClick(node)
+  getChecked = (checked, node, checkedKeys) => {
+    if (checked) { // push
+      checkedKeys.indexOf(node.key) === -1 && checkedKeys.push(node.key) // 避免重复 push
+    } else { // splice
+      checkedKeys.indexOf(node.key) > -1 && checkedKeys.splice(checkedKeys.indexOf(node.key), 1) // 避免多删除
     }
-    if (!this.props.stopDefaultEvent) {
-      if (node.isLeaf) {
-        let treeData = this.setSelected(this.state.treeData, node)
-        this.setState({
-          treeData
-        }, () => {
-          if (this.props.onChange) {
-            this.props.onChange(node)
-          }
-        })
-      } else {
-        let treeData = this.setNodeOpen(this.state.treeData, node)
-        this.setState({
-          treeData
-        }, () => {
-          if (this.props.onChange) {
-            this.props.onChange(node)
-          }
-        })
-      }
-    }
-  }
-  checkBoxClick = (node) => { // 多选组件点击
-    if (this.props.onClick) {
-      this.props.onClick(node)
-    }
-    if (node.isLeaf) {
-      let treeData = this.setChecked(this.state.treeData, node)
-      this.setState({
-        treeData
-      }, () => {
-        if (this.props.onChange) {
-          this.props.onChange(node)
-        }
-      })
-    } else {
-      let treeData = this.setNodeOpen(this.state.treeData, node)
-      this.setState({
-        treeData
-      }, () => {
-        if (this.props.onChange) {
-          this.props.onChange(node)
-        }
+    if (node.children) { // 递归操作子节点
+      node.children.map(_node => {
+        return this.getChecked(checked, _node, checkedKeys)
       })
     }
+    return checkedKeys
   }
-  callBack = (item, padding) => {
-    return item && item.map((node) => {
-      let { color, icon } = node
-      if (node.isOpen) {
-        icon = node.icon2
+  setChecked = (checked, node) => { //  设置 叶子 checked Toggle
+    const checkedKeys = this.getChecked(checked, node, this.state.checkedKeys)
+    this.setState({
+      checkedKeys
+    }, () => {
+      if (this.props.onCheck) {
+        this.props.onCheck(this.state.checkedKeys)
       }
-      let className = (node.isLeaf && this.props.type === 'simple' ) ? (node.selected ? "yui-tree-node yui-tree-leaf-active" : "yui-tree-node yui-tree-leaf") : 'yui-tree-node'
-      return (
-        this.props.type === 'simple'
-          ?
-          <div key={node.key} className={className} >
-            <div style={{
-              padding: 2,
-              paddingLeft: padding,
-              display: 'flex',
-              justifyContent: 'left',
-              alignItems: 'center',
-              cursor: 'pointer',
-              width: '100%'
-            }} 
-            onClick={() => {
-              this.nodeClick(node)
-            }}>
-              <span><i className={"iconfont " + icon} style={{ color }} /></span>
-              <span style={{ width: '100%', paddingLeft: 8 }}>
-                {node.label}
-              </span>
-            </div>
-            {(node.node != undefined && node.isOpen) ? this.callBack(node.node, padding + 20) : null}
-          </div>
-          :
-          <div key={node.key} className={className}>
-            <div style={{
-              padding: 2,
-              paddingLeft: padding,
-              display: 'flex',
-              justifyContent: 'left',
-              alignItems: 'center',
-              cursor: 'pointer',
-              width: '100%'
-            }} 
-            onClick={() => {
-              this.nodeClick(node)
-            }}>
-              <span><i className={"iconfont " + icon} style={{ color }} /></span>
-              <span style={{ width: '100%', paddingLeft: 8 }}>
-                {
-                  node.isLeaf
-                    ?
-                    <span>
-                      <CheckBox style={{height:16}} value={node.selected ? [node.key] : []} dataList={[{ label: node.label, value: node.key }]} onChange={
-                        (e) => {
-                          console.log(e)
-                        }
-                      } />
-                    </span>
-                    :
-                    <span>{node.label}</span>
+    })
+  }
+  callBack = (children, marginLeft) => {
+    let { expandedKeys, checkedKeys } = this.state
+    return children && children.map(node => {
+      let className = checkedKeys.includes(node.key) ? "yui-tree-node yui-tree-leaf-active" : "yui-tree-node yui-tree-leaf"
+      return [<div
+        key={node.key}
+        className={className}
+        style={{
+          marginLeft
+        }}
+      >
+        <div
+          className='yui-tree-icon'
+          onClick={
+            () => {
+              this.expandedKeysToggle(node.key)
+            }
+          }
+        >
+          {
+            node.children && <i className={expandedKeys.includes(node.key) ? 'iconfont icon-jiantou32' : 'iconfont icon-jiantou34'} />
+          }
+        </div>
+        {
+          this.props.checkable ? <CheckBox
+            value={checkedKeys.includes(node.key) ? [node.key] : []}
+            dataList={[{ label: node.label, value: node.key }]}
+            onChange={
+              (e) => {
+                this.setChecked(e.length > 0, node)
+              }
+            }
+          /> : <span className='yui-tree-label' onClick={
+            () => {
+              this.setState({
+                checkedKeys: [node.key]
+              }, () => {
+                if (this.props.onCheck) {
+                  this.props.onCheck(this.state.checkedKeys)
                 }
-              </span>
-            </div>
-            {(node.node != undefined && node.isOpen) ? this.callBack(node.node, padding + 20) : null}
-          </div>
-      )
-    });
+              })
+            }
+          }>{node.label}</span>
+        }
+      </div>,
+      expandedKeys.includes(node.key) ? this.callBack(node.children, marginLeft + 20) : null]
+    })
   }
   render() {
-    let tree_dom = this.callBack(this.state.treeData, 16)
+    let treeDom = this.callBack(this.state.treeData, 0)
     const theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
-    return <div className={"yui-tree"+theme} style={this.props.style}>
-      {tree_dom}
+    return <div className={"yui-tree" + theme} style={this.props.style}>
+      {treeDom}
     </div>
   }
 }

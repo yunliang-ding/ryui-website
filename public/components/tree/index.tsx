@@ -3,300 +3,86 @@ import ReactDom from 'react-dom'
 import { Tree } from 'ryui'
 class Demo extends React.Component {
   state = {
-    info1: '点击显示节点信息',
-    info2: '点击显示节点信息',
     data: [{
-      key: Math.random(),
-      icon: 'icon-jiantou34',
-      icon2: 'icon-jiantou32',
-      isLeaf: false,
-      color: '',
-      label: 'Tree',
-      isOpen: true,
-      node: [{
-        key: Math.random(),
-        icon: 'icon-react',
-        color: '#1296db',
-        label: 'index.jsx',
-        isLeaf: true
+      key: '1',
+      label: 'parent-1',
+      children: [{
+        key: '1-1',
+        label: 'childern-1-1'
       }, {
-        key: Math.random(),
-        icon: 'icon-less',
-        color: '#1E9FFF',
-        label: 'index.less',
-        isLeaf: true,
+        key: '1-2',
+        label: 'childern-1-2'
       }, {
-        key: Math.random(),
-        color: '',
-        icon: 'icon-jiantou34',
-        icon2: 'icon-jiantou32',
-        isLeaf: false,
-        label: 'Tree2',
-        isOpen: true,
-        node: [{
-          key: Math.random(),
-          icon: 'icon-react',
-          color: '#1296db',
-          label: 'index.jsx',
-          isLeaf: true,
+        key: '1-3',
+        label: 'childern-1-3',
+        children: [{
+          key: '1-3-1',
+          label: 'childern-1-3-1'
         }]
       }]
     }, {
-      key: Math.random(),
-      icon: 'icon-jiantou34',
-      color: '',
-      label: 'Button',
-      icon2: 'icon-jiantou32',
-      isLeaf: false,
-      isOpen: true,
-      node: [{
-        key: Math.random(),
-        icon: 'icon-react',
-        color: '#1296db',
-        label: 'index.jsx',
-        isLeaf: true,
+      key: '2',
+      label: 'parent-2',
+      children: [{
+        key: '2-1',
+        label: 'childern-2-1'
       }, {
-        key: Math.random(),
-        icon: 'icon-less',
-        color: '#1E9FFF',
-        label: 'index.less',
-        isLeaf: true,
+        key: '2-2',
+        label: 'childern-2-2'
       }, {
-        key: Math.random(),
-        icon: 'icon-react',
-        color: '#1296db',
-        label: 'store.jsx',
-        isLeaf: true,
+        key: '2-3',
+        label: 'childern-2-3',
+        children: [{
+          key: '2-3-1',
+          label: 'childern-2-3-1'
+        }]
       }]
-    }, {
-      key: Math.random(),
-      icon: 'icon-jiantou34',
-      color: '',
-      label: 'Select',
-      icon2: 'icon-jiantou32',
-      isLeaf: false,
-      node: [{
-        key: Math.random(),
-        icon: 'icon-react',
-        color: '#1296db',
-        label: 'index.jsx',
-        isLeaf: true,
-      }, {
-        key: Math.random(),
-        icon: 'icon-less',
-        color: '#1E9FFF',
-        label: 'index.less',
-        isLeaf: true,
-      }, {
-        key: Math.random(),
-        icon: 'icon-react',
-        color: '#1296db',
-        label: 'store.jsx',
-        isLeaf: true,
-      }]
-    }, {
-      key: Math.random(),
-      icon: 'icon-react',
-      color: '#1296db',
-      label: 'app.jsx',
-      icon2: 'icon-jiantou32',
-      isLeaf: true,
-    }, {
-      key: Math.random(),
-      icon: 'icon-react',
-      color: '#FF5722',
-      label: 'react.jsx',
-      icon2: 'icon-jiantou32',
-      isLeaf: true,
-    }],
-    data2: [
-      {
-        key: Math.random(),
-        icon: 'icon-jiantou34',
-        icon2: 'icon-jiantou32',
-        isLeaf: false,
-        color: '',
-        label: 'Tree',
-        isOpen: true,
-        node: [{
-          key: Math.random(),
-          icon: 'icon-react',
-          color: '#1296db',
-          label: 'index.jsx',
-          isLeaf: true
-        }, {
-          key: Math.random(),
-          icon: 'icon-less',
-          color: '#1E9FFF',
-          label: 'index.less',
-          isLeaf: true,
-        }, {
-          key: Math.random(),
-          color: '',
-          icon: 'icon-jiantou34',
-          icon2: 'icon-jiantou32',
-          isLeaf: false,
-          label: 'Tree2',
-          isOpen: true,
-          node: [{
-            key: Math.random(),
-            icon: 'icon-react',
-            color: '#1296db',
-            label: 'index.jsx',
-            isLeaf: true,
-          }]
-        }]
-      }, {
-        key: Math.random(),
-        icon: 'icon-jiantou34',
-        color: '',
-        label: 'Button',
-        icon2: 'icon-jiantou32',
-        isLeaf: false,
-        isOpen: true,
-        node: [{
-          key: Math.random(),
-          icon: 'icon-react',
-          color: '#1296db',
-          label: 'index.jsx',
-          isLeaf: true,
-        }, {
-          key: Math.random(),
-          icon: 'icon-less',
-          color: '#1E9FFF',
-          label: 'index.less',
-          isLeaf: true,
-        }, {
-          key: Math.random(),
-          icon: 'icon-react',
-          color: '#1296db',
-          label: 'store.jsx',
-          isLeaf: true,
-        }]
-      }, {
-        key: Math.random(),
-        icon: 'icon-jiantou34',
-        color: '',
-        label: 'Select',
-        icon2: 'icon-jiantou32',
-        isLeaf: false,
-        node: [{
-          key: Math.random(),
-          icon: 'icon-react',
-          color: '#1296db',
-          label: 'index.jsx',
-          isLeaf: true,
-        }, {
-          key: Math.random(),
-          icon: 'icon-less',
-          color: '#1E9FFF',
-          label: 'index.less',
-          isLeaf: true,
-        }, {
-          key: Math.random(),
-          icon: 'icon-react',
-          color: '#1296db',
-          label: 'store.jsx',
-          isLeaf: true,
-        }]
-      }, {
-        key: Math.random(),
-        icon: 'icon-react',
-        color: '#1296db',
-        label: 'app.jsx',
-        icon2: 'icon-jiantou32',
-        isLeaf: true,
-      }, {
-        key: Math.random(),
-        icon: 'icon-react',
-        color: '#FF5722',
-        label: 'react.jsx',
-        icon2: 'icon-jiantou32',
-        isLeaf: true,
-      }],
-    tabs: [{
-      key: Math.random(),
-      icon: 'icon-react',
-      color: '#1296db',
-      label: 'index.jsx',
-      tip: '/user/Tabs/src/index.jsx',
-      active: false
-    }, {
-      key: Math.random(),
-      icon: 'icon-less',
-      color: '#1E9FFF',
-      label: 'index.less',
-      tip: '/user/Tabs/src/index.jsx',
-      active: true
-    }, {
-      key: Math.random(),
-      icon: 'icon-react',
-      color: '#1296db',
-      label: 'webpack.config.prod.jsx',
-      tip: '/user/Tabs/src/index.jsx',
-      active: false
-    }, {
-      key: Math.random(),
-      icon: 'icon-react',
-      color: '#1296db',
-      label: 'index.jsx',
-      tip: '/user/Tabs/src/index.jsx',
-      active: false
-    }, {
-      key: Math.random(),
-      icon: 'icon-less',
-      color: '#1E9FFF',
-      label: 'index.less',
-      tip: '/user/Tabs/src/index.jsx',
-      active: false
-    }, {
-      key: Math.random(),
-      icon: 'icon-react',
-      color: '#1296db',
-      label: 'webpack.config.prod.jsx',
-      tip: '/user/Tabs/src/index.jsx',
-      active: false
     }]
   }
   render() {
     return (
-      <div className="app-preview" style={{flexDirection: 'row'}}>
-        <Tree
-          style={{
-            width: 200,
-            height: 500
-          }}
-          type="simple"
-          treeData={this.state.data}
-          onClick={
-            (e) => {
-              console.log(e)
+      <div className="app-preview" style={{ flexDirection: 'row' }}>
+        <div style={{display: 'flex'}}>
+          <Tree
+            style={{
+              width: 200,
+              height: 200
+            }}
+            checkable
+            defaultExpandedKeys={['1', '1-3']}
+            defaultCheckedKeys={['1-2']}
+            treeData={this.state.data}
+            onCheck={
+              (e) => {
+                console.log(e)
+              }
             }
-          }
-          onChange={
-            (e) => {
-              console.log(e)
+            onExpande={
+              (e) => {
+                console.log(e)
+              }
             }
-          }
-        />
-        <Tree
-          style={{
-            width: 200,
-            height: 500,
-            marginLeft: 50
-          }}
-          treeData={this.state.data2}
-          onClick={
-            (e) => {
-              console.log(e)
+          />
+          <Tree
+            style={{
+              width: 200,
+              height: 200
+            }}
+            defaultExpandedKeys={['1', '1-3']}
+            defaultCheckedKeys={['1-2']}
+            treeData={this.state.data}
+            onCheck={
+              (e) => {
+                console.log(e)
+              }
             }
-          }
-          onChange={
-            (e) => {
-              console.log(e)
+            onExpande={
+              (e) => {
+                console.log(e)
+              }
             }
-          }
-        />
+          />
+        </div>
       </div>
     )
   }

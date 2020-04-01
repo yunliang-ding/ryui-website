@@ -28,21 +28,21 @@ class Radio extends React.Component {
             item.disabled
               ?
               <span className={"yui-radio-compont-item-disabled"+theme} key={item.key}>
+                <span className="value"></span>
                 <span className="label">
                   {item.label}
                 </span>
-                <span className="value"></span>
               </span>
               :
               (
                 item.value == value
                   ?
                   <span className={"yui-radio-compont-item"+theme} key={item.key}>
-                    <span className="label">
-                      {item.label}
-                    </span>
                     <span className="value-active">
                       <span className="value-active-center"></span>
+                    </span>
+                     <span className="label">
+                      {item.label}
                     </span>
                   </span>
                   :
@@ -51,10 +51,10 @@ class Radio extends React.Component {
                       this.props.onChange(item.value)
                     }
                   }>
-                    <span className="label">
+                    <span className="value" ></span>
+                     <span className="label">
                       {item.label}
                     </span>
-                    <span className="value" ></span>
                   </span>
               )
           )
@@ -69,19 +69,19 @@ class Radio extends React.Component {
               item.value == value
                 ?
                 <span className={"yui-radio-compont-item"+theme} key={item.key}>
-                  <span className="label">
-                    {item.label}
-                  </span>
                   <span className="value-active">
                     <span className="value-active-center"></span>
+                  </span>
+                  <span className="label">
+                    {item.label}
                   </span>
                 </span>
                 :
                 <span className={"yui-radio-compont-item"+theme} key={item.key}>
+                  <span className="value"></span>
                   <span className="label">
                     {item.label}
                   </span>
-                  <span className="value"></span>
                 </span>
             )
           })
