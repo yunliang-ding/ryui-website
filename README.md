@@ -1,2 +1,2 @@
-# Yui
-一套基于react前端基础组件解决方案
+# ryui-website
+ryui基础组件文档

@@ -77,8 +77,10 @@ class Layout extends React.Component {
             <Select
               dark={dark}
               style={{
-                width: 300,
-                height: 30
+                width: 90,
+                height: 30,
+                border: 0,
+                background: 'inherit'
               }}
               dataList={themeList}
               value={theme}
