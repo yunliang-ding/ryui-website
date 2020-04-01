@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Table, Button } from 'ryui'
+import { Table, Button, Select } from 'ryui'
 class Demo extends React.Component {
   state = {
     data: [{
@@ -40,7 +40,32 @@ class Demo extends React.Component {
       label: '应用名称',
       dataIndex: 'application'
     }, {
-      label: '应用权限',
+      label: <Select
+        style={{
+          width: 80,
+          height: 30,
+          border: 0,
+          background: 'inherit',
+          marginLeft: -8
+        }}
+        dataList={[
+          {
+            label: '全部类型',
+            value: -1
+          },
+          {
+            label: '管理员',
+            value: 1
+          }
+          
+        ]}
+        value={-1}
+        onChange={
+          (e) => {
+            console.log(e)
+          }
+        }
+      />,
       dataIndex: 'role'
     }, {
       label: '子进程数',
@@ -59,7 +84,7 @@ class Demo extends React.Component {
       }
     }]
     return (
-      <div className='app-preview' style={{justifyContent: 'flex-start'}}>
+      <div className='app-preview' style={{ justifyContent: 'flex-start' }}>
         <Table style={{ height: 400, marginBottom: 40 }} data={this.state.data} colmun={colmun} />
         <Table style={{ height: 400, marginBottom: 40 }} data={this.state.data} colmun={colmun} styleHeader={{
           background: 'var(--theme-color)',
