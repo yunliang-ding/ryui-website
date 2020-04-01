@@ -5,13 +5,13 @@ const Window: any = window
 class Tree extends React.Component {
   state: any
   props: {
-    style: any
-    dark: boolean
-    checkable: boolean
-    defaultExpandedKeys: any
-    defaultCheckedKeys: any
-    onCheck: any
-    onExpand: any
+    style?: any
+    dark?: boolean
+    checkable?: boolean
+    defaultExpandedKeys?: any
+    defaultCheckedKeys?: any
+    onCheck?: any
+    onExpand?: any
     treeData: any
   }
   constructor(props) {

@@ -95,6 +95,11 @@ class Popover extends React.Component {
       <div
         className='yui-popover-inner'
         ref={(innerNode) => { this.innerNode = innerNode }}
+        onClick={
+          (e) => {
+            e.stopPropagation()
+          }
+        }
         onMouseEnter={
           () => {
             this.mouseEnter = true

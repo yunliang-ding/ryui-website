@@ -25,7 +25,7 @@ class Demo extends React.Component {
       <br />
       <Input
         style={{ width: 300 }}
-        readonly={true}
+        readOnly={true}
         placeholder='姓名'
         value={this.state.value}
       />

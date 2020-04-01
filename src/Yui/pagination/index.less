@@ -7,7 +7,7 @@
   transition: all .4s;
   -webkit-transition: all .4s;
   user-select: none;
-  color:#000;
+  color:#333;
   .yui-pagination-pre,
   .yui-pagination-next,
   .yui-pagination-item,
@@ -23,12 +23,13 @@
     border:1px solid #f2f2f2;
     border-left:0;
     cursor: pointer;
+    background: #fff;
   }
   .yui-pagination-pre-disabled, yui-pagination-next-disabled{
     opacity: 0.5;
   }
   .yui-pagination-item-active{
-    border:1px solid var(--theme-color);
+    border:0;
     background: var(--theme-color);
     color:#fff;
   }
@@ -52,6 +53,14 @@
     transition: all .4s;
     -webkit-transition: all .4s;
   }
+  .yui-pagination-jump{
+    margin-left:12px;
+    display: flex;
+    align-items: center;
+    .yui-input{
+      margin:0 10px;
+    }
+  }
 }
 .yui-pagination-dark{
   color:#ccc;
@@ -60,8 +69,10 @@
   .yui-pagination-next,
   .yui-pagination-next-disabled{
     border-color:#333;
+    background: #222;
   }
   .yui-pagination-item{
     border-color:#333;
+    background: #222;
   }
 }

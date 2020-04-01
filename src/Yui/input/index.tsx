@@ -1,15 +1,23 @@
 import * as React from 'react'
 import './index.less'
-const Window:any = window
-/**
-  props:{
-    type: string | default text
-    addonBefore: ReactNode
-    addonAfter: ReactNode
-  }
- */
+const Window: any = window
 class Input extends React.Component {
-  props: any;
+  props: {
+    type?: string,
+    addonBefore?: any,
+    addonAfter?: any,
+    dark?: boolean,
+    readOnly?: boolean,
+    value?: any,
+    onChange?: any,
+    style?: any,
+    placeholder?: string,
+    onBlur?: any,
+    defaultValue?: any
+  }
+  constructor(props) {
+    super(props)
+  }
   render() {
     let addonBefore = null
     let addonAfter = null
@@ -27,8 +35,8 @@ class Input extends React.Component {
       </span>
     }
     if (type === 'textArea') {
-      input = <textarea 
-        readOnly={this.props.readonly}
+      input = <textarea
+        readOnly={this.props.readOnly}
         className={'yui-input-textArea' + theme}
         value={this.props.value}
         onChange={
@@ -48,11 +56,16 @@ class Input extends React.Component {
         placeholder={this.props.placeholder}
         onChange={
           (e) => {
-            this.props.onChange(e)
+            this.props.onChange && this.props.onChange(e)
+          }
+        }
+        onBlur={
+          (e) => {
+            this.props.onBlur && this.props.onBlur(e)
           }
         }
       />
-      if (this.props.readonly == true) {
+      if (this.props.readOnly == true) {
         input = <input className={'input-disabled' + theme} readOnly
           type='text'
           style={this.props.style}

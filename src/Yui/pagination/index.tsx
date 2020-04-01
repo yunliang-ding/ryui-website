@@ -1,27 +1,31 @@
 import * as React from 'react'
 import './index.less'
+import { Input, Select } from '../index'
 const Window: any = window
 class Pagination extends React.Component {
   state: any
   props: {
     current: number,
-    pagesize: number,
+    pageSize: number,
     total: number,
-    onChange: any,
-    dark: boolean
+    onChange?: any,
+    dark?: boolean,
+    pageSizeOptions?: any,
+    onPageSizeChange?:any,
+    showJumper?: boolean
   }
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       current: props.current,
-      pagesize: props.pagesize,
+      pageSize: props.pageSize,
       total: props.total
     }
   }
   componentWillReceiveProps(props) {
     this.setState({
       current: props.current,
-      pagesize: props.pagesize,
+      pageSize: props.pageSize,
       total: props.total,
       dark: props.dark
     })
@@ -37,8 +41,8 @@ class Pagination extends React.Component {
   }
   render() {
     let current = this.state.current
-    let pagesize = this.state.pagesize
-    let totalPage = this.state.total / pagesize + (this.state.total % pagesize > 0 ? 1 : 0)
+    let pageSize = this.state.pageSize
+    let totalPage = this.state.total / pageSize + (this.state.total % pageSize > 0 ? 1 : 0)
     let page = [];
     let theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     let arr = [1]
@@ -110,6 +114,46 @@ class Pagination extends React.Component {
         >
           <i className='iconfont icon-jiantou2'></i>
         </div>
+        {
+          this.props.pageSizeOptions && <div className='yui-pagination-jump'>
+            <Select
+              style={{ width: 90, height: 32 }}
+              value={pageSize}
+              onChange={
+                (pageSize) => {
+                  this.setState({
+                    pageSize
+                  })
+                  this.props.onPageSizeChange && this.props.onPageSizeChange(pageSize)
+                }
+              }
+              dataList={
+                this.props.pageSizeOptions.map(value=>{
+                  return {
+                    label: `每页${value}条`,
+                    value
+                  }
+                })
+              }
+            />
+          </div>
+        }
+        {
+          this.props.showJumper && <div className='yui-pagination-jump'>
+            <span className='yui-pagination-jump-label'>跳转至</span>
+            <Input style={{ width: 50 }} onBlur={
+              (e) => {
+                let current = window.parseInt(e.target.value)
+                if(!isNaN(current)){
+                  this.setState({
+                    current: current > totalPage ? totalPage : current
+                  })
+                }
+              }
+            } />
+            <span>页</span>
+          </div>
+        }
       </div>
     )
   }
