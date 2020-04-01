@@ -11,7 +11,7 @@ class Tree extends React.Component {
     defaultExpandedKeys: any
     defaultCheckedKeys: any
     onCheck: any
-    onExpande: any
+    onExpand: any
     treeData: any
   }
   constructor(props) {
@@ -22,7 +22,7 @@ class Tree extends React.Component {
       expandedKeys: props.defaultExpandedKeys || [],
     }
   }
-  componentWillReceiveProps(props){
+  componentWillReceiveProps(props) {
     this.state = {
       checkedKeys: props.defaultCheckedKeys || [],
       expandedKeys: props.defaultExpandedKeys || []
@@ -37,12 +37,12 @@ class Tree extends React.Component {
     this.setState({
       expandedKeys: this.state.expandedKeys
     }, () => {
-      this.props.onExpande && this.props.onExpande(this.state.expandedKeys)
+      this.props.onExpand && this.props.onExpand(this.state.expandedKeys)
     })
   }
   getChecked = (checked, node, checkedKeys) => {
     if (checked) { // push
-      checkedKeys.indexOf(node.key) === -1 && checkedKeys.push(node.key) // 避免重复 push
+      (checkedKeys.indexOf(node.key) === -1 && !node.disabled) && checkedKeys.push(node.key) // 避免重复 push
     } else { // splice
       checkedKeys.indexOf(node.key) > -1 && checkedKeys.splice(checkedKeys.indexOf(node.key), 1) // 避免多删除
     }
@@ -89,25 +89,34 @@ class Tree extends React.Component {
         {
           this.props.checkable ? <CheckBox
             value={checkedKeys.includes(node.key) ? [node.key] : []}
-            dataList={[{ label: node.label, value: node.key }]}
+            dataList={[{ label: node.label, value: node.key, disabled: node.disabled }]}
             onChange={
               (e) => {
                 this.setChecked(e.length > 0, node)
               }
             }
-          /> : <span className='yui-tree-label' onClick={
-            () => {
-              this.setState({
-                checkedKeys: [node.key]
-              }, () => {
-                if (this.props.onCheck) {
-                  this.props.onCheck(this.state.checkedKeys)
+          /> : <span
+            className='yui-tree-label'
+            onClick={
+              () => {
+                if (node.disabled) {
+                  return
                 }
-              })
+                this.setState({
+                  checkedKeys: [node.key]
+                }, () => {
+                  if (this.props.onCheck) {
+                    this.props.onCheck(this.state.checkedKeys)
+                  }
+                })
+              }
             }
-          }>{node.label}</span>
+            style={{
+              cursor: node.disabled ? 'not-allowed' : 'pointer',
+              opacity: node.disabled ? 0.5 : 1
+            }}>{node.label}</span>
         }
-      </div>,
+      </div >,
       expandedKeys.includes(node.key) ? this.callBack(node.children, marginLeft + 20) : null]
     })
   }

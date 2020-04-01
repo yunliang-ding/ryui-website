@@ -8,6 +8,7 @@ class Demo extends React.Component {
       label: 'parent-1',
       children: [{
         key: '1-1',
+        disabled: true,
         label: 'childern-1-1'
       }, {
         key: '1-2',
@@ -57,7 +58,7 @@ class Demo extends React.Component {
                 console.log(e)
               }
             }
-            onExpande={
+            onExpand={
               (e) => {
                 console.log(e)
               }
@@ -76,7 +77,7 @@ class Demo extends React.Component {
                 console.log(e)
               }
             }
-            onExpande={
+            onExpand={
               (e) => {
                 console.log(e)
               }

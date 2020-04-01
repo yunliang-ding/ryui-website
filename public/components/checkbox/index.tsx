@@ -4,7 +4,7 @@ import { Select, CheckBox } from 'ryui'
 class Demo extends React.Component {
   state = {
     value: 0,
-    valueList: [1],
+    valueList: [3],
     dataList: [{
       key: Math.random(),
       value: 0,
