@@ -16,6 +16,7 @@ class Modal extends React.Component {
     footer?: any,
     mask?: boolean
   }
+  modalNode: HTMLDivElement
   constructor(props) {
     super(props)
     this.state = {
@@ -44,7 +45,10 @@ class Modal extends React.Component {
     const { visible } = this.state
     const theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     let style = this.props.style || {}
-    return visible === true && <div className={'yui-modal' + theme} style={style}>
+    let width = style.width || 600
+    style.left = `calc(50vw - ${width / 2}px)`
+    console.log(style)
+    return visible === true && <div className={'yui-modal' + theme} style={style} ref={(node) => { this.modalNode = node }}>
       <div className='yui-modal-header'>
         <div>
           {this.props.title}

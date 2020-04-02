@@ -33,6 +33,20 @@ class Demo extends React.Component {
               visible: true,
               placement: 'right',
               height: '100vh',
+              closable: true,
+              footer: null,
+              mask: true
+            })
+          }
+        } />
+        <br />
+         <Button label='Open-NoClose' style={{ width: 100 }} onClick={
+          () => {
+            this.setState({
+              visible: true,
+              placement: 'right',
+              height: '100vh',
+              closable: false,
               footer: null,
               mask: true
             })
@@ -45,6 +59,7 @@ class Demo extends React.Component {
               visible: true,
               placement: 'right',
               height: '100vh',
+              closable: true,
               footer: null,
               mask: false
             })
@@ -58,6 +73,7 @@ class Demo extends React.Component {
               placement: 'left',
               height: '100vh',
               footer: null,
+              closable: true,
               mask: true
             })
           }
@@ -70,6 +86,7 @@ class Demo extends React.Component {
               placement: 'right',
               height: 'calc(100vh - 50px)',
               footer: null,
+              closable: true,
               mask: true
             })
           }
@@ -82,6 +99,7 @@ class Demo extends React.Component {
               placement: 'right',
               height: '100vh',
               footer: false,
+              closable: true,
               mask: true
             })
           }

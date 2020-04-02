@@ -30,6 +30,18 @@ class Demo extends React.Component {
             this.setState({
               visible: true,
               footer: null,
+              closable: true,
+              mask: true
+            })
+          }
+        } />
+        <br />
+        <Button label='Open-NoClose' style={{ width: 100 }} onClick={
+          () => {
+            this.setState({
+              visible: true,
+              footer: null,
+              closable: false,
               mask: true
             })
           }
@@ -39,28 +51,9 @@ class Demo extends React.Component {
           () => {
             this.setState({
               visible: true,
+              closable: true,
               footer: null,
               mask: false
-            })
-          }
-        } />
-        <br />
-        <Button label='Open-Left' style={{ width: 80 }} onClick={
-          () => {
-            this.setState({
-              visible: true,
-              footer: null,
-              mask: true
-            })
-          }
-        } />
-        <br />
-        <Button label='Open-Custom-Height' style={{ width: 140 }} onClick={
-          () => {
-            this.setState({
-              visible: true,
-              footer: null,
-              mask: true
             })
           }
         } />
@@ -69,6 +62,7 @@ class Demo extends React.Component {
           () => {
             this.setState({
               visible: true,
+              closable: true,
               footer: false,
               mask: true
             })
@@ -79,13 +73,14 @@ class Demo extends React.Component {
           () => {
             this.setState({
               visible: true,
+              closable: true,
               footer: this.renderFooter(),
               mask: true
             })
           }
         } />
         <Modal
-          title="Basic Drawer"
+          title="Basic Modal"
           closable={this.state.closable}
           mask={this.state.mask}
           footer={this.state.footer}
