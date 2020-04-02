@@ -1,73 +1,49 @@
 import * as React from "react"
-import { Button } from '../index'
 import './index.less'
-const Window:any = window
+const Window: any = window
+const iconMapping = {
+  success: 'icon-message_SendSuccessfully',
+  info: 'icon-warning',
+  warning: 'icon-info_warning',
+  error: 'icon-cuo'
+}
 class Alert extends React.Component {
-  props: any;
   state = {
     show: true
   }
+  props: {
+    onClose?: any,
+    message: any,
+    closable?: boolean,
+    type?: string,
+    dark?: boolean,
+    style?: any
+  }
+  constructor(props) {
+    super(props)
+  }
   close = () => {
-    if (this.props.onClose) {
-      this.props.onClose();
-    }
     this.setState({
       show: false
+    }, () => {
+      this.props.onClose && this.props.onClose()
     })
-  }
-  componentWillReceiveProps(newProps) {
-    this.setState({
-      show: newProps.show
-    })
-  }
-  componentWillMount() {
-    if (this.props.show != undefined) {
-      this.setState({
-        show: this.props.show
-      })
-    }
   }
   render() {
+    const { type, style, closable } = this.props
     const dark = this.props.dark || Window.yuiIsDark
     let show = this.state.show;
     let theme = dark ? '-dark' : ''
-    return (
-      <div className={"yui-alert"+theme} style={{ display: show ? 'block' : 'none' }}>
-        <div className="yui-alert-center">
-          <div className="yui-alert-title">
-            <span>{this.props.title}</span>
-            <span><i className="iconfont icon-guanbi" onClick={this.close} /> </span>
-          </div>
-          <div className="yui-alert-body">
-            {this.props.children}
-          </div>
-          <div className="yui-alert-footer">
-            <Button dark={dark} type={dark ? "normal" : 'primary'} style={{ width: 80 }} label={this.props.okText || '确定'} onClick={
-              () => {
-                if (this.props.onOk) {
-                  this.props.onOk()
-                } 
-                this.setState({
-                  show: false
-                })
-              }
-            } />
-            {
-              this.props.cancelText && <Button dark={dark} style={{ width: 80 }} label={this.props.cancelText} onClick={
-                () => {
-                  if (this.props.onCancel) {
-                    this.props.onCancel()
-                  }
-                  this.setState({
-                    show: false
-                  })
-                }
-              } />
-            }
-          </div>
-        </div>
+    let icon = iconMapping[type]
+    return show && <div className={`yui-alert${theme} yui-alert${theme}-${type}`} style={style}>
+      <div className='yui-alert-message'>
+        <i className={`iconfont ${icon}`}></i>
+        <span>{this.props.message}</span>
       </div>
-    )
+      {
+        closable && <i className={`iconfont icon-guanbi`} onClick={this.close}></i>
+      }
+    </div>
   }
 }
 export {

@@ -1,73 +1,54 @@
 .yui-alert, .yui-alert-dark{
-  position: fixed;
-  width:100vw;
-  height:100vh;
-  z-index:19930226;
-  top:0;
-  left: 0;
-  .yui-alert-center{
-    position: absolute;
-    width:300px;
-    height:160px;
-    background:#fff;
-    top:100px;
-    left:calc(~'50vw - 150px');
-    box-shadow: 0px 1px 4px 1px #dcd9d9;
-    display:flex;
-    flex-direction: column;
-    .yui-alert-title{
-      height:40px;
-      padding:0 10px;
-      border-bottom: 1px solid #eee;
-      font-size: 14px;
-      color: #555;
-      overflow: hidden;
-      background-color: #F8F8F8;
-      border-radius: 2px 2px 0 0;
-      display:flex;
-      justify-content: space-between;
-      align-items: center;
-      .iconfont{
-        cursor: pointer;
-      }
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  height: 40px;
+  background: #333;
+  font-size: 12px;
+  justify-content: space-between;
+  color: #fff;
+  border: 1px solid #222;
+  .yui-alert-message{
+    .icon-message_SendSuccessfully{
+      color: #1ac7aa;
     }
-    .yui-alert-body{
-      color:#111;
-      height:70px;
-      position: relative;
-      padding: 20px;
-      line-height: 24px;
-      word-break: break-all;
-      overflow: hidden;
-      font-size: 14px;
-      overflow-x: hidden;
-      overflow-y: auto;
+    .icon-warning{
+      color: #39a9f4;
     }
-    .yui-alert-footer{
-      height:50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .yui-button{
-        margin-right:8px;
-      }
+    .icon-info_warning{
+      color: #f4ea2a;
     }
+    .icon-cuo{
+      color: #d81e06;
+    }
+    span{
+      padding:0 8px;
+    }
+  }
+  .icon-guanbi{
+    cursor: pointer;
+  }
+  .icon-guanbi:active{
+    font-size:18px;
   }
 }
-.yui-alert-dark{
-  .yui-alert-center{
-    box-shadow: 0px 1px 4px 1px #33323296 !important;
-  }
-  .yui-alert-title{
-    background-color: #333  !important;
-    color: #fff !important;
-    border-bottom: 1px solid #464444  !important;
-  }
-  .yui-alert-body{
-    background: #444;
-    color: #fff !important;
-  }
-  .yui-alert-footer{
-    background: #444;
-  }
+.yui-alert{
+  color: #333;
+}
+.yui-alert-success{
+  background-color: #f6ffed;
+  border: 1px solid #b7eb8f;
+}
+.yui-alert-info{
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+}
+.yui-alert-warning{
+  background-color: #fffbe6;
+  border: 1px solid #ffe58f;
+}
+.yui-alert-error{
+  background-color: #fff2f0;
+  border: 1px solid #ffccc7;
 }

@@ -38,7 +38,8 @@ class Demo extends React.Component {
       <div className="app-preview">
         <Tabs
           style={{
-            width: 500
+            width: 500,
+            height: 40
           }}
           dataList={this.state.dataList1}
           activeKey={1}

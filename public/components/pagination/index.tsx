@@ -17,17 +17,6 @@ class Demo extends React.Component {
         />
         <br />
         <Pagination
-          current={3}
-          pageSize={10}
-          total={60}
-          onChange={
-            (e) => {
-              console.log(e)
-            }
-          }
-        />
-        <br />
-        <Pagination
           current={8}
           pageSize={10}
           total={180}
