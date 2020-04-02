@@ -2,6 +2,7 @@ import alert from 'raw-loader!./alert/index.tsx'
 import button from 'raw-loader!./button/index.tsx'
 import cascader from 'raw-loader!./cascader/index.tsx'
 import checkbox from 'raw-loader!./checkbox/index.tsx'
+import drawer from 'raw-loader!./drawer/index.tsx'
 import input from 'raw-loader!./input/index.tsx'
 import loading from 'raw-loader!./loading/index.tsx'
 import message from 'raw-loader!./message/index.tsx'
@@ -22,6 +23,7 @@ export default {
   button,
   cascader,
   checkbox,
+  drawer,
   input,
   loading,
   message,

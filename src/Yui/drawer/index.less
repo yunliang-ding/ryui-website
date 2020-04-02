@@ -1,0 +1,40 @@
+.yui-drawer, .yui-drawer-dark{
+  width:400px;
+  height:100%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: #1e1e1e;
+  box-shadow: 1px 1px 3px 0px #101010;
+  z-index: 9999;
+  .yui-drawer-header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    font-size:14px;
+    padding: 0 16px;
+    color:#ddd;
+    .icon-guanbi{
+      font-size:18px;
+      color:#ddd;
+      cursor: pointer;
+    }
+    .icon-guanbi:active{
+      font-size: 20px;
+    }
+  }
+  .yui-drawer-body{
+    height: calc(~'100% - 100px')
+  }
+  .yui-drawer-footer{
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 50px;
+    box-shadow: 2px 0px 2px 1px #191919;
+    .yui-button{
+      margin: 0 10px;
+    }
+  }
+}

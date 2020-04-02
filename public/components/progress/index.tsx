@@ -22,7 +22,7 @@ class Demo extends React.Component {
         <br />
         <Progress
           value={49}
-          background='#a93910'
+          background='linear-gradient(to right, #e66465, #9198e5)'
           style={{
             height: 4,
             width: 500
@@ -56,7 +56,7 @@ class Demo extends React.Component {
           <Progress
             value={80}
             type='circle'
-            background='#a93910'
+            background='linear-gradient(to right, #e66465, #9198e5)'
             style={{
               height: 150,
               width: 150
