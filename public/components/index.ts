@@ -6,6 +6,7 @@ import drawer from 'raw-loader!./drawer/index.tsx'
 import input from 'raw-loader!./input/index.tsx'
 import loading from 'raw-loader!./loading/index.tsx'
 import message from 'raw-loader!./message/index.tsx'
+import modal from 'raw-loader!./modal/index.tsx'
 import nav from 'raw-loader!./nav/index.tsx'
 import pagination from 'raw-loader!./pagination/index.tsx'
 import popover from 'raw-loader!./popover/index.tsx'
@@ -27,6 +28,7 @@ export default {
   input,
   loading,
   message,
+  modal,
   nav,
   pagination,
   popover,

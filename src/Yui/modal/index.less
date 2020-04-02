@@ -1,13 +1,13 @@
-.yui-drawer, .yui-drawer-dark{
-  width:400px;
-  height:100%;
+.yui-modal, .yui-modal-dark{
+  width:300px;
+  height:200px;
   position: fixed;
   bottom: 0;
   right: 0;
   background: #1e1e1e;
   box-shadow: 1px 1px 3px 0px #101010;
   z-index: 9999;
-  .yui-drawer-mask{
+  .yui-modal-mask{
     width:100vw;
     height:100vh;
     background: rgba(0, 0, 0, 0.3);
@@ -16,7 +16,7 @@
     top: 0;
     z-index: 1;
   }
-  .yui-drawer-header{
+  .yui-modal-header{
     display:flex;
     align-items: center;
     justify-content: space-between;
@@ -36,7 +36,7 @@
       font-size: 20px;
     }
   }
-  .yui-drawer-body{
+  .yui-modal-body{
     height: calc(~'100% - 100px');
     padding: 10px;
     color: #ddd;
@@ -44,12 +44,11 @@
     position: relative;
     background-color:inherit;
   }
-  .yui-drawer-footer{
+  .yui-modal-footer{
     display:flex;
     align-items: center;
     justify-content: flex-end;
     height: 50px;
-    box-shadow: 2px 0px 2px 1px #111;
     z-index: 2;
     position: relative;
     background-color:inherit;
@@ -58,12 +57,9 @@
     }
   }
 }
-.yui-drawer{
-  .yui-drawer-header,.yui-drawer-footer,.yui-drawer-body{
+.yui-modal{
+  .yui-modal-header,.yui-modal-footer,.yui-modal-body{
     background: #fff;
     color:#333;
-  }
-  .yui-drawer-footer{
-    box-shadow: 2px 0px 2px 1px #e4e0e0;
   }
 }

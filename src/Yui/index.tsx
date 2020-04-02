@@ -18,6 +18,7 @@ import { Cascader } from './cascader/index'
 import { Popover } from './popover/index'
 import { Progress } from './progress/index'
 import { Drawer } from './drawer/index'
+import { Modal } from './modal/index'
 import './theme.less'
 export {
   Input,
@@ -39,5 +40,6 @@ export {
   Cascader,
   Popover,
   Progress,
-  Drawer
+  Drawer,
+  Modal
 }

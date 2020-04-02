@@ -91,6 +91,27 @@ class Layout extends React.Component {
               }
             />
           </div>
+          <div className='app-layout-header-model'>
+            <Tooltip
+              dark={dark}
+              title={<span>切换会重制代码</span>}
+              trigger='hover'
+              placement='left'
+            >
+              <Switch
+                style={{ width: 50 }}
+                checked={dark}
+                checkedNode={<span>黑色</span>}
+                unCheckedNode={<span>白色</span>}
+                onChange={
+                  (e) => {
+                    this.props.Compile.setCode(this.props.Monaco.editorMonaco.getValue())
+                    setDark(e)
+                  }
+                }
+              />
+            </Tooltip>
+          </div>
         </div>
         <div className='app-layout-body'>
           <div className='app-layout-body-left' style={{
@@ -196,27 +217,6 @@ class Layout extends React.Component {
                 <pre id='error-message' style={{
                   background: dark ? '#1b1b1b' : '#fff',
                 }} />
-                <div className='app-layout-body-theme'>
-                  <Tooltip
-                    dark={dark}
-                    title={<span>切换会重制代码</span>}
-                    trigger='hover'
-                    placement='left'
-                  >
-                    <Switch
-                      style={{ width: 50 }}
-                      checked={dark}
-                      checkedNode={<span>黑色</span>}
-                      unCheckedNode={<span>白色</span>}
-                      onChange={
-                        (e) => {
-                          this.props.Compile.setCode(this.props.Monaco.editorMonaco.getValue())
-                          setDark(e)
-                        }
-                      }
-                    />
-                  </Tooltip>
-                </div>
                 <div className='app-layout-body-type'>
                   <Tabs
                     dark={dark}
