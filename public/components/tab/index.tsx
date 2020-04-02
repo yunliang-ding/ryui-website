@@ -7,17 +7,27 @@ class Demo extends React.Component {
     super(props)
     this.state = {
       info: null,
-      dataList: [{
+      dataList1: [{
         key: 1,
-        label: <span>第一个Tab1</span>,
+        label: <span>noContent-Tab1</span>
+      }, {
+        key: 2,
+        label: <span>noContent-Tab2</span>
+      }, {
+        key: 3,
+        label: <span>noContent-Tab3</span>
+      }],
+      dataList2: [{
+        key: 1,
+        label: <span>content-Tab1</span>,
         content: <div>sub-tab1</div>
       }, {
         key: 2,
-        label: <span>第二个Tab2</span>,
+        label: <span>content-Tab2</span>,
         content: <div>sub-tab2</div>
       }, {
         key: 3,
-        label: <span>第三个Tab3</span>,
+        label: <span>content-Tab3</span>,
         content: <div>sub-tab3</div>
       }],
       value: 3
@@ -27,15 +37,11 @@ class Demo extends React.Component {
     return (
       <div className="app-preview">
         <Tabs
-          style={{ width: 500 }}
-          contentStyle={{ height: 300 }}
-          dataList={this.state.dataList}
+          style={{
+            width: 500
+          }}
+          dataList={this.state.dataList1}
           activeKey={1}
-          onRemove={
-            (e) => {
-              console.log(e)
-            }
-          }
           onClick={
             (e) => {
               console.log(e)
@@ -43,11 +49,27 @@ class Demo extends React.Component {
           }
         />
         <br />
-         <Tabs
+        <Tabs
+          style={{
+            width: 500,
+            height: 200
+          }}
+          dataList={this.state.dataList2}
+          activeKey={1}
+          onClick={
+            (e) => {
+              console.log(e)
+            }
+          }
+        />
+        <br />
+        <Tabs
           close
-          style={{ width: 500 }}
-          contentStyle={{ height: 300 }}
-          dataList={this.state.dataList}
+          style={{
+            width: 500,
+            height: 200
+          }}
+          dataList={this.state.dataList2}
           activeKey={1}
           onRemove={
             (e) => {

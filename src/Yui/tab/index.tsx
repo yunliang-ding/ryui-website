@@ -4,7 +4,6 @@ const Window: any = window
 class Tabs extends React.Component<any, any> {
   props: {
     style?: any,
-    contentStyle?: any,
     close?: boolean,
     dataList: any,
     activeKey?: any,
@@ -32,16 +31,16 @@ class Tabs extends React.Component<any, any> {
     tabs = <div className="yui-tabs-compont">
       {
         dataList && dataList.map(tab => {
-          return (
-            <div title={tab.tip} key={tab.key} className={activeKey === tab.key ? "yui-tabs-item-active" : "yui-tabs-item"} onClick={
-              () => {
-                this.setState({
-                  activeKey: tab.key
-                }, () => {
-                  onClick && onClick(tab)
-                })
-              }
-            }>
+          return <div title={tab.tip} key={tab.key} className={activeKey === tab.key ? "yui-tabs-item-active" : "yui-tabs-item"} onClick={
+            () => {
+              this.setState({
+                activeKey: tab.key
+              }, () => {
+                onClick && onClick(tab)
+              })
+            }
+          }>
+            <div className='yui-tabs-item-header'>
               <div className='yui-tabs-item-label'>
                 {tab.label}
               </div>
@@ -71,7 +70,15 @@ class Tabs extends React.Component<any, any> {
                 }} />
               }
             </div>
-          )
+            {
+              (tab.content && tab.key === activeKey) && <div className='yui-tabs-item-content' style={{
+                width: this.props.style.width,
+                height: this.props.style.height - 36
+              }}>
+                {tab.content}
+              </div>
+            }
+          </div>
         })
       }
     </div>

@@ -220,7 +220,6 @@ class Layout extends React.Component {
                 <div className='app-layout-body-type'>
                   <Tabs
                     dark={dark}
-                    style={{ height: 36 }}
                     dataList={[{
                       key: 1,
                       label: [<i className='iconfont icon-view-1' style={{

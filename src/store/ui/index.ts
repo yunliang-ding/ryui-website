@@ -125,12 +125,10 @@ class UI {
     }, {
       key: 'modal',
       icon: 'icon-cebianlan',
-      disabled: true,
       label: 'Modal　对话框'
     }, {
       key: 'drawer',
       icon: 'icon-cebianlan',
-      disabled: true,
       label: 'Drawer　抽屉'
     }, {
       key: 'progress',

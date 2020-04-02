@@ -42,7 +42,7 @@ class Demo extends React.Component {
   }
   render() {
     return (
-      <div className="app-preview" style={{ flexDirection: 'row' }}>
+      <div className="app-preview">
         <div style={{display: 'flex'}}>
           <Tree
             style={{

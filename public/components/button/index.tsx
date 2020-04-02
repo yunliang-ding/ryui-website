@@ -4,7 +4,7 @@ import { Button } from 'ryui'
 class Demo extends React.Component {
   render() {
     return (
-      <div className="app-preview" style={{ flexDirection: 'row' }}>
+      <div className="app-preview">
         <div>
           <Button  style={{ width: 100, margin: 12 }} label="normal" onClick={() => {
             alert('normal')
