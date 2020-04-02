@@ -7,14 +7,25 @@
   background: #1e1e1e;
   box-shadow: 1px 1px 3px 0px #101010;
   z-index: 9999;
+  .yui-drawer-mask{
+    width:100vw;
+    height:100vh;
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
   .yui-drawer-header{
     display:flex;
     align-items: center;
     justify-content: space-between;
     height: 50px;
-    font-size:14px;
+    font-size:15px;
     padding: 0 16px;
     color:#ddd;
+    z-index: 2;
+    position: relative;
     .icon-guanbi{
       font-size:18px;
       color:#ddd;
@@ -25,16 +36,31 @@
     }
   }
   .yui-drawer-body{
-    height: calc(~'100% - 100px')
+    height: calc(~'100% - 100px');
+    padding: 10px;
+    color: #ddd;
+    z-index: 2;
+    position: relative;
   }
   .yui-drawer-footer{
     display:flex;
     align-items: center;
     justify-content: flex-end;
     height: 50px;
-    box-shadow: 2px 0px 2px 1px #191919;
+    box-shadow: 2px 0px 2px 1px #111;
+    z-index: 2;
+    position: relative;
     .yui-button{
       margin: 0 10px;
     }
+  }
+}
+.yui-drawer{
+  .yui-drawer-header,.yui-drawer-footer,.yui-drawer-body{
+    background: #fff;
+    color:#333;
+  }
+  .yui-drawer-footer{
+    box-shadow: 2px 0px 2px 1px #e4e0e0;
   }
 }

@@ -19,16 +19,8 @@ class Button extends React.Component {
       }>
         {label}
       </div>
-    } else if (type == 'warm') {
+    } else if (type == 'warn') {
       button = <div className="yui-button yui-button-warm" style={style} onClick={
-        (e) => {
-          this.click(e)
-        }
-      }>
-        {label}
-      </div>
-    } else if (type == 'normal') {
-      button = <div className={"yui-button yui-button-normal"+theme} style={style} onClick={
         (e) => {
           this.click(e)
         }
@@ -53,6 +45,14 @@ class Button extends React.Component {
       </div>
     } else if (type == 'blue') {
       button = <div className="yui-button yui-button-blue" style={style} onClick={
+        (e) => {
+          this.click(e)
+        }
+      }>
+        {label}
+      </div>
+    } else {
+      button = <div className={"yui-button yui-button-normal"+theme} style={style} onClick={
         (e) => {
           this.click(e)
         }

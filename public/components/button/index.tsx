@@ -12,7 +12,7 @@ class Demo extends React.Component {
           <Button type="primary" style={{ width: 100, margin: 12 }} label="primary" onClick={() => {
             alert('primary')
           }} />
-          <Button type="warm" style={{ width: 100, margin: 12 }} label="warm" onClick={() => {
+          <Button type="warn" style={{ width: 100, margin: 12 }} label="warm" onClick={() => {
 
           }} />
           <Button type="blue" style={{ width: 100, margin: 12 }} label="blue" onClick={() => {
@@ -36,7 +36,7 @@ class Demo extends React.Component {
           } onClick={() => {
             alert('icon-chuangjian')
           }} />
-          <Button type="warm" style={{ width: 100, margin: 12 }} label={
+          <Button type="warn" style={{ width: 100, margin: 12 }} label={
             <i className="iconfont icon-icon_yingyongguanli" />
           } onClick={() => {
 
