@@ -28,7 +28,7 @@ class Demo extends React.Component {
         />
         <br />
         <Pagination
-          current={5}
+          current={8}
           pageSize={10}
           total={180}
           showJumper

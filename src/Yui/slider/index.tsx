@@ -93,7 +93,7 @@ class Slider extends React.Component {
         onMouseMove={
           (e) => {
             if (this.canMove) {
-              let pro = this.state.progress + ((e.pageX - this.startX) / width)
+              let pro = this.state.progress + (e.pageX - this.startX) / width
               this.setState({
                 progress: pro > 100 ? 100 : pro < 0 ? 0 : pro
               }, () => {
@@ -126,7 +126,7 @@ class Slider extends React.Component {
             this.props.showTip && <Tooltip
               dark={this.props.dark}
               title={
-                this.state.progress
+                parseInt(this.state.progress)
               }
               trigger='hover'
               placement='top'

@@ -1,35 +1,69 @@
 import * as React from 'react'
 import './index.less'
-const Window:any = window
-class Tab extends React.Component {
-  props: any
+const Window: any = window
+class Tabs extends React.Component<any, any> {
+  props: {
+    style?: any,
+    contentStyle?: any,
+    close?: boolean,
+    dataList: any,
+    activeKey?: any,
+    onClick?: any,
+    onRemove?: any,
+    dark?: boolean
+  }
+  constructor(props) {
+    super(props)
+    this.state = {
+      activeKey: props.activeKey,
+      dataList: props.dataList
+    }
+  }
+  componentWillReceiveProps(props) {
+    this.setState({
+      activeKey: props.activeKey,
+      dataList: props.dataList
+    })
+  }
   render() {
     let tabs = null;
-    let { close, data, value, onClick, onRemove } = this.props
+    let { close, onClick, onRemove } = this.props
+    let { activeKey, dataList } = this.state
     tabs = <div className="yui-tabs-compont">
       {
-        data && data.map(tab => {
+        dataList && dataList.map(tab => {
           return (
-            <div title={tab.tip} key={tab.key} className={value === tab.key ? "yui-tabs-item-active" : "yui-tabs-item"} onClick={
+            <div title={tab.tip} key={tab.key} className={activeKey === tab.key ? "yui-tabs-item-active" : "yui-tabs-item"} onClick={
               () => {
-                onClick(tab)
+                this.setState({
+                  activeKey: tab.key
+                }, () => {
+                  onClick && onClick(tab)
+                })
               }
             }>
-              <i className={"iconfont " + tab.icon} style={{ color: tab.color }} />
-              <span style={{ margin: '0 8px' }}>{tab.label}</span>
+              <div className='yui-tabs-item-label'>
+                {tab.label}
+              </div>
               {
                 close ? <i
                   className="iconfont icon-guanbi"
                   style={{
-                    visibility: value === tab.key ? 'visible' : 'hidden'
+                    visibility: activeKey === tab.key ? 'visible' : 'hidden'
                   }}
                   onClick={
                     (e) => {
                       e.stopPropagation(); //阻止往上冒泡
-                      let filterData = data.filter(m=>{
-                          return m.key != tab.key
+                      let data = dataList.filter(m => {
+                        return m.key != tab.key
                       })
-                      onRemove(filterData)
+                      this.setState({
+                        dataList: data,
+                        activeKey: data[0] && data[0].key
+                      }, () => {
+                        onRemove && onRemove(tab)
+                      })
+
                     }
                   }
                 /> : <i className="iconfont" style={{
@@ -48,5 +82,5 @@ class Tab extends React.Component {
   }
 }
 export {
-  Tab
+  Tabs
 }

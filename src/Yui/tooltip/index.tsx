@@ -1,7 +1,6 @@
 import * as React from 'react'
 import './index.less'
 const Window:any = window
-const $: any = document.querySelector.bind(document)
 class Tooltip extends React.Component {
   props: any
   state: any

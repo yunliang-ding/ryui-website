@@ -1,7 +1,7 @@
 import * as React from "react"
 import { toJS } from 'mobx'
 import './index.less'
-import { Nav, Select, Button, Radio, Tab, Tooltip, Switch } from 'ryui'
+import { Nav, Select, Button, Tabs, Tooltip, Switch } from 'ryui'
 import { observer, inject } from 'mobx-react'
 import { Monaco } from '../monaco'
 import SplitPane from 'react-split-pane'
@@ -168,7 +168,7 @@ class Layout extends React.Component {
                     trigger='hover'
                     placement='bottom'
                   >
-                    <Button dark={dark} style={{ width: 60, margin:'0 4px' }} label="重置" onClick={() => {
+                    <Button dark={dark} style={{ width: 60, margin: '0 4px' }} label="重置" onClick={() => {
                       this.props.Monaco.editorMonaco.setValue(code[selectKey])
                       this.props.Compile.setCode(code[selectKey])
                     }} />
@@ -179,7 +179,7 @@ class Layout extends React.Component {
                     trigger='hover'
                     placement='bottom'
                   >
-                    <Button dark={dark} type="primary" style={{ width: 60, margin:'0 4px' }} label="运行" onClick={() => {
+                    <Button dark={dark} type="primary" style={{ width: 60, margin: '0 4px' }} label="运行" onClick={() => {
                       this.props.Compile.setCode(this.props.Monaco.editorMonaco.getValue())
                     }} />
                   </Tooltip>
@@ -197,35 +197,44 @@ class Layout extends React.Component {
                   background: dark ? '#1b1b1b' : '#fff',
                 }} />
                 <div className='app-layout-body-theme'>
-                  <Switch
-                    style={{width:50}}
-                    checked={dark}
-                    checkedNode={<span>黑色</span>}
-                    unCheckedNode={<span>白色</span>}
-                    onChange={
-                      (e) => {
-                        this.props.Compile.setCode(this.props.Monaco.editorMonaco.getValue())
-                        setDark(e)
+                  <Tooltip
+                    dark={dark}
+                    title={<span>切换会重制代码</span>}
+                    trigger='hover'
+                    placement='left'
+                  >
+                    <Switch
+                      style={{ width: 50 }}
+                      checked={dark}
+                      checkedNode={<span>黑色</span>}
+                      unCheckedNode={<span>白色</span>}
+                      onChange={
+                        (e) => {
+                          this.props.Compile.setCode(this.props.Monaco.editorMonaco.getValue())
+                          setDark(e)
+                        }
                       }
-                    } 
-                  />
+                    />
+                  </Tooltip>
                 </div>
                 <div className='app-layout-body-type'>
-                  <Tab
+                  <Tabs
                     dark={dark}
-                    style={{ width: 180, height: 36 }}
-                    data={[{
+                    style={{ height: 36 }}
+                    dataList={[{
                       key: 1,
-                      icon: 'icon-view-1',
-                      color: 'var(--theme-color)',
-                      label: '预览'
+                      label: [<i className='iconfont icon-view-1' style={{
+                        color: 'var(--theme-color)',
+                        marginRight: 8
+                      }}></i>, '预览']
                     }, {
                       key: 2,
-                      icon: 'icon-hezi',
-                      color: 'var(--theme-color)',
-                      label: '属性'
+                      label: [<i className='iconfont icon-hezi' style={{
+                        color: 'var(--theme-color)',
+                        marginRight: 8
+                      }}></i>, '属性']
                     }]}
-                    value={type}
+                    activeKey={type}
                     onClick={
                       (e) => {
                         setType(e.key)

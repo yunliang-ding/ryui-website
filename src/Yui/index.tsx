@@ -8,7 +8,7 @@ import { Table } from './table/index'
 import { Pagination } from './pagination/index'
 import { Loading } from './loading/index'
 import { Nav } from './nav/index'
-import { Tab } from './tab/index'
+import { Tabs } from './tab/index'
 import { Tree } from './tree/index'
 import { Switch } from './switch/index'
 import { Tooltip } from './tooltip/index'
@@ -29,7 +29,7 @@ export {
   Pagination,
   Loading,
   Nav,
-  Tab,
+  Tabs,
   Tree,
   Switch,
   Tooltip,
