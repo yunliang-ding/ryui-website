@@ -32,13 +32,14 @@ class Demo extends React.Component {
     count: 4
   }]
   state = {
-    data: JSON.parse(JSON.stringify(this.data))
+    data: JSON.parse(JSON.stringify(this.data)),
+    role: -1
   }
-  filterByType = (type) => {
-    let data = type === -1 ? this.data : this.data.filter(item => {
-      return item.role === type
+  filterByType = (role) => {
+    let data = role === -1 ? this.data : this.data.filter(item => {
+      return item.role === role
     })
-    this.setState({data})
+    this.setState({data, role})
   }
   render() {
     const colmun = [{
@@ -81,7 +82,7 @@ class Demo extends React.Component {
             value: 4
           }
         ]}
-        value={-1}
+        value={this.state.role}
         onChange={
           (e) => {
             this.filterByType(e)

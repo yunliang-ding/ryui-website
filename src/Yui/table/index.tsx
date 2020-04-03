@@ -12,6 +12,7 @@ class Table extends React.Component {
   props: any
   componentWillReceiveProps(props) {
     this.state.data = props.data
+    this.state.colmun = props.colmun
   }
   componentWillMount() {
     this.setState({
@@ -21,7 +22,6 @@ class Table extends React.Component {
   }
   sort(sort: any, isReverse: boolean) {
     this.state.data.sort(sort)
-    console.log(this.state.data)
     this.setState({
       data: isReverse ? this.state.data.reverse() : this.state.data
     }, () => {
