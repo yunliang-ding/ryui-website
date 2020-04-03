@@ -3,17 +3,15 @@
  */
 import * as React from 'react'
 import './index.less'
-const Window:any = window
+const Window: any = window
 class Table extends React.Component {
   state = {
     colmun: [],
     data: []
   }
   props: any
-  componentWillReceiveProps(newProps) {
-    this.setState({
-      data: newProps.data
-    })
+  componentWillReceiveProps(props) {
+    this.state.data = props.data
   }
   componentWillMount() {
     this.setState({
@@ -21,11 +19,20 @@ class Table extends React.Component {
       colmun: this.props.colmun
     })
   }
+  sort(sort: any, isReverse: boolean) {
+    this.state.data.sort(sort)
+    console.log(this.state.data)
+    this.setState({
+      data: isReverse ? this.state.data.reverse() : this.state.data
+    }, () => {
+      this.props.onSort && this.props.onSort()
+    })
+  }
   render() {
     let { colmun, data } = this.state;
     let theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     return (
-      <div className={"yui-table"+theme} style={this.props.style}>
+      <div className={"yui-table" + theme} style={this.props.style}>
         <div className="yui-table-header" style={this.props.styleHeader}>
           {
             colmun.map(m => {
@@ -34,11 +41,26 @@ class Table extends React.Component {
                 <div key={m.no} className="yui-table-header-colmun" style={{ width }}>
                   <div>{m.label}</div>
                   {
-                    this.props.colmunSort
+                    m.sorter
                       ?
                       <div className="yui-table-header-sort">
-                        <i className="iconfont icon-jiantou" style={{ height: 8 }} />
-                        <i className="iconfont icon-jiantou32" />
+                        <i
+                          className="iconfont icon-jiantou"
+                          style={{ height: 8 }}
+                          onClick={
+                            () => {
+                              this.sort(m.sort, false)
+                            }
+                          }
+                        />
+                        <i
+                          className="iconfont icon-jiantou32"
+                          onClick={
+                            () => {
+                              this.sort(m.sort, true)
+                            }
+                          }
+                        />
                       </div>
                       : null
                   }
