@@ -2,7 +2,16 @@ import * as React from 'react'
 import './index.less'
 const Window:any = window
 class Switch extends React.Component {
-  props: any
+  props: {
+    disabled?:boolean,
+    checkedNode?:any,
+    loading?:boolean,
+    unCheckedNode?:any,
+    checked?:boolean,
+    dark?:boolean,
+    style?:any,
+    onChange?:Function
+  }
   state: any
   constructor(props){
     super(props)

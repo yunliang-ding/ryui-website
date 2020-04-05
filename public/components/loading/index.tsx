@@ -9,36 +9,38 @@ class Demo extends React.Component {
     return (
       <div className="app-preview">
         <br />
-        <Button style={{ width: 100 }} label={this.state.loading ? "点击完成" : '点击加载'} onClick={
-          () => {
-            this.setState({
-              loading: !this.state.loading
-            })
+        <Button
+          style={{ width: 100 }}
+          label={this.state.loading ? "点击完成" : '点击加载'}
+          onClick={
+            () => {
+              this.setState({
+                loading: !this.state.loading
+              })
+            }
           }
-        } />
+        />
         <br />
         <Loading
           style={{ height: 120, width: '80%' }}
           loading={this.state.loading}
+        />
+        <br />
+        <Loading
+          style={{ height: 120, width: '80%' }}
+          loading={this.state.loading}
+          iconStyle={{
+            color: '#16b4a7'
+          }}
         >
+          <span>测试数据</span>
         </Loading>
         <br />
         <Loading
           style={{ height: 120, width: '80%' }}
           loading={this.state.loading}
-          options={{
-            background: '#16b4a7',
-            iconColor: '#fff'
-          }}>
-        </Loading>
-        <br />
-        <Loading
-          style={{ height: 120, width: '80%' }}
-          loading={this.state.loading}
-          options={{
-            icon: 'icon-shuaxin'
-          }}>
-        </Loading>
+          icon='icon-loading6'
+        />
       </div>
     )
   }

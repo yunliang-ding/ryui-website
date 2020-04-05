@@ -2,7 +2,16 @@ import * as React from 'react'
 import './index.less'
 const Window:any = window
 class Radio extends React.Component {
-  props: any
+  props: {
+    value?:any,
+    dataList:any,
+    dark?:boolean,
+    addonBefore?:any,
+    addonAfter?:any,
+    onChange?:Function,
+    readonly?:boolean,
+    style?:any
+  }
   render() {
     let { value, dataList } = this.props
     value = value || ''

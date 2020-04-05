@@ -1,13 +1,25 @@
 import * as React from 'react'
 import './index.less'
-const Window:any = window
+const Window: any = window
 class Nav extends React.Component {
+  props: {
+    navList: any,
+    openKey?: any[],
+    selectKey?: any[],
+    menuClick?: Function,
+    type?: string,
+    logo?: any,
+    model?: string,
+    collapsed?: boolean,
+    style?: any,
+    collapsedWidth?: number,
+    dark?:boolean
+  }
   state = {
     navList: [],
     openKey: [],  // 展开的父节点
     selectKey: [] //选中的叶子节点
   }
-  props: any;
   componentWillReceiveProps(nextProps) {
     this.setState({
       navList: nextProps.navList,
@@ -23,7 +35,7 @@ class Nav extends React.Component {
     })
   }
   navClick = (nav) => {
-    if(nav.disabled) return
+    if (nav.disabled) return
     let navList = this.state.navList.map(m => {
       m.active = m.key == nav.key
       return m
@@ -31,13 +43,11 @@ class Nav extends React.Component {
     this.setState({
       navList
     }, () => {
-      if (this.props.menuClick) {
-        this.props.menuClick(nav)
-      }
+      this.props.menuClick && this.props.menuClick(nav)
     })
   }
   menuClick = (nav) => {
-    if(nav.disabled) return
+    if (nav.disabled) return
     this.state.navList.map(m => {
       if (m.key == nav.key) {
         if (m.subMenu) {
@@ -104,8 +114,8 @@ class Nav extends React.Component {
             this.props.type == 'right' ? {
               left: 10
             } : {
-              right: 10
-            }
+                right: 10
+              }
           }>
             {this.props.logo}
           </div>
@@ -122,9 +132,9 @@ class Nav extends React.Component {
             let subMenu = [] // 二级
             if (item.subMenu) {
               let select = false; // 标志是否有子节点选中
-              item.isOpen = openKey.includes(item.key);
+              item.isOpen = openKey.indexOf(item.key) > -1
               item.subMenu.map(sub => {
-                sub.active = selectKey.includes(sub.key)
+                sub.active = selectKey.indexOf(sub.key) > -1
                 if (sub.active) {
                   select = true;
                 }
@@ -175,7 +185,7 @@ class Nav extends React.Component {
                 nav.push(subMenu)
               }
             } else { // 没有二级的一级菜单
-              item.active = selectKey.includes(item.key)
+              item.active = selectKey.indexOf(item.key) > -1
               nav.push(
                 <div
                   key={item.key}
@@ -204,7 +214,7 @@ class Nav extends React.Component {
             navList.map(item => {
               let nav = [] // 一级
               if (item.subMenu) {
-                item.isOpen = openKey.includes(item.key)
+                item.isOpen = openKey.indexOf(item.key) > -1
                 nav.push(
                   <div
                     key={item.key}
@@ -223,7 +233,7 @@ class Nav extends React.Component {
                   </div>
                 )
               } else { // 没有二级的一级菜单
-                item.active = selectKey.includes(item.key)
+                item.active = selectKey.indexOf(item.key) > -1
                 nav.push(
                   <div
                     key={item.key}
@@ -256,7 +266,7 @@ class Nav extends React.Component {
       })
     }
     const theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
-    return <div className={"yui-nav"+theme} style={style}>
+    return <div className={"yui-nav" + theme} style={style}>
       {nav}
     </div>
   }

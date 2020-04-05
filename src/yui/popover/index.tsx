@@ -2,7 +2,15 @@ import * as React from 'react'
 import './index.less'
 const Window:any = window
 class Popover extends React.Component {
-  props: any
+  props: {
+    placement?:string,
+    showAllow?:boolean,
+    dark?:boolean,
+    onChange?:Function,
+    trigger?:string,
+    content?:any,
+    children?:any
+  }
   state: any
   node: any
   innerNode: any

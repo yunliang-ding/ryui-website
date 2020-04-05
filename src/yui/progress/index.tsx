@@ -1,9 +1,14 @@
 import * as React from 'react'
 import './index.less'
-const $: any = document.querySelector.bind(document)
 const Window: any = window
 class Progress extends React.Component {
-  props: any
+  props: {
+    value?: number,
+    background?: string,
+    type?: string,
+    dark?: boolean,
+    style?: any
+  }
   rightNode: HTMLDivElement
   leftNode: HTMLDivElement
   setProgress = () => {

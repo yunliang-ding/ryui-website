@@ -1,6 +1,3 @@
-/**
- * yui-table1.0
- */
 import * as React from 'react'
 import './index.less'
 const Window: any = window
@@ -9,7 +6,15 @@ class Table extends React.Component {
     colmun: [],
     data: []
   }
-  props: any
+  props: {
+    data: any,
+    colmun: any,
+    onSort?: Function,
+    dark?: boolean,
+    style?: any,
+    styleHeader?: any,
+    line?: boolean
+  }
   componentWillReceiveProps(props) {
     this.state.data = props.data
     this.state.colmun = props.colmun

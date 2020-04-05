@@ -1,8 +1,13 @@
 import * as React from 'react'
 import './index.less'
-const Window:any = window
+const Window: any = window
 class Tooltip extends React.Component {
-  props: any
+  props: {
+    placement?: string,
+    children?: any,
+    dark?: boolean,
+    title?: any
+  }
   state: any
   node: any
   innerNode: any
@@ -17,11 +22,11 @@ class Tooltip extends React.Component {
     let innerHeight = parseFloat(window.getComputedStyle(this.innerNode).height)
     let innerWidth = parseFloat(window.getComputedStyle(this.innerNode).width)
     if (placement === 'right') {
-      this.innerNode.style.left = parentWidth + 10 
-      this.innerNode.style.top =  (parentHeight - innerHeight) / 2
+      this.innerNode.style.left = parentWidth + 10
+      this.innerNode.style.top = (parentHeight - innerHeight) / 2
       this.allowsNode.style.left = -2
     } else if (placement === 'left') {
-      this.innerNode.style.right = parentWidth + 10 
+      this.innerNode.style.right = parentWidth + 10
       this.innerNode.style.top = (parentHeight - innerHeight) / 2
       this.allowsNode.style.right = -2
     } else if (placement === 'top') {

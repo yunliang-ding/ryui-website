@@ -1,13 +1,20 @@
 import * as React from 'react'
 import './index.less'
 const Window:any = window
-/**
-  props: {
-    
-  }
- */
 class Select extends React.Component {
-  props: any;
+  props: {
+    onChange?:Function,
+    style?:any,
+    dark?:boolean,
+    value?:any,
+    dataList:any,
+    addonBefore?:any,
+    addonAfter?:any,
+    mode?:string,
+    clear?:boolean,
+    placeholder?:string,
+    readonly?:boolean
+  }
   state = {
     isOpen: false,
     isActive: false,

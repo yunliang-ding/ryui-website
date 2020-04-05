@@ -12,7 +12,7 @@ class Demo extends React.Component {
           <Button type="primary" style={{ width: 100, margin: 12 }} label="primary" onClick={() => {
             alert('primary')
           }} />
-          <Button type="warn" style={{ width: 100, margin: 12 }} label="warm" onClick={() => {
+          <Button type="warn" style={{ width: 100, margin: 12 }} label="warn" onClick={() => {
 
           }} />
           <Button type="blue" style={{ width: 100, margin: 12 }} label="blue" onClick={() => {
@@ -21,7 +21,7 @@ class Demo extends React.Component {
           <Button type="danger" style={{ width: 100, margin: 12 }} label="danger" onClick={() => {
 
           }} />
-          <Button  type="disabled" style={{ width: 100, margin: 12 }} label="disabled" onClick={() => {
+          <Button type="disabled" style={{ width: 100, margin: 12 }} label="disabled" onClick={() => {
 
           }} />
         </div>

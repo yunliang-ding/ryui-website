@@ -1,4 +1,4 @@
-.yui-button, .yui-button-dark{
+.yui-btn{
   font-size:12px;
   cursor: pointer;
   display:flex;
@@ -12,58 +12,50 @@
   border-radius: 2px;
   user-select: none;
 }
-.yui-button:hover{
+.yui-btn:hover{
   opacity: 0.6;
   transition: all .3s;
   -webkit-transition: all .3s;
 }
-.yui-button-primary{
+.yui-btn-primary, .yui-btn-dark-primary{
   background: var(--theme-color);
   color:#fff;
   border: 1px solid var(--theme-color);
   transition: all .3s;
   -webkit-transition: all .3s;
 }
-.yui-button-warm{
+.yui-btn-warn, .yui-btn-dark-warn{
   background: #FFB800;
   color:#fff;
   border: 1px solid #FFB800;
   transition: all .3s;
   -webkit-transition: all .3s;
 }
-.yui-button-blue{
+.yui-btn-blue, .yui-btn-dark-blue{
   background: #1E9FFF;
   color:#fff;
   border: 1px solid #1E9FFF;
   transition: all .3s;
   -webkit-transition: all .3s;
 }
-.yui-button-danger{
+.yui-btn-danger, .yui-btn-dark-danger{
   background: #f02525;
   color:#fff;
   border: 1px solid #f02525;
   transition: all .3s;
   -webkit-transition: all .3s;
 }
-.yui-button-disabled{
+.yui-btn-dark-normal, .yui-btn-dark-disabled{
+  background: #222;
+  color: #ccc;
+  border-color: #333;
+}
+.yui-btn-normal, .yui-btn-disabled{
+  background: #fff;
+  color: #333;
+  border-color: #dcdcdc;
+}
+.yui-btn-disabled, .yui-btn-dark-disabled{
   opacity: 0.5;
   cursor:not-allowed;
-  transition: all .3s;
-  -webkit-transition: all .3s;
-}
-.yui-button-normal:hover{
-  border:1px solid var(--theme-color);
-  transition: all .3s;
-  -webkit-transition: all .3s;
-}
-.yui-button-normal-dark{
-  background: #222;
-  color: #ccc;
-  border-color: #333;
-}
-.yui-button-disabled-dark{
-  background: #222;
-  color: #ccc;
-  border-color: #333;
-  cursor: not-allowed;
 }

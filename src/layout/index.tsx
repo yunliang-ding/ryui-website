@@ -95,7 +95,6 @@ class Layout extends React.Component {
             <Tooltip
               dark={dark}
               title={<span>切换会重制代码</span>}
-              trigger='hover'
               placement='left'
             >
               <Switch
@@ -186,7 +185,6 @@ class Layout extends React.Component {
                   <Tooltip
                     dark={dark}
                     title={<span>重制之后会立即运行代码</span>}
-                    trigger='hover'
                     placement='bottom'
                   >
                     <Button dark={dark} style={{ width: 60, margin: '0 4px' }} label="重置" onClick={() => {
@@ -197,7 +195,6 @@ class Layout extends React.Component {
                   <Tooltip
                     dark={dark}
                     title={<span>运行异常控制台会有错误信息</span>}
-                    trigger='hover'
                     placement='bottom'
                   >
                     <Button dark={dark} type="primary" style={{ width: 60, margin: '0 4px' }} label="运行" onClick={() => {

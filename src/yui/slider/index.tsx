@@ -3,7 +3,14 @@ import './index.less'
 import { Tooltip } from '../index'
 const Window:any = window
 class Slider extends React.Component {
-  props: any
+  props: {
+    dark?:boolean,
+    siderHeight?:number,
+    siderWidth?:number,
+    onChange?:Function,
+    showTip?:boolean,
+    progress:number
+  }
   state: any
   radiusNode: HTMLDivElement
   trackNode: HTMLDivElement
@@ -128,7 +135,6 @@ class Slider extends React.Component {
               title={
                 parseInt(this.state.progress)
               }
-              trigger='hover'
               placement='top'
             >
               &nbsp;&nbsp;

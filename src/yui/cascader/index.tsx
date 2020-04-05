@@ -1,8 +1,15 @@
 import * as React from "react"
 import './index.less'
-const Window:any = window
+const Window: any = window
 class Cascader extends React.Component {
-  props: any;
+  props: {
+    value?: any,
+    onChange?: Function,
+    style?: any,
+    dark?: boolean,
+    placeholder?: string,
+    trigger?: string
+  }
   state: any;
   cascaderNode: any;
   constructor(props) {
@@ -128,7 +135,7 @@ class Cascader extends React.Component {
                         className={item.selected ? 'yui-cascader-body-col-item-active' : 'yui-cascader-body-col-item'}
                         onMouseOver={
                           () => {
-                            if(trigger === 'hover' && item.children){
+                            if (trigger === 'hover' && item.children) {
                               this.labelClick(cols, col, item, index)
                             }
                           }
