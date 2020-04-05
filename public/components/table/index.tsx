@@ -121,8 +121,7 @@ class Demo extends React.Component {
           data={this.state.data}
           colmun={colmun}
           styleHeader={{
-            background: 'var(--theme-color)',
-            color: '#fff'
+            border: '1px solid var(--theme-color)'
           }}
         />
         <Table
