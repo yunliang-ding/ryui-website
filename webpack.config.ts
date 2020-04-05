@@ -25,7 +25,7 @@ const config = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
     alias: {
-      ryui: path.join(__dirname, './src/Yui')
+      ryui: path.join(__dirname, './src/yui')
     }
   },
   externals: {
