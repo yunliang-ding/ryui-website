@@ -47,7 +47,6 @@ class Modal extends React.Component {
     let style = this.props.style || {}
     let width = style.width || 600
     style.left = `calc(50vw - ${width / 2}px)`
-    console.log(style)
     return visible === true && <div className={'yui-modal' + theme} style={style} ref={(node) => { this.modalNode = node }}>
       <div className='yui-modal-header'>
         <div>
