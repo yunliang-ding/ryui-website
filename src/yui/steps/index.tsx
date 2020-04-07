@@ -33,9 +33,9 @@ class Steps extends React.Component {
             onClick={
               () => {
                 this.setState({
-                  current: index
+                  current: index + 1
                 }, () => {
-                  this.props.onChange && this.props.onChange()
+                  this.props.onChange && this.props.onChange(index)
                 })
               }
             }
