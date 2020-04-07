@@ -19,6 +19,7 @@ import { Popover } from './popover/index'
 import { Progress } from './progress/index'
 import { Drawer } from './drawer/index'
 import { Modal } from './modal/index'
+import { Steps } from './steps/index'
 import './theme.less'
 export {
   Input,
@@ -41,5 +42,6 @@ export {
   Popover,
   Progress,
   Drawer,
-  Modal
+  Modal,
+  Steps
 }

@@ -134,6 +134,10 @@ class UI {
       key: 'progress',
       icon: 'icon-cebianlan',
       label: 'Progress　进度条'
+    }, {
+      key: 'steps',
+      icon: 'icon-cebianlan',
+      label: 'Steps　步骤条'
     }]
   }, {
     key: '3',

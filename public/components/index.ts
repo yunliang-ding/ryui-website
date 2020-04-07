@@ -19,6 +19,7 @@ import tab from 'raw-loader!./tab/index.tsx'
 import table from 'raw-loader!./table/index.tsx'
 import tooltip from 'raw-loader!./tooltip/index.tsx'
 import tree from 'raw-loader!./tree/index.tsx'
+import steps from 'raw-loader!./steps/index.tsx'
 export default {
   alert,
   button,
@@ -40,5 +41,6 @@ export default {
   tab,
   table,
   tooltip,
-  tree
+  tree,
+  steps
 }
