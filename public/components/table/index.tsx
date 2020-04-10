@@ -46,7 +46,7 @@ class Demo extends React.Component {
       label: '序号',
       dataIndex: 'no',
       render: (value, record) => {
-        return <Button type='primary' style={{ width: 30 }} label={value} />
+        return <Button style={{ width: 30 }} label={value} />
       }
     }, {
       label: '应用名称',
@@ -101,7 +101,7 @@ class Demo extends React.Component {
       dataIndex: 'opeartion',
       render: (value, record) => {
         return ['删除', '修改'].map(m => {
-          return <Button type='primary' style={{ width: 50, marginRight: 10 }} label={m} onClick={
+          return <Button style={{ width: 50, marginRight: 10 }} label={m} onClick={
             () => {
               alert('123')
             }
