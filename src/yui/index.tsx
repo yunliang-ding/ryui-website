@@ -20,6 +20,7 @@ import { Progress } from './progress/index'
 import { Drawer } from './drawer/index'
 import { Modal } from './modal/index'
 import { Steps } from './steps/index'
+import { Carousel } from './carousel/index'
 import './theme.less'
 export {
   Input,
@@ -43,5 +44,6 @@ export {
   Progress,
   Drawer,
   Modal,
-  Steps
+  Steps,
+  Carousel
 }

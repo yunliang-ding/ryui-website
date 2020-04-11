@@ -1,3 +1,4 @@
+// @ts-nocheck
 import alert from 'raw-loader!./alert/index.tsx'
 import button from 'raw-loader!./button/index.tsx'
 import cascader from 'raw-loader!./cascader/index.tsx'
@@ -20,6 +21,7 @@ import table from 'raw-loader!./table/index.tsx'
 import tooltip from 'raw-loader!./tooltip/index.tsx'
 import tree from 'raw-loader!./tree/index.tsx'
 import steps from 'raw-loader!./steps/index.tsx'
+import carousel from 'raw-loader!./carousel/index.tsx'
 export default {
   alert,
   button,
@@ -42,5 +44,6 @@ export default {
   table,
   tooltip,
   tree,
-  steps
+  steps,
+  carousel
 }

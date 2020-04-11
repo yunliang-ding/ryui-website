@@ -138,6 +138,10 @@ class UI {
       key: 'steps',
       icon: 'icon-cebianlan',
       label: 'Steps　步骤条'
+    }, {
+      key: 'carousel',
+      icon: 'icon-cebianlan',
+      label: 'Carousel　轮播'
     }]
   }, {
     key: '3',
