@@ -22,6 +22,7 @@ import tooltip from 'raw-loader!./tooltip/index.tsx'
 import tree from 'raw-loader!./tree/index.tsx'
 import steps from 'raw-loader!./steps/index.tsx'
 import carousel from 'raw-loader!./carousel/index.tsx'
+import datepicker from 'raw-loader!./datepicker/index.tsx'
 export default {
   alert,
   button,
@@ -45,5 +46,6 @@ export default {
   tooltip,
   tree,
   steps,
-  carousel
+  carousel,
+  datepicker
 }

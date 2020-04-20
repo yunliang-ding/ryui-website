@@ -1,12 +1,12 @@
 // @ts-nocheck
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Carousel } from 'ryui'
+import { DatePicker } from 'ryui'
 class Demo extends React.Component {
   render() {
     return (
       <div className="app-preview">
-        <Carousel dataList={[]} />
+        <DatePicker />
       </div>
     )
   }

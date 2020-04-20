@@ -1,28 +1,24 @@
 import * as React from "react"
 import './index.less'
 const Window: any = window
-class Carousel extends React.Component {
+class DatePicker extends React.Component {
   props: {
     dark?:boolean,
     style?:any,
-    dataList:any
+    value:any
   }
   constructor(props) {
     super(props)
   }
   render() {
-    const { style, dataList } = this.props
+    const { style } = this.props
     const dark = this.props.dark || Window.yuiIsDark
     let theme = dark ? '-dark' : ''
-    return <div className={`yui-carousel${theme}`} style={style}>
-      {
-        dataList.map(item => {
-          return <div>yui</div>
-        })
-      }
+    return <div className={`yui-date-picker${theme}`} style={style}>
+      yui-date-picker
     </div>
   }
 }
 export {
-  Carousel
+  DatePicker
 }

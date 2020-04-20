@@ -142,6 +142,10 @@ class UI {
       key: 'carousel',
       icon: 'icon-cebianlan',
       label: 'Carousel　轮播'
+    }, {
+      key: 'datepicker',
+      icon: 'icon-cebianlan',
+      label: 'DatePicker　日期'
     }]
   }, {
     key: '3',
