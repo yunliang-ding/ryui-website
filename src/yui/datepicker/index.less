@@ -1,3 +1,67 @@
 .yui-date-picker, .yui-date-picker-dark{
-
+  position: relative;
+  .yui-date-picker-layer{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+  }
+  .yui-date-picker-body{
+    height: 320px;
+    width: 300px;
+    position: absolute;
+    top: 36px;
+    color: #eee;
+    background: #222;
+    box-shadow: 0 0 3px 1px #101010;
+    .yui-date-picker-body-header{
+      height: 40px;
+      display: flex;
+      .yui-picker-header-item{
+        color:#eee;
+        font-size:12px;
+        width: 14.28%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+    }
+    .yui-date-picker-body-calendar{
+      .yui-picker-calendar-row{
+        display:flex;
+        height:40px;
+        .yui-picker-calendar-row-col, .yui-picker-calendar-row-col-current, .yui-picker-calendar-row-col-current-month{
+          width: 14.28%;
+          height: 100%;
+          color:#eee;
+          font-size:12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          opacity: .4;
+        }
+        .yui-picker-calendar-row-col:hover, .yui-picker-calendar-row-col-current-month:hover{
+          color: var(--theme-color);
+        }
+        .yui-picker-calendar-row-col-current-month{
+          opacity: 1;
+        }
+        .yui-picker-calendar-row-col-current{
+          opacity: 1;
+          color: var(--theme-color);
+        }
+      }
+    }
+    .yui-date-picker-body-footer{
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 10px;
+    }
+  }
 }

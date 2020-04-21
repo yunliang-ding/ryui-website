@@ -6,7 +6,7 @@ class Demo extends React.Component {
   render() {
     return (
       <div className="app-preview">
-        <DatePicker />
+        <DatePicker style={{width:200}} placeholder='选择日期' />
       </div>
     )
   }

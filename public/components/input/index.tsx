@@ -56,18 +56,6 @@ class Demo extends React.Component {
       />
       <br />
       <Input
-        type='date'
-        style={{ width: 300 }}
-        placeholder='姓名'
-        value={this.state.value}
-        onChange={
-          (e) => {
-            this.setValue(e.target.value)
-          }
-        }
-      />
-      <br />
-      <Input
         style={{ width: 300 }}
         type="textArea"
         placeholder='姓名'
