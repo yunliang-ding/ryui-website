@@ -1,7 +1,7 @@
 class DateUtil {
   date: Date
-  constructor() {
-    this.date = new Date()
+  constructor(date) {
+    this.date = date
   }
   setDate = (date: Date) => {
     this.date = date
@@ -50,7 +50,7 @@ class DateUtil {
         date: date.getDate(),
         dateString: date.toLocaleDateString(),
         currentMonth: true,
-        current: date.toLocaleDateString() === this.date.toLocaleDateString()
+        current: date.toLocaleDateString() === new Date().toLocaleDateString()
       }
     })
     // 后补齐
@@ -74,7 +74,6 @@ class DateUtil {
     ]
   }
 }
-const dateUtil = new DateUtil()
 export {
-  dateUtil
+  DateUtil
 }
