@@ -103,9 +103,9 @@ const config = {
     hints: false
   },
   plugins: [
-    new MonacoWebpackPlugin({
-      languages: ['javascript', 'html', 'typescript']
-    }),
+    // new MonacoWebpackPlugin({
+    //   languages: ['javascript', 'html', 'typescript']
+    // }),
     new MiniCssExtractPlugin({
       filename: 'app.css'
     }),

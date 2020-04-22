@@ -1,7 +1,7 @@
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
 import 'monaco-editor/esm/vs/basic-languages/javascript/javascript.contribution'
 import { textMateService } from './syntaxHighlighter'
-const { typescriptDefaults, javascriptDefaults }: any = monaco.languages.typescript
+// const { typescriptDefaults, javascriptDefaults }: any = monaco.languages.typescript
 const option:any = {
   selectOnLineNumbers: true,
   automaticLayout: true,
@@ -40,8 +40,8 @@ class MonacoServices{
     })
     this.editorMonaco = editorMonaco
     oldDecorations = this.textMateColor(editorMonaco, options.language, options.value, oldDecorations)
-    typescriptDefaults._compilerOptions = this.compilerOptions
-    javascriptDefaults._compilerOptions = this.compilerOptions
+    // typescriptDefaults._compilerOptions = this.compilerOptions
+    // javascriptDefaults._compilerOptions = this.compilerOptions
   }
   setValue = (value) => {
     this.editorMonaco.setValue(value)
