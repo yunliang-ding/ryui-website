@@ -1,7 +1,10 @@
+import dayjs from 'dayjs'
 class DateUtil {
   date: Date
-  constructor(date) {
+  format: string
+  constructor(date, format) {
     this.date = date
+    this.format = format
   }
   setDate = (date: Date) => {
     this.date = date
@@ -39,7 +42,7 @@ class DateUtil {
       let date = new Date(fristDate.getTime() - (index + 1) * 24 * 60 * 60 * 1000)
       return {
         date: date.getDate(),
-        dateString: date.toLocaleDateString(),
+        dateString: dayjs(date.toLocaleDateString()).format(this.format),
         currentMonth: false,
         current: false
       }
@@ -48,7 +51,7 @@ class DateUtil {
       let date = new Date(fristDate.getTime() + index * 24 * 60 * 60 * 1000)
       return {
         date: date.getDate(),
-        dateString: date.toLocaleDateString(),
+        dateString: dayjs(date.toLocaleDateString()).format(this.format),
         currentMonth: true,
         current: date.toLocaleDateString() === new Date().toLocaleDateString()
       }
@@ -58,7 +61,7 @@ class DateUtil {
       let date = new Date(lastDate.getTime() + (index + 1) * 24 * 60 * 60 * 1000)
       return {
         date: date.getDate(),
-        dateString: date.toLocaleDateString(),
+        dateString: dayjs(date.toLocaleDateString()).format(this.format),
         currentMonth: false,
         current: false
       }
@@ -72,6 +75,9 @@ class DateUtil {
       calendar.slice(28, 35),
       calendar.slice(35, 42)
     ]
+  }
+  getDateString = (date) => {
+    return dayjs(date.toLocaleDateString()).format(this.format)
   }
 }
 export {

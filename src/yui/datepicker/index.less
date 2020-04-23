@@ -15,6 +15,8 @@
     color: #eee;
     background: #222;
     box-shadow: 0 0 3px 1px #101010;
+    user-select: none;
+    z-index:199;
     .yui-date-picker-body-tools{
       height:40px;
       display:flex;
@@ -68,7 +70,10 @@
       .yui-picker-calendar-row{
         display:flex;
         height:40px;
-        .yui-picker-calendar-row-col, .yui-picker-calendar-row-col-current, .yui-picker-calendar-row-col-current-month{
+        .yui-picker-calendar-row-col,
+        .yui-picker-calendar-row-col-active,
+        .yui-picker-calendar-row-col-current,
+        .yui-picker-calendar-row-col-current-month{
           width: 14.28%;
           height: 100%;
           color:#eee;
@@ -78,6 +83,11 @@
           justify-content: center;
           cursor: pointer;
           opacity: .4;
+        }
+        .yui-picker-calendar-row-col-active{
+          background: var(--theme-color);
+          color:#fff;
+          opacity: 1;
         }
         .yui-picker-calendar-row-col:hover, .yui-picker-calendar-row-col-current-month:hover{
           color: var(--theme-color);

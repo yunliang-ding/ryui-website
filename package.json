@@ -1,5 +1,5 @@
 {
-  "name": "Yui",
+  "name": "yui-website",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -18,7 +18,7 @@
     "react-router": "^3.0.2",
     "monaco-editor":"0.19.0",
     "react-split-pane":"0.1.87",
-    "moment": "^2.20.1"
+    "dayjs":"1.8.25"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
