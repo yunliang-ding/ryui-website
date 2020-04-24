@@ -79,6 +79,25 @@ class DateUtil {
   getDateString = (date) => {
     return dayjs(date.toLocaleDateString()).format(this.format)
   }
+  getYearList = () => { // -40 < 当前年份 < 20
+    let year = new Date().getFullYear()
+    let arr = []
+    for (let i = year - 40; i < year + 21; i++) {
+      arr.push({
+        label: i,
+        value: i
+      })
+    }
+    return arr
+  }
+  getMonthList = () => {
+    return Array.from(new Array(12).keys()).map(month => {
+      return {
+        label: month + 1,
+        value: month + 1
+      }
+    })
+  }
 }
 export {
   DateUtil

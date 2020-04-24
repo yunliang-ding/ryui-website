@@ -1,9 +1,11 @@
 import * as React from "react"
-import { Input, Button } from '../index'
+import { Input, Button, Select } from '../index'
 import { DateUtil } from './util'
 import './index.less'
 const Window: any = window
 class DatePicker extends React.Component {
+  yearList = []
+  monthList = []
   dateUtil: DateUtil;
   state: any;
   props: {
@@ -12,8 +14,8 @@ class DatePicker extends React.Component {
     value: any,
     onChange: any,
     placeholder?: string,
-    addonBefore?:any,
-    addonAfter?:any
+    addonBefore?: any,
+    addonAfter?: any
   }
   constructor(props) {
     super(props)
@@ -25,13 +27,15 @@ class DatePicker extends React.Component {
       value: props.value,
       calendar: this.dateUtil.getCalendar() // 当前日历
     }
+    this.yearList = this.dateUtil.getYearList()
+    this.monthList = this.dateUtil.getMonthList()
   }
   componentWillReceiveProps(props) {
     let date = props.value || new Date().getTime()
     let format = props.format || 'YYYY-MM-DD'
     this.dateUtil = new DateUtil(new Date(date), format)
     this.state.value = props.value,
-      this.state.calendar = this.dateUtil.getCalendar() // 当前日历
+    this.state.calendar = this.dateUtil.getCalendar() // 当前日历
   }
   renderHeader = () => {
     return ['日', '一', '二', '三', '四', '五', '六'].map(item => {
@@ -84,14 +88,19 @@ class DatePicker extends React.Component {
     return <div className={`yui-date-picker${theme}`} style={style}>
       <div className='yui-date-picker-input'>
         <Input
+          dark={dark}
           placeholder={placeholder}
           value={this.state.value}
           addonBefore={this.props.addonBefore}
           addonAfter={this.props.addonAfter}
           onFocus={
             () => {
+              this.state.value ? this.dateUtil.setDate(
+                new Date(this.state.value)
+              ) : this.dateUtil.setDate(new Date())
               this.setState({
-                isOpen: true
+                isOpen: true,
+                calendar: this.dateUtil.getCalendar()
               })
             }
           } />
@@ -122,7 +131,42 @@ class DatePicker extends React.Component {
             }>
               <i className='iconfont icon-icon-jiantouzuo'></i>
             </div>
-            <div className='picker-tools-date'>{this.dateUtil.date.getFullYear()}年{this.dateUtil.date.getMonth() + 1}月</div>
+            <div className='picker-tools-date'>
+              <Select
+                dark={dark}
+                style={{ border: 0 }}
+                value={this.dateUtil.date.getFullYear()}
+                dataList={this.yearList}
+                onChange={
+                  (e) => {
+                    this.dateUtil.setDate(
+                      new Date(`${e}-${this.dateUtil.date.getMonth() + 1}-${this.dateUtil.date.getDate()}`)
+                    )
+                    this.setState({
+                      calendar: this.dateUtil.getCalendar()
+                    })
+                  }
+                }
+              />
+              年
+              <Select
+                dark={dark}
+                style={{ border: 0 }}
+                value={this.dateUtil.date.getMonth() + 1}
+                dataList={this.monthList}
+                onChange={
+                  (e) => {
+                    this.dateUtil.setDate(
+                      new Date(`${this.dateUtil.date.getFullYear()}-${e}-${this.dateUtil.date.getDate()}`)
+                    )
+                    this.setState({
+                      calendar: this.dateUtil.getCalendar()
+                    })
+                  }
+                }
+              />
+              月
+            </div>
             <div className='picker-tools-next picker-tools-next-month' onClick={
               () => {
                 this.setCalendar(this.dateUtil.date.getTime() + this.dateUtil.getDateNumberByMonth(this.dateUtil.date.getMonth() + 1) * 24 * 60 * 60 * 1000)
@@ -151,6 +195,9 @@ class DatePicker extends React.Component {
               style={{ height: 30, width: 60 }}
               onClick={
                 () => {
+                  this.dateUtil.setDate(
+                    new Date()
+                  )
                   this.setState({
                     value: this.dateUtil.getDateString(new Date()),
                     isOpen: false
