@@ -23,14 +23,20 @@ class Demo extends React.Component {
         <Carousel
           style={{ width: 500, height: 240 }}
           pages={pages}
-          currentPage={2}
         />
         <br /><br />
         <Carousel
           style={{ width: 500, height: 240 }}
           pages={pages}
-          currentPage={2}
           autoplay
+          currentPage={2}
+        />
+         <br /><br />
+        <Carousel
+          style={{ width: 500, height: 240 }}
+          pages={pages}
+          autoplay
+          effect='fade'
         />
       </div>
     )

@@ -3,28 +3,31 @@ import './index.less'
 const Window: any = window
 class Carousel extends React.Component {
   state: any
+  timer: any
   props: {
     dark?: boolean,
     style?: any,
     pages: any,
     currentPage?: any,
     onChange?: any,
-    autoplay?: boolean
+    autoplay?: boolean,
+    effect?: string
   }
   constructor(props) {
     super(props)
     this.state = {
-      currentPage: props.currentPage
+      currentPage: props.currentPage || 1
     }
   }
   componentWillReceiveProps(props) {
-    this.state.currentPage = props.currentPage
+    this.state.currentPage = props.currentPage || 1
   }
-  setCurrentPage = (page) => {
-    let currentPage = 1 
-    if(page < 1){
+  setCurrentPage = (page: number) => {
+    clearTimeout(this.timer) // clear
+    let currentPage = 1
+    if (page < 1) {
       currentPage = this.props.pages.length
-    } else if(page > this.props.pages.length) {
+    } else if (page > this.props.pages.length) {
       currentPage = 1
     } else {
       currentPage = page
@@ -34,20 +37,25 @@ class Carousel extends React.Component {
     }, () => {
       this.props.onChange && this.props.onChange(currentPage)
     })
+    
   }
-  autoplay = () => {
-    setTimeout(() => {
-      this.setCurrentPage(this.state.currentPage + 1)
-      this.autoplay()
+  autoPlay = () => {
+    this.timer = setTimeout(() => {
+      this.setState({
+        currentPage: this.state.currentPage + 1 > this.props.pages.length ? 1 : this.state.currentPage + 1
+      }, () => {
+        this.props.onChange && this.props.onChange(this.state.currentPage)
+      })
     }, 3000)
   }
+  componentDidUpdate() {
+    this.props.autoplay && this.autoPlay()
+  }
   componentDidMount() {
-    if(this.props.autoplay){
-      this.autoplay()
-    }
+    this.props.autoplay && this.autoPlay()
   }
   render() {
-    const { style, pages } = this.props
+    const { style, pages, effect } = this.props
     const dark = this.props.dark || Window.yuiIsDark
     const { currentPage } = this.state
     let theme = dark ? '-dark' : ''
@@ -69,7 +77,9 @@ class Carousel extends React.Component {
       {
         pages && pages.map((page, index) => {
           return <div className='yui-carousel-page' style={{
-            left: (index + 1) === currentPage ? 0 : 100 * ((index + 1) - currentPage) + '%'
+            left: effect === 'fade' ? 0 : (index + 1) === currentPage ? 0 : 100 * ((index + 1) - currentPage) + '%',
+            opacity: effect === 'fade' ? ((index + 1) === currentPage ? 1 : 0) : 1,
+            transition: effect === 'fade' ? '.8s' : '.5s'
           }}>
             {
               page
