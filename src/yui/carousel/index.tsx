@@ -8,7 +8,8 @@ class Carousel extends React.Component {
     style?: any,
     pages: any,
     currentPage?: any,
-    onChange?: any
+    onChange?: any,
+    autoplay?: boolean
   }
   constructor(props) {
     super(props)
@@ -19,6 +20,32 @@ class Carousel extends React.Component {
   componentWillReceiveProps(props) {
     this.state.currentPage = props.currentPage
   }
+  setCurrentPage = (page) => {
+    let currentPage = 1 
+    if(page < 1){
+      currentPage = this.props.pages.length
+    } else if(page > this.props.pages.length) {
+      currentPage = 1
+    } else {
+      currentPage = page
+    }
+    this.setState({
+      currentPage
+    }, () => {
+      this.props.onChange && this.props.onChange(currentPage)
+    })
+  }
+  autoplay = () => {
+    setTimeout(() => {
+      this.setCurrentPage(this.state.currentPage + 1)
+      this.autoplay()
+    }, 3000)
+  }
+  componentDidMount() {
+    if(this.props.autoplay){
+      this.autoplay()
+    }
+  }
   render() {
     const { style, pages } = this.props
     const dark = this.props.dark || Window.yuiIsDark
@@ -27,18 +54,14 @@ class Carousel extends React.Component {
     return <div className={`yui-carousel${theme}`} style={style}>
       <div className='yui-carousel-before' onClick={
         () => {
-          this.setState({
-            currentPage: this.state.currentPage == 1 ? 1 : this.state.currentPage - 1
-          })
+          this.setCurrentPage(this.state.currentPage - 1)
         }
       }>
         <i className='iconfont icon-icon-jiantouzuo'></i>
       </div>
       <div className='yui-carousel-next' onClick={
         () => {
-          this.setState({
-            currentPage: this.state.currentPage === pages.length ? pages.length : this.state.currentPage + 1
-          })
+          this.setCurrentPage(this.state.currentPage + 1)
         }
       }>
         <i className='iconfont icon-jiantou2'></i>
@@ -46,7 +69,7 @@ class Carousel extends React.Component {
       {
         pages && pages.map((page, index) => {
           return <div className='yui-carousel-page' style={{
-            left: (index + 1) === currentPage ? 0 : 100 * ((index+1) - currentPage) + '%'
+            left: (index + 1) === currentPage ? 0 : 100 * ((index + 1) - currentPage) + '%'
           }}>
             {
               page
@@ -62,11 +85,7 @@ class Carousel extends React.Component {
                 className={(index + 1) === currentPage ? 'yui-carousel-legend-box-item-active' : 'yui-carousel-legend-box-item'}
                 onClick={
                   () => {
-                    this.setState({
-                      currentPage: index + 1
-                    }, () => {
-                      this.props.onChange && this.props.onChange(index + 1)
-                    })
+                    this.setCurrentPage(index + 1)
                   }
                 }
               />
