@@ -36,9 +36,14 @@ class Demo extends React.Component {
         label: 'childern-2-3',
         children: [{
           key: '2-3-1',
-          label: 'childern-2-3-1'
+          label: 'childern-2-3-1',
+          
         }]
       }]
+    }, {
+      key: '3',
+      label: 'parent-3',
+      icon: 'icon-react'
     }]
   }
   render() {

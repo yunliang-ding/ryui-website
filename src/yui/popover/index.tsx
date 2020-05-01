@@ -1,15 +1,18 @@
 import * as React from 'react'
 import './index.less'
-const Window:any = window
+const Window: any = window
 class Popover extends React.Component {
+  [x: string]: any
   props: {
-    placement?:string,
-    showAllow?:boolean,
-    dark?:boolean,
-    onChange?:Function,
-    trigger?:string,
-    content?:any,
-    children?:any
+    placement?: string,
+    showAllow?: boolean,
+    dark?: boolean,
+    onChange?: Function,
+    trigger?: string,
+    content?: any,
+    children?: any,
+    style?: any,
+    onContext?:any
   }
   state: any
   node: any
@@ -57,9 +60,10 @@ class Popover extends React.Component {
   }
   render() {
     const { visable } = this.state
-    const { showAllow, trigger } = this.props
+    const { showAllow, trigger, style } = this.props
     let theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     return <div
+      style={style}
       className={'yui-popover' + theme}
       ref={(node) => { this.node = node }}
       onMouseLeave={
@@ -84,6 +88,7 @@ class Popover extends React.Component {
       }
       onContextMenu={
         (e) => {
+          this.props.onContext && this.props.onContext(e)
           this.setVisable(true)
           e.preventDefault()
         }
@@ -131,7 +136,11 @@ class Popover extends React.Component {
       >
         <div className='yui-popover-inner-layer' />
         {showAllow && <div className='yui-popover-inner-allow' ref={(allowNode) => { this.allowNode = allowNode }} />}
-        <div className='yui-popover-inner-content'>
+        <div className='yui-popover-inner-content' onClick={
+          () => {
+            this.setVisable(false)
+          }
+        }>
           {this.props.content}
         </div>
       </div>
