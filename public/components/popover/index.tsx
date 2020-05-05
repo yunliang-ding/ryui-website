@@ -79,9 +79,11 @@ class Demo extends React.Component {
           <Button style={{ width: 100 }} label="Hover" />
         </Popover>
         <br /><br />
+        <br /><br />
+        <br /><br />
         <Popover
           content={this.content()}
-          placement='bottom'
+          placement='top'
         >
           <Button style={{ width: 100 }} label="Click" />
         </Popover>
@@ -92,13 +94,6 @@ class Demo extends React.Component {
           trigger='contextMenu'
         >
           <Button style={{ width: 100 }} label="Right Click" />
-        </Popover>
-        <br /><br />
-        <Popover
-          content={this.renderTree()}
-          placement='bottom'
-        >
-          <Button style={{ width: 150 }} label="Tree Select" />
         </Popover>
       </div>
     )
