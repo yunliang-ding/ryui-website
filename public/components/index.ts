@@ -1,5 +1,6 @@
 // @ts-nocheck
 import alert from 'raw-loader!./alert/index.tsx'
+import badge from 'raw-loader!./badge/index.tsx'
 import button from 'raw-loader!./button/index.tsx'
 import cascader from 'raw-loader!./cascader/index.tsx'
 import checkbox from 'raw-loader!./checkbox/index.tsx'
@@ -25,6 +26,7 @@ import carousel from 'raw-loader!./carousel/index.tsx'
 import datepicker from 'raw-loader!./datepicker/index.tsx'
 export default {
   alert,
+  badge,
   button,
   cascader,
   checkbox,

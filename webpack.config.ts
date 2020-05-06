@@ -1,7 +1,6 @@
 const path = require("path")
 const os = require('os')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 function getIPAdress() {
   let localIPAddress = "";
   let interfaces = os.networkInterfaces();
@@ -69,7 +68,6 @@ const config = {
     {
       test: /\.less/,
       include: [ //样式只应用到这两个文件夹下面的css文件中
-        path.resolve(__dirname, 'node_modules'),
         path.resolve(__dirname, './src')
       ],
       use: [
@@ -97,15 +95,12 @@ const config = {
     contentBase: './www'
   },
   optimization: process.env.NODE_ENV === "production" ? {
-    minimize: false
+    minimize: true
   } : {},
   performance: {
     hints: false
   },
   plugins: [
-    // new MonacoWebpackPlugin({
-    //   languages: ['javascript', 'html', 'typescript']
-    // }),
     new MiniCssExtractPlugin({
       filename: 'app.css'
     }),

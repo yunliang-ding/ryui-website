@@ -86,6 +86,10 @@ class UI {
       icon: 'icon-cebianlan',
       label: 'Button　按钮'
     }, {
+      key: 'badge',
+      icon: 'icon-cebianlan',
+      label: 'Badge　角标'
+    }, {
       key: 'Switch',
       icon: 'icon-cebianlan',
       label: 'Switch　开关'

@@ -20,7 +20,7 @@ class Layout extends React.Component {
     } = this.props.UI
     let selectKey = location.hash.substring(2)
     let openKey = ''
-    if (['input', 'radio', 'Switch', 'checkbox', 'select', 'button', 'slider', 'tooltip', 'cascader', 'popover'].indexOf(selectKey) > -1) {
+    if (['input', 'radio', 'Switch', 'badge', 'checkbox', 'select', 'button', 'slider', 'tooltip', 'cascader', 'popover'].indexOf(selectKey) > -1) {
       openKey = '1'
     } else if (['alert', 'loading', 'message', 'progress', 'drawer', 'modal', 'steps', 'carousel', 'datepicker'].indexOf(selectKey) > -1) {
       openKey = '2'
