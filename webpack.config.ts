@@ -22,10 +22,7 @@ const config = {
     filename: 'app.js'
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],
-    alias: {
-      ryui: path.join(__dirname, './src/yui')
-    }
+    extensions: ['.ts', '.tsx', '.js', '.json']
   },
   externals: {
     'react': 'React',
@@ -67,9 +64,6 @@ const config = {
     },
     {
       test: /\.less/,
-      include: [ //样式只应用到这两个文件夹下面的css文件中
-        path.resolve(__dirname, './src')
-      ],
       use: [
         { loader: MiniCssExtractPlugin.loader },
         {

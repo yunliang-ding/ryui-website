@@ -1,7 +1,7 @@
 import * as React from "react"
 import { toJS } from 'mobx'
 import './index.less'
-import { Nav, Select, Button, Tabs, Tooltip, Switch } from 'ryui'
+import { Nav, Select, Button, Tabs, Tooltip, Switch } from 'react-ryui'
 import { observer, inject } from 'mobx-react'
 import { Monaco } from '../monaco'
 import SplitPane from 'react-split-pane'
@@ -44,7 +44,6 @@ class Layout extends React.Component {
       menus,
       collapsed,
       setCollapsed,
-      darkList,
       setDark,
       openkey,
       setOpenkey,
