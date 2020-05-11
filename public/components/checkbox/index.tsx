@@ -75,7 +75,7 @@ class Demo extends React.Component {
         <CheckBox
           style={{ width: 400 }}
           addonAfter={
-            <i className="iconfont icon-chazhao" />
+            <i className="iconfont icon--buju" />
           }
           dataList={dataList}
           value={valueList}

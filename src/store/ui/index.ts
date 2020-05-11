@@ -63,117 +63,117 @@ class UI {
   @observable collapsed = false
   @observable menus = [{
     key: '1',
-    icon: 'icon-cloud-form',
+    icon: 'iconfont icon-cloud-form',
     label: '基本组件',
     subMenu: [{
       key: 'input',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Input　输入框'
     }, {
       key: 'checkbox',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'CheckBox　多选框'
     }, {
       key: 'radio',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Radio　单选框'
     }, {
       key: 'select',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Select　下拉框'
     }, {
       key: 'button',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Button　按钮'
     }, {
       key: 'badge',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Badge　角标'
     }, {
       key: 'Switch',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Switch　开关'
     }, {
       key: 'tooltip',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Tooltip　提示信息'
     }, {
       key: 'popover',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Popover 气泡卡片'
     }, {
       key: 'slider',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Slider　滑动条'
     }, {
       key: 'cascader',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Cascader　级联选择'
     }]
   }, {
     key: '2',
-    icon: 'icon-jiaohu',
+    icon: 'iconfont icon-jiaohu',
     label: '交互组件',
     subMenu: [{
       key: 'alert',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Alert　警告提示'
     }, {
       key: 'loading',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Loading　加载'
     }, {
       key: 'message',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Message　全局提示'
     }, {
       key: 'modal',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Modal　对话框'
     }, {
       key: 'drawer',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Drawer　抽屉'
     }, {
       key: 'progress',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Progress　进度条'
     }, {
       key: 'steps',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Steps　步骤条'
     }, {
       key: 'carousel',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Carousel　轮播'
     }, {
       key: 'datepicker',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'DatePicker　日期'
     }]
   }, {
     key: '3',
-    icon: 'icon--buju',
+    icon: 'iconfont icon--buju',
     label: '导航组件',
     subMenu: [{
       key: 'table',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Table　表格'
     }, {
       key: 'tab',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Tab　选项卡'
     }, {
       key: 'pagination',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Pagination　分页'
     }, {
       key: 'tree',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Tree　树形控件'
     }, {
       key: 'nav',
-      icon: 'icon-cebianlan',
+      icon: 'iconfont icon-menu',
       label: 'Nav　导航栏'
     }]
   }]

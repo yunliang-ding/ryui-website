@@ -8,43 +8,17 @@ class Demo extends React.Component {
       <div className="app-preview">
         <Steps
           stepList={[{
-            icon: <i className='iconfont icon-message_SendSuccessfully'></i>,
+            icon: <i className='iconfont icon-view-1'></i>,
             title: 'step1',
             subTitle: 'subTitle1',
             description: 'description1'
           }, {
-            icon: <i className='iconfont icon-message_SendSuccessfully'></i>,
+            icon: <i className='iconfont icon-loading6'></i>,
             title: 'step2',
             subTitle: 'subTitle2',
             description: 'description2'
           }, {
-            icon: <i className='iconfont icon-message_SendSuccessfully'></i>,
-            title: 'step3',
-            subTitle: 'subTitle3',
-            description: 'description3'
-          }]}
-          current={1}
-          onChange={
-            (e) => {
-              console.log(e)
-            }
-          }
-        />
-        <br />
-        <br />
-        <Steps
-          stepList={[{
-            icon: <i className='iconfont icon-message_SendSuccessfully'></i>,
-            title: 'step1',
-            subTitle: 'subTitle1',
-            description: 'description1'
-          }, {
-            icon: <i className='iconfont icon-loading'></i>,
-            title: 'step2',
-            subTitle: 'subTitle2',
-            description: 'description2'
-          }, {
-            icon: <i className='iconfont icon-message_SendSuccessfully'></i>,
+            icon: <i className='iconfont icon-view-1'></i>,
             title: 'step3',
             subTitle: 'subTitle3',
             description: 'description3'
@@ -62,17 +36,17 @@ class Demo extends React.Component {
           style={{ width: 200, height: 320 }}
           direction='vertical'
           stepList={[{
-            icon: <i className='iconfont icon-message_SendSuccessfully'></i>,
+            icon: <i className='iconfont icon-view-1'></i>,
             title: 'step1',
             subTitle: 'subTitle1',
             description: 'description1'
           }, {
-            icon: <i style={{color: 'red'}} className='iconfont icon-cuo'></i>,
+            icon: <i style={{color: 'red'}} className='iconfont icon-zhongqi'></i>,
             title: 'step2',
             subTitle: 'subTitle2',
             description: 'description2'
           }, {
-            icon: <i className='iconfont icon-message_SendSuccessfully'></i>,
+            icon: <i className='iconfont icon-view-1'></i>,
             title: 'step3',
             subTitle: 'subTitle3',
             description: 'description3'

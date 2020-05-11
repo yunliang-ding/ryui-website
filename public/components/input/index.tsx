@@ -52,7 +52,7 @@ class Demo extends React.Component {
             this.setValue(e.target.value)
           }
         }
-        addonAfter={<i className="iconfont icon-chazhao" />}
+        addonAfter={<i className="iconfont icon-view-1" />}
       />
       <br />
       <Input

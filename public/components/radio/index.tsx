@@ -64,7 +64,7 @@ class Demo extends React.Component {
         <Radio
           style={{ width: 400 }}
           addonAfter={
-            <i className="iconfont icon-chazhao" />
+            <i className="iconfont icon--buju" />
           }
           dataList={dataList}
           value={value}

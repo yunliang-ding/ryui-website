@@ -21,30 +21,30 @@ class Demo extends React.Component {
     }],
     menu: [{
       key: '1',
-      icon: 'icon-github',
+      icon: 'iconfont icon-hezi',
       label: '个人中心',
       subMenu: [{
         key: '1-2',
-        icon: 'icon-fenxiang',
+        icon: 'iconfont icon-menu',
         label: '我的信息'
       }, {
         key: '1-3',
-        icon: 'icon-fenxiang',
+        icon: 'iconfont icon-menu',
         label: '个人中心'
       }, {
         key: '1-4',
-        icon: 'icon-tuichu',
+        icon: 'iconfont icon-menu',
         disabled: true,
         label: '我的提交'
       }]
     }, {
       key: '2',
       disabled: true,
-      icon: 'icon-icon_yingyongguanli',
+      icon: 'iconfont icon-UI1',
       label: '信息管理'
     }, {
       key: '3',
-      icon: 'icon-icon_yingyongguanli',
+      icon: 'iconfont icon-view-1',
       label: '信息中心'
     }],
     collapsed: false,

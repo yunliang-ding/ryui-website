@@ -80,7 +80,7 @@ class Demo extends React.Component {
         <Select
           style={{ width: 300, marginBottom: 16 }}
           addonBefore={
-            <i className="iconfont icon-chazhao" style={{ color: 'var(--theme-color)' }} />
+            <i className="iconfont icon-hezi" style={{ color: 'var(--theme-color)' }} />
           }
           placeholder="请选择"
           dataList={dataList}

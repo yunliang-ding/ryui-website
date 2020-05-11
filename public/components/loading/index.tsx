@@ -40,7 +40,7 @@ class Demo extends React.Component {
         <Loading
           style={{ height: 120, width: '80%' }}
           loading={this.state.loading}
-          icon='icon-loading6'
+          icon='iconfont icon-loading6'
         />
       </div>
     )

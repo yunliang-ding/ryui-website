@@ -28,32 +28,32 @@ class Demo extends React.Component {
         </div>
         <div>
           <Button  style={{ width: 100, margin: 12 }} label={
-            <i className="iconfont icon-fenxiang" />
+            <i className="iconfont icon-view-1" />
           } onClick={() => {
             alert('iconfont')
           }} />
           <Button type="primary" style={{ width: 100, margin: 12 }} label={
-            <i className="iconfont icon-git" />
+            <i className="iconfont icon-cloud-form" />
           } onClick={() => {
             alert('icon-chuangjian')
           }} />
           <Button type="warn" style={{ width: 100, margin: 12 }} label={
-            <i className="iconfont icon-icon_yingyongguanli" />
+            <i className="iconfont icon-hezi" />
           } onClick={() => {
 
           }} />
           <Button type="blue" style={{ width: 100, margin: 12 }} label={
-            <i className="iconfont icon-tuichu" />
+            <i className="iconfont icon-icon_yingyongguanli" />
           } onClick={() => {
 
           }} />
           <Button type="danger" style={{ width: 100, margin: 12 }} label={
-            <i className="iconfont icon-github" />
+            <i className="iconfont icon-menu" />
           } onClick={() => {
 
           }} />
           <Button  type="disabled" style={{ width: 100, margin: 12 }} label={
-            <i className="iconfont icon-chazhao" />
+            <i className="iconfont icon-loading6" />
           } onClick={() => {
 
           }} />

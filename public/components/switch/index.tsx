@@ -37,8 +37,8 @@ class Demo extends React.Component {
         <br />
         <Switch
           checked
-          checkedNode={<i className='iconfont icon-duihao'></i>}
-          unCheckedNode={<i className='iconfont icon-guanbi'></i>}
+          checkedNode={<i className='iconfont icon-shouqi'></i>}
+          unCheckedNode={<i className='iconfont icon-zhankai1'></i>}
           onChange={
             (e) => {
               console.log(e)
