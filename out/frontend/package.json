@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "ryui",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express":"4.17.1",
-    "ejs":"2.7.1"
+    "ejs":"2.7.1",
+    "cors":"^2.8.5"
   }
 }
