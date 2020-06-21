@@ -94,7 +94,7 @@ const config = {
     contentBase: './www'
   },
   optimization: process.env.NODE_ENV === "production" ? {
-    minimize: false
+    minimize: true
   } : {},
   performance: {
     hints: false
