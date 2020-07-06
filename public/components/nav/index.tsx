@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Nav, Select, Button } from 'ryui'
+import { Nav, Select, Button } from 'react-ryui'
 class Demo extends React.Component {
   state = {
     value: 0,

@@ -5,7 +5,7 @@ class Compile {
   scope = {
     'react': require('react'),
     'react-dom': require('react-dom'),
-    'ryui': require('react-ryui')
+    'react-ryui': require('react-ryui')
   }
   require = key => {
     if (this.scope[key] === void 0) throw new Error(`${key} is not define`)

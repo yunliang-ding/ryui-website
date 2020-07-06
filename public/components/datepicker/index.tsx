@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import ReactDom from 'react-dom'
-import { DatePicker } from 'ryui'
+import { DatePicker } from 'react-ryui'
 class Demo extends React.Component {
   render() {
     return (

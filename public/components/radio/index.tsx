@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Select, Radio } from 'ryui'
+import { Select, Radio } from 'react-ryui'
 class Demo extends React.Component {
   state = {
     value: 0,

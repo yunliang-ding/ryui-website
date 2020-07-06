@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Alert } from 'ryui'
+import { Alert } from 'react-ryui'
 class Demo extends React.Component {
   render() {
     return (

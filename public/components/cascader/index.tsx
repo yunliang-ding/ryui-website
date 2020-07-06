@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Cascader } from 'ryui'
+import { Cascader } from 'react-ryui'
 class Demo extends React.Component {
   dataList = [
     {

@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Popover, Button, Tree } from 'ryui'
+import { Popover, Button, Tree } from 'react-ryui'
 class Demo extends React.Component {
   data = [{
     key: '1',

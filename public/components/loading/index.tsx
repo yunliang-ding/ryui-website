@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Loading, Button } from 'ryui'
+import { Loading, Button } from 'react-ryui'
 class Demo extends React.Component {
   state = {
     loading: true

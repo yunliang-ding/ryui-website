@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Table, Button, Select } from 'ryui'
+import { Table, Button, Select } from 'react-ryui'
 class Demo extends React.Component {
   data = [{
     key: Math.random(),

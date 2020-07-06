@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Message, Button } from 'ryui'
+import { Message, Button } from 'react-ryui'
 class Demo extends React.Component {
   render() {
     const message = new Message({

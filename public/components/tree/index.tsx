@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Tree } from 'ryui'
+import { Tree } from 'react-ryui'
 class Demo extends React.Component {
   state = {
     data: [{

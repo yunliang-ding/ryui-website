@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Tooltip, Button } from 'ryui'
+import { Tooltip, Button } from 'react-ryui'
 class Demo extends React.Component {
   render() {
     return (

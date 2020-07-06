@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Pagination } from 'ryui'
+import { Pagination } from 'react-ryui'
 class Demo extends React.Component {
   render() {
     return (

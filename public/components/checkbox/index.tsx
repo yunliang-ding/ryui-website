@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Select, CheckBox } from 'ryui'
+import { Select, CheckBox } from 'react-ryui'
 class Demo extends React.Component {
   state = {
     value: 0,

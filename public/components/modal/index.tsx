@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Modal, Button } from 'ryui'
+import { Modal, Button } from 'react-ryui'
 class Demo extends React.Component {
   state = {
     visible: false,

@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Carousel } from 'ryui'
+import { Carousel } from 'react-ryui'
 const style = {
   background: 'var(--theme-color)',
   width: '100%',
