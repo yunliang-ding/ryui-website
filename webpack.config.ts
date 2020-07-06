@@ -1,5 +1,6 @@
 const path = require("path")
 const os = require('os')
+const packageName = require('./package.json').name;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 function getIPAdress() {
   let localIPAddress = "";
@@ -19,7 +20,11 @@ const config = {
   entry: './src/index.tsx',
   output: {
     path: process.env.NODE_ENV == "production" ? path.resolve(__dirname, './out/frontend/public/') : path.resolve(__dirname, 'www/'),
-    filename: 'app.js'
+    filename: 'app.js',
+    library: `${packageName}-[name]`,
+    libraryTarget: 'umd',
+    jsonpFunction: `webpackJsonp_${packageName}`,
+    publicPath: `//49.233.85.54:${process.env.NODE_ENV == "production" ? 8003 : 9000}/`
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json']
@@ -55,7 +60,7 @@ const config = {
           outputPath: 'images/'
         }
       }
-    },{
+    }, {
       test: /\.css$/,
       use: [
         { loader: MiniCssExtractPlugin.loader },

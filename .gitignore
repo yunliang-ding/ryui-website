@@ -23,5 +23,7 @@ yarn-error.log*
 *.sw*
 
 out/log/
-out/frontend/public/
+out/frontend/public/app.js
+out/frontend/public/app.css
+out/frontend/public/1.app.js
 out/frontend/node_modules/

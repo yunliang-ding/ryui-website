@@ -1,7 +1,7 @@
 {
   "apps": [
     {
-      "name": "Yui",
+      "name": "yui-website",
       "script": "frontend/production.js",
       "ignore-watch": "node_modules",
       "exec_mode": "cluster",
